@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://nexelldocs.com/sitemap.xml
+Sitemap: https://nexelldox.com/sitemap.xml
