@@ -418,6 +418,9 @@
             display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem; position: relative;
         }
+        .proceso-steps-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
         .paso {
             text-align: center; padding: 1.5rem;
         }
@@ -592,7 +595,7 @@
             /* GRIDS A 1 COLUMNA */
             .ventajas-grid { grid-template-columns: 1fr; }
             .servicios-grid { grid-template-columns: 1fr; }
-            .proceso-steps { grid-template-columns: 1fr 1fr; }
+            .proceso-steps, .proceso-steps-4 { grid-template-columns: 1fr 1fr; }
             .garantias-grid { grid-template-columns: 1fr; }
             .diferencial-grid { grid-template-columns: 1fr; gap: 1.5rem; }
             .colab-grid { grid-template-columns: 1fr; }
@@ -905,7 +908,7 @@
         <div class="tab-content active" data-tab-content="particulares">
             <h2 class="section-title">Así de fácil</h2>
             <p class="section-sub">De tu consulta a la legalización en 4 pasos.</p>
-            <div class="proceso-steps" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="proceso-steps proceso-steps-4">
                 <div class="paso">
                     <div class="paso-num">1</div>
                     <h3>Cuéntanos tu caso</h3>
