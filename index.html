@@ -1195,15 +1195,24 @@
     document.getElementById('solicitud-form').addEventListener('submit', function(e) {
         e.preventDefault();
         const btn = this.querySelector('.form-submit');
-        btn.textContent = '✓ Solicitud enviada correctamente';
-        btn.style.background = '#065F46';
+        const originalText = btn.textContent;
+        btn.textContent = 'Enviando...';
         btn.disabled = true;
-        // TODO: Conectar a webhook Make.com
-        // fetch('https://hook.eu2.make.com/XXXXXXX', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(Object.fromEntries(new FormData(this)))
-        // });
+        fetch('https://hook.eu1.make.com/su7f2kymvomrx6c3twf3o2piv0oq9ugk', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(Object.fromEntries(new FormData(this)))
+        })
+        .then(r => {
+            btn.textContent = '✓ Solicitud enviada correctamente';
+            btn.style.background = '#065F46';
+            this.reset();
+        })
+        .catch(() => {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            alert('Error al enviar. Inténtalo de nuevo o llámanos al 672 585 491.');
+        });
     });
 </script>
 
