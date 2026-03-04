@@ -214,6 +214,17 @@
         }
         .nav-cta:hover { background: #D41920 !important; }
 
+        /* HAMBURGER — oculto en desktop */
+        .nav-hamburger {
+            display: none; background: none; border: none; cursor: pointer;
+            padding: 0.5rem; flex-direction: column; gap: 5px;
+        }
+        .nav-hamburger span {
+            display: block; width: 24px; height: 2.5px;
+            background: var(--azul-oscuro); border-radius: 2px;
+            transition: all 0.3s;
+        }
+
         /* HERO */
         .hero {
             padding: 10rem 2rem 5rem;
@@ -541,15 +552,57 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero p.hero-sub { font-size: 1.05rem; }
-            .form-row { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
+            /* NAV HAMBURGER */
+            .nav-hamburger { display: flex; }
+            nav { padding: 0.5rem 1rem; }
+            .nav-brand img { height: 50px; }
+            .nav-links {
+                display: none; flex-direction: column;
+                position: absolute; top: 100%; left: 0; right: 0;
+                background: rgba(255,255,255,0.98);
+                backdrop-filter: blur(10px);
+                padding: 1rem 1.5rem; gap: 0;
+                box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+                border-top: 1px solid rgba(31,78,120,0.1);
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a {
+                padding: 0.8rem 0; font-size: 1rem;
+                border-bottom: 1px solid rgba(0,0,0,0.06);
+            }
+            .nav-links a:last-child { border-bottom: none; }
+            .nav-cta {
+                text-align: center; margin-top: 0.5rem;
+                padding: 0.7rem 1.2rem !important;
+            }
+
+            /* HERO */
+            .hero { padding: 7rem 1.2rem 4rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero p.hero-sub { font-size: 1rem; }
+            .hero-badges { gap: 0.5rem; }
+            .badge { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
+            .tab-btn { padding: 0.6rem 1.2rem; font-size: 0.85rem; }
+
+            /* SECCIONES */
             section { padding: 3rem 1.2rem; }
+            .section-title { font-size: 1.7rem; }
+            .section-sub { font-size: 0.95rem; }
+
+            /* GRIDS A 1 COLUMNA */
+            .ventajas-grid { grid-template-columns: 1fr; }
             .servicios-grid { grid-template-columns: 1fr; }
-            .diferencial-grid { grid-template-columns: 1fr; }
-            .colab-grid { grid-template-columns: 1fr 1fr; }
-            .tab-btn { padding: 0.6rem 1.5rem; font-size: 0.9rem; }
+            .proceso-steps { grid-template-columns: 1fr 1fr; }
+            .garantias-grid { grid-template-columns: 1fr; }
+            .diferencial-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .colab-grid { grid-template-columns: 1fr; }
+
+            /* FORMULARIO */
+            .form-row { grid-template-columns: 1fr; }
+            .form-container { padding: 0 0.5rem; }
+
+            /* FOOTER */
+            .footer-asociaciones { flex-direction: column; gap: 0.5rem; }
         }
     </style>
 </head>
@@ -561,12 +614,15 @@
         <img src="logo-nexell-instalaciones.png" alt="Nexell Instalaciones">
         <img src="logo-nexell-docs.png" alt="Nexell Docs">
     </a>
+    <button class="nav-hamburger" aria-label="Menú" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+    </button>
     <div class="nav-links">
-        <a href="#servicios">Servicios</a>
-        <a href="#proceso">Cómo funciona</a>
-        <a href="#colaboradores">Red técnica</a>
-        <a href="#garantias">Garantías</a>
-        <a href="#contacto" class="nav-cta">Solicitar presupuesto</a>
+        <a href="#servicios" onclick="this.parentElement.classList.remove('open')">Servicios</a>
+        <a href="#proceso" onclick="this.parentElement.classList.remove('open')">Cómo funciona</a>
+        <a href="#colaboradores" onclick="this.parentElement.classList.remove('open')">Red técnica</a>
+        <a href="#garantias" onclick="this.parentElement.classList.remove('open')">Garantías</a>
+        <a href="#contacto" class="nav-cta" onclick="this.parentElement.classList.remove('open')">Solicitar presupuesto</a>
     </div>
 </nav>
 
