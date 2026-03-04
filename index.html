@@ -244,14 +244,14 @@
             background: rgba(255,255,255,0.97);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(31,78,120,0.1);
-            padding: 0.5rem 2rem;
+            padding: 0.6rem 2rem;
             display: flex; justify-content: space-between; align-items: center;
         }
         .nav-brand {
             display: flex; align-items: center; gap: 0.3rem;
             text-decoration: none;
         }
-        .nav-brand img { height: 80px; width: auto; object-fit: contain; }
+        .nav-brand img { height: 90px; width: auto; object-fit: contain; }
         .nav-links { display: flex; gap: 2rem; align-items: center; }
         .nav-links a {
             text-decoration: none; color: var(--gris-texto);
@@ -306,7 +306,42 @@
             background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
             padding: 0.4rem 1rem; border-radius: 50px;
             font-size: 0.85rem; font-weight: 500;
+            cursor: pointer; transition: all 0.3s; text-decoration: none; color: inherit;
+            position: relative;
         }
+        .badge:hover {
+            background: rgba(255,255,255,0.25); transform: scale(1.05);
+        }
+        .badge::after {
+            content: ' →'; opacity: 0; transition: opacity 0.3s;
+        }
+        .badge:hover::after {
+            opacity: 1;
+        }
+        /* Tooltip on hover */
+        .badge[data-filter]::before {
+            content: 'Ver servicios →';
+            position: absolute; bottom: 110%; left: 50%;
+            transform: translateX(-50%) translateY(4px); opacity: 0;
+            background: rgba(0,0,0,0.8); color: white;
+            padding: 0.3rem 0.7rem; border-radius: 6px;
+            font-size: 0.7rem; white-space: nowrap;
+            pointer-events: none; transition: all 0.3s;
+        }
+        .badge[data-filter]:hover::before {
+            opacity: 1; transform: translateX(-50%) translateY(0);
+        }
+        /* Highlight pulse animation for badge filtering */
+        @keyframes highlightPulse {
+            0% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.6); border-color: rgba(234, 179, 8, 0.8); }
+            40% { box-shadow: 0 0 0 8px rgba(234, 179, 8, 0.2); border-color: rgba(234, 179, 8, 0.6); }
+            100% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0); border-color: transparent; }
+        }
+        .highlight-pulse {
+            animation: highlightPulse 1.5s ease-out;
+            border: 2px solid rgba(234, 179, 8, 0.8) !important;
+        }
+
         .cta-btn {
             display: inline-block;
             background: var(--verde); color: white;
@@ -510,6 +545,19 @@
         }
         .colab-icon.asociacion { background: #DBEAFE; }
         .colab-icon.inspeccion { background: #FEE2E2; }
+        .colab-logo {
+            width: 56px; height: 56px;
+            border-radius: 12px;
+            background: white;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .colab-logo img {
+            width: 38px; height: 38px;
+            object-fit: contain;
+        }
         .colab-item-text h5 {
             font-size: 0.9rem; font-weight: 700; color: var(--azul-oscuro);
         }
@@ -650,7 +698,7 @@
             /* NAV HAMBURGER */
             .nav-hamburger { display: flex; }
             nav { padding: 0.5rem 1rem; }
-            .nav-brand img { height: 50px; }
+            .nav-brand img { height: 55px; }
             .nav-links {
                 display: none; flex-direction: column;
                 position: absolute; top: 100%; left: 0; right: 0;
@@ -785,6 +833,7 @@
         <a href="#colaboradores" onclick="this.parentElement.classList.remove('open')">Red técnica</a>
         <a href="#garantias" onclick="this.parentElement.classList.remove('open')">Garantías</a>
         <a href="#faq" onclick="this.parentElement.classList.remove('open')">FAQ</a>
+        <a href="certificados-ahorro-energetico.html" onclick="this.parentElement.classList.remove('open')">CAE</a>
         <a href="#contacto" class="nav-cta" onclick="this.parentElement.classList.remove('open')">Solicitar presupuesto</a>
     </div>
 </nav>
@@ -793,9 +842,9 @@
 <section class="hero">
     <div class="container">
         <div class="hero-badges">
-            <span class="badge">REBT — Baja Tensión</span>
-            <span class="badge">RITE — Climatización</span>
-            <span class="badge">RSIF — Refrigeración</span>
+            <a href="#servicios" class="badge" data-filter="rebt">REBT — Baja Tensión</a>
+            <a href="#servicios" class="badge" data-filter="rite">RITE — Climatización</a>
+            <a href="#servicios" class="badge" data-filter="rsif">RSIF — Refrigeración</a>
         </div>
         <h1>Tu instalación legalizada<br>en <span>24–48 horas</span></h1>
 
@@ -886,25 +935,25 @@
             <h2 class="section-title">¿Qué necesitas legalizar?</h2>
             <p class="section-sub">Selecciona tu caso. Nos encargamos de la documentación y los trámites.</p>
             <div class="servicios-grid">
-                <div class="servicio-card bg-azul">
+                <div class="servicio-card bg-azul" data-reglamento="rite rsif">
                     <span class="servicio-tag tag-rebt">CLIMATIZACIÓN</span>
                     <h3><a href="/legalizar-aire-acondicionado">Aire acondicionado / Split</a></h3>
                     <p>¿Te instalaron uno o varios splits y no tienes documentación? Generamos la memoria técnica RITE y gestionamos la legalización ante Industria.</p>
                     <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
-                <div class="servicio-card bg-verde">
+                <div class="servicio-card bg-verde" data-reglamento="rite rsif">
                     <span class="servicio-tag tag-rite-verde">CLIMATIZACIÓN</span>
                     <h3><a href="/legalizar-aerotermia">Aerotermia</a></h3>
                     <p>Instalación de aerotermia para calefacción, ACS o frío. Documentación RITE completa con cálculos de cargas térmicas y selección de equipo.</p>
                     <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
-                <div class="servicio-card bg-naranja">
+                <div class="servicio-card bg-naranja" data-reglamento="rite">
                     <span class="servicio-tag tag-rite-naranja">CLIMATIZACIÓN</span>
                     <h3><a href="/legalizar-caldera">Caldera / Calentador</a></h3>
                     <p>Cambio de caldera, calentador de gas o instalación nueva. Memoria técnica y certificación para la compañía de gas.</p>
                     <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
-                <div class="servicio-card bg-rojo">
+                <div class="servicio-card bg-rojo" data-reglamento="rebt">
                     <span class="servicio-tag tag-rebt">ELECTRICIDAD</span>
                     <h3><a href="/legalizar-instalacion-electrica">Instalación eléctrica</a></h3>
                     <p>Ampliación de potencia, nueva instalación o modificación del cuadro. Memoria técnica REBT, boletín y gestión con la compañía eléctrica.</p>
@@ -936,28 +985,28 @@
             <h2 class="section-title">Servicios para instaladores</h2>
             <p class="section-sub">Todo lo que necesitas para legalizar, certificar y documentar tus instalaciones.</p>
             <div class="servicios-grid">
-                <div class="servicio-card bg-rojo">
+                <div class="servicio-card bg-rojo" data-reglamento="rebt">
                     <span class="servicio-tag tag-rebt">REBT</span>
                     <h3><a href="/memoria-tecnica-diseno">Memoria Técnica Eléctrica</a></h3>
                     <p>MTD para viviendas, locales, oficinas e industria. Cálculos de sección, caída de tensión y protecciones incluidos.</p>
                     <div class="servicio-precio">Desde 250 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 24-48h</div>
                 </div>
-                <div class="servicio-card bg-azul">
+                <div class="servicio-card bg-azul" data-reglamento="rite">
                     <span class="servicio-tag tag-rite">RITE</span>
                     <h3>Memoria Técnica Térmica</h3>
                     <p>MTD para climatización y ACS. Cargas térmicas, selección de equipos, conductos y tuberías.</p>
                     <div class="servicio-precio">Desde 300 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 24-48h</div>
                 </div>
-                <div class="servicio-card bg-verde">
+                <div class="servicio-card bg-verde" data-reglamento="rsif">
                     <span class="servicio-tag tag-rsif">RSIF</span>
                     <h3>Documentación frigorífica</h3>
                     <p>Memorias y certificados para instalaciones frigoríficas. Carga de refrigerante, clasificación de local, tuberías.</p>
                     <div class="servicio-precio">Desde 350 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 48h</div>
                 </div>
-                <div class="servicio-card bg-rojo">
+                <div class="servicio-card bg-rojo" data-reglamento="rebt">
                     <span class="servicio-tag tag-rebt">REBT</span>
                     <h3>Cálculos eléctricos</h3>
                     <p>Previsión de cargas, secciones por ITC-BT-19, protecciones, coordinación. Tablas y esquemas unifilares.</p>
@@ -1162,7 +1211,7 @@
                 <h4>Instalaciones y mantenimiento</h4>
                 <div class="colab-items">
                     <div class="colab-item">
-                        <div class="colab-icon asociacion">🔧</div>
+                        <div class="colab-logo"><img src="logo-nexell-instalaciones.png" alt="Nexell Instalaciones" loading="lazy"></div>
                         <div class="colab-item-text">
                             <h5><a href="https://nexell.es" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(0,0,0,0.3);">Nexell Instalaciones ↗</a></h5>
                             <p>Nuestra empresa de instalaciones. Ejecución de obra nueva, reformas y mantenimiento de instalaciones eléctricas, térmicas y de climatización en toda España.</p>
@@ -1176,7 +1225,7 @@
                 <h4>Asociaciones profesionales</h4>
                 <div class="colab-items">
                     <div class="colab-item">
-                        <div class="colab-icon asociacion">🏢</div>
+                        <div class="colab-logo"><img src="https://agremia.com/favicon.ico" alt="Agremia" loading="lazy"></div>
                         <div class="colab-item-text">
                             <h5><a href="https://agremia.com" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(0,0,0,0.3);">Agremia ↗</a></h5>
                             <p>Asociación de empresas del sector de las instalaciones y la energía. Más de 2.000 empresas asociadas en la Comunidad de Madrid.</p>
@@ -1190,14 +1239,14 @@
                 <h4>Organismos de control (OCAs)</h4>
                 <div class="colab-items">
                     <div class="colab-item">
-                        <div class="colab-icon inspeccion">🔍</div>
+                        <div class="colab-logo"><img src="https://scisa.es/favicon.ico" alt="SCI Control & Inspección" loading="lazy"></div>
                         <div class="colab-item-text">
                             <h5><a href="https://scisa.es" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(0,0,0,0.3);">SCI Control & Inspección ↗</a></h5>
                             <p>OCA acreditada. Inspecciones reglamentarias de instalaciones eléctricas de baja y alta tensión, térmicas e industriales.</p>
                         </div>
                     </div>
                     <div class="colab-item">
-                        <div class="colab-icon inspeccion">🔍</div>
+                        <div class="colab-logo"><img src="https://icninspeccion.com/favicon.ico" alt="ICN Inspección" loading="lazy"></div>
                         <div class="colab-item-text">
                             <h5><a href="https://icninspeccion.com" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(0,0,0,0.3);">ICN Inspección ↗</a></h5>
                             <p>OCA acreditada por ENAC (nº 371/EI711). Inspección de instalaciones eléctricas, térmicas, PCI y equipos a presión.</p>
@@ -1447,7 +1496,7 @@
 <!-- FOOTER -->
 <footer>
     <div class="container">
-        <img src="logo-nexell-docs-blanco.png" alt="Nexell Docs - Legalización de instalaciones eléctricas y térmicas" style="height:70px; margin-bottom:1rem; filter:brightness(10);">
+        <img src="logo-nexell-docs-blanco.png" alt="Nexell Docs - Legalización de instalaciones eléctricas y térmicas" style="height:90px; margin-bottom:1rem; opacity:0.85;">
         <p>Un servicio de <a href="https://nexell.es" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.9); border-bottom: 1px dashed rgba(255,255,255,0.4);">Nexell Instalaciones ↗</a></p>
         <p>Construction Efficient Building and Services S.L. · CIF B87004370 · R.I. 206529</p>
         <div class="footer-asociaciones">
@@ -1495,8 +1544,9 @@
         });
     });
 
-    // Smooth scroll
+    // Smooth scroll (skip badges — handled separately)
     document.querySelectorAll('a[href^="#"]').forEach(a => {
+        if (a.classList.contains('badge')) return; // badges have their own handler
         a.addEventListener('click', e => {
             e.preventDefault();
             const target = document.querySelector(a.getAttribute('href'));
@@ -1519,6 +1569,40 @@
                 item.classList.add('open');
                 btn.setAttribute('aria-expanded', 'true');
             }
+        });
+    });
+
+    // BADGE FILTER — interactive badges scroll to servicios and highlight matching cards
+    document.querySelectorAll('.badge[data-filter]').forEach(badge => {
+        badge.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const filter = this.dataset.filter;
+            const serviciosSection = document.getElementById('servicios');
+            if (!serviciosSection) return;
+
+            // Smooth scroll to servicios
+            serviciosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Wait for scroll to complete, then highlight
+            setTimeout(() => {
+                // Remove any existing highlights
+                document.querySelectorAll('.highlight-pulse').forEach(el => el.classList.remove('highlight-pulse'));
+
+                // Find matching cards
+                const cards = document.querySelectorAll('.servicio-card[data-reglamento]');
+                cards.forEach(card => {
+                    const reglamentos = card.dataset.reglamento.split(' ');
+                    if (reglamentos.includes(filter)) {
+                        card.classList.add('highlight-pulse');
+                    }
+                });
+
+                // Remove highlight after animation
+                setTimeout(() => {
+                    document.querySelectorAll('.highlight-pulse').forEach(el => el.classList.remove('highlight-pulse'));
+                }, 1500);
+            }, 600);
         });
     });
 
