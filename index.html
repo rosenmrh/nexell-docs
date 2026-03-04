@@ -298,48 +298,52 @@
             font-size: 1.25rem; max-width: 600px; margin: 0 auto 2rem;
             opacity: 0.9; font-weight: 300;
         }
+        /* REGULATION SELECTOR — contemporary toggle group */
         .hero-badges {
-            display: flex; justify-content: center; gap: 1.5rem;
-            flex-wrap: wrap; margin-bottom: 2.5rem;
-        }
-        .badge {
-            background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
-            padding: 0.4rem 1rem; border-radius: 50px;
-            font-size: 0.85rem; font-weight: 500;
-            cursor: pointer; transition: all 0.3s; text-decoration: none; color: inherit;
+            display: flex; justify-content: center; gap: 0;
+            margin-bottom: 2.5rem;
+            background: rgba(0,0,0,0.25);
+            border-radius: 16px; padding: 5px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            max-width: 600px; margin-left: auto; margin-right: auto;
             position: relative;
         }
-        .badge:hover {
-            background: rgba(255,255,255,0.25); transform: scale(1.05);
+        .badge {
+            flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;
+            padding: 0.7rem 0.8rem 0.6rem; border-radius: 12px;
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
+            cursor: pointer; transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+            text-decoration: none; color: rgba(255,255,255,0.6);
+            position: relative; z-index: 1; border: none; background: transparent;
         }
-        .badge::after {
-            content: ' →'; opacity: 0; transition: opacity 0.3s;
+        .badge .badge-icon {
+            font-size: 1.4rem; line-height: 1; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
         }
-        .badge:hover::after {
-            opacity: 1;
+        .badge:hover { color: rgba(255,255,255,0.9); }
+        .badge:hover .badge-icon { transform: scale(1.15); }
+        .badge.active {
+            color: white;
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15);
         }
-        /* Tooltip on hover */
-        .badge[data-filter]::before {
-            content: 'Ver servicios →';
-            position: absolute; bottom: 110%; left: 50%;
-            transform: translateX(-50%) translateY(4px); opacity: 0;
-            background: rgba(0,0,0,0.8); color: white;
-            padding: 0.3rem 0.7rem; border-radius: 6px;
-            font-size: 0.7rem; white-space: nowrap;
-            pointer-events: none; transition: all 0.3s;
+        .badge.active .badge-icon { transform: scale(1.2); }
+        .badge-count {
+            font-size: 0.55rem; background: var(--verde); color: white;
+            padding: 1px 6px; border-radius: 10px; font-weight: 700;
+            opacity: 0; transition: all 0.3s; transform: translateY(3px);
         }
-        .badge[data-filter]:hover::before {
-            opacity: 1; transform: translateX(-50%) translateY(0);
+        .badge.active .badge-count { opacity: 1; transform: translateY(0); }
+
+        /* Service cards filter animation */
+        .servicio-card { transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .servicio-card.card-hidden {
+            opacity: 0.15; transform: scale(0.96);
+            filter: grayscale(0.5);
         }
-        /* Highlight pulse animation for badge filtering */
-        @keyframes highlightPulse {
-            0% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.6); border-color: rgba(234, 179, 8, 0.8); }
-            40% { box-shadow: 0 0 0 8px rgba(234, 179, 8, 0.2); border-color: rgba(234, 179, 8, 0.6); }
-            100% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0); border-color: transparent; }
-        }
-        .highlight-pulse {
-            animation: highlightPulse 1.5s ease-out;
-            border: 2px solid rgba(234, 179, 8, 0.8) !important;
+        .servicio-card.card-visible {
+            opacity: 1; transform: scale(1);
+            filter: none;
         }
 
         .cta-btn {
@@ -446,6 +450,8 @@
         .servicio-card.bg-gris:hover { border-color: #64748B; }
         .servicio-card.bg-morado { background: rgba(107,33,168,0.06); border-color: rgba(107,33,168,0.15); }
         .servicio-card.bg-morado:hover { border-color: #6B21A8; }
+        .servicio-card.bg-esmeralda { background: rgba(16,185,129,0.08); border-color: rgba(16,185,129,0.25); }
+        .servicio-card.bg-esmeralda:hover { border-color: #10B981; }
         .servicio-tag {
             display: inline-block; font-size: 0.7rem; font-weight: 700;
             text-transform: uppercase; letter-spacing: 1px;
@@ -459,6 +465,7 @@
         .tag-rsif { background: #D1FAE5; color: #065F46; }
         .tag-multi { background: #FEF3C7; color: #92400E; }
         .tag-gris { background: #F1F5F9; color: #475569; }
+        .tag-cae { background: #D1FAE5; color: #047857; }
         .servicio-card h3 {
             font-size: 1.15rem; font-weight: 700; color: var(--azul-oscuro);
             margin-bottom: 0.4rem;
@@ -814,6 +821,96 @@
         .servicio-card h3 a:hover {
             color: var(--azul-claro);
         }
+
+        /* SECTION ILLUSTRATIONS */
+        .section-illustration {
+            display: flex; justify-content: center; margin-bottom: 2.5rem;
+        }
+        .illust-container {
+            display: flex; gap: 2rem; align-items: center; justify-content: center;
+            flex-wrap: wrap;
+        }
+        .illust-item {
+            width: 100px; height: 100px; border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.8rem; position: relative;
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        .illust-item:hover { transform: translateY(-6px) scale(1.05); }
+        .illust-item.i-electric { background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%); box-shadow: 0 8px 25px rgba(30,64,175,0.15); }
+        .illust-item.i-clima { background: linear-gradient(135deg, #DBEAFE 0%, #E0F2FE 100%); box-shadow: 0 8px 25px rgba(14,165,233,0.15); }
+        .illust-item.i-fire { background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%); box-shadow: 0 8px 25px rgba(239,68,68,0.15); }
+        .illust-item.i-doc { background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); box-shadow: 0 8px 25px rgba(16,185,129,0.15); }
+        .illust-item.i-shield { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); box-shadow: 0 8px 25px rgba(245,158,11,0.15); }
+        .illust-item.i-search { background: linear-gradient(135deg, #F3E8FF 0%, #E9D5FF 100%); box-shadow: 0 8px 25px rgba(147,51,234,0.15); }
+
+        /* Servicio card visual icon area */
+        .servicio-visual {
+            width: 56px; height: 56px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; margin-bottom: 1rem;
+            position: relative;
+        }
+        .servicio-visual.sv-clima { background: linear-gradient(135deg, #DBEAFE, #BFDBFE); }
+        .servicio-visual.sv-green { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); }
+        .servicio-visual.sv-orange { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+        .servicio-visual.sv-red { background: linear-gradient(135deg, #FEE2E2, #FECACA); }
+        .servicio-visual.sv-grey { background: linear-gradient(135deg, #F1F5F9, #E2E8F0); }
+        .servicio-visual.sv-emerald { background: linear-gradient(135deg, #D1FAE5, #6EE7B7); }
+        .servicio-visual.sv-purple { background: linear-gradient(135deg, #F3E8FF, #E9D5FF); }
+
+        /* Hero floating decoration */
+        .hero-decoration {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; overflow: hidden;
+        }
+        .hero-shape {
+            position: absolute; border-radius: 50%; opacity: 0.07;
+            background: white;
+        }
+        .hero-shape.s1 { width: 300px; height: 300px; top: -80px; right: -60px; }
+        .hero-shape.s2 { width: 200px; height: 200px; bottom: 60px; left: -50px; }
+        .hero-shape.s3 { width: 150px; height: 150px; top: 40%; right: 15%; }
+        .hero-shape.s4 { width: 80px; height: 80px; top: 25%; left: 10%; opacity: 0.1; }
+
+        /* Proceso connectors */
+        .proceso-visual {
+            display: flex; align-items: center; justify-content: center;
+            gap: 0; margin-bottom: 2rem;
+        }
+        .proceso-dot {
+            width: 48px; height: 48px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; font-weight: 800; color: white;
+            background: linear-gradient(135deg, var(--azul), var(--azul-claro));
+            flex-shrink: 0; position: relative; z-index: 1;
+        }
+        .proceso-line {
+            width: 60px; height: 3px;
+            background: linear-gradient(90deg, var(--azul-claro), var(--verde));
+            flex-shrink: 0;
+        }
+
+        /* Garantias visual */
+        .garantias-visual {
+            text-align: center; margin-bottom: 2rem;
+        }
+        .garantias-shield {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 90px; height: 90px; border-radius: 50%;
+            background: linear-gradient(135deg, #D1FAE5 0%, #6EE7B7 100%);
+            font-size: 2.8rem;
+            box-shadow: 0 8px 30px rgba(16,185,129,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .illust-container { gap: 1rem; }
+            .illust-item { width: 72px; height: 72px; font-size: 2rem; border-radius: 16px; }
+            .proceso-visual { gap: 0; }
+            .proceso-line { width: 30px; }
+            .proceso-dot { width: 36px; height: 36px; font-size: 1rem; }
+            .hero-shape { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -840,11 +937,29 @@
 
 <!-- HERO -->
 <section class="hero">
+    <div class="hero-decoration">
+        <div class="hero-shape s1"></div>
+        <div class="hero-shape s2"></div>
+        <div class="hero-shape s3"></div>
+        <div class="hero-shape s4"></div>
+    </div>
     <div class="container">
-        <div class="hero-badges">
-            <a href="#servicios" class="badge" data-filter="rebt">REBT — Baja Tensión</a>
-            <a href="#servicios" class="badge" data-filter="rite">RITE — Climatización</a>
-            <a href="#servicios" class="badge" data-filter="rsif">RSIF — Refrigeración</a>
+        <div class="hero-badges" id="regSelector">
+            <a href="#servicios" class="badge" data-filter="rebt">
+                <span class="badge-icon">&#9889;</span>
+                <span>Electricidad</span>
+                <span class="badge-count">REBT</span>
+            </a>
+            <a href="#servicios" class="badge" data-filter="rite">
+                <span class="badge-icon">&#10052;</span>
+                <span>Climatización</span>
+                <span class="badge-count">RITE</span>
+            </a>
+            <a href="#servicios" class="badge" data-filter="rsif">
+                <span class="badge-icon">&#10054;</span>
+                <span>Refrigeración</span>
+                <span class="badge-count">RSIF</span>
+            </a>
         </div>
         <h1>Tu instalación legalizada<br>en <span>24–48 horas</span></h1>
 
@@ -871,6 +986,14 @@
     <div class="container">
         <!-- PARTICULARES -->
         <div class="tab-content active" data-tab-content="particulares">
+            <div class="section-illustration">
+                <div class="illust-container">
+                    <div class="illust-item i-electric">⚡</div>
+                    <div class="illust-item i-clima">❄️</div>
+                    <div class="illust-item i-fire">🔥</div>
+                    <div class="illust-item i-doc">📋</div>
+                </div>
+            </div>
             <h2 class="section-title">¿Por qué legalizar tu instalación?</h2>
             <p class="section-sub">Una instalación sin legalizar puede suponer multas, problemas con el seguro y riesgos para tu familia.</p>
             <div class="ventajas-grid">
@@ -899,6 +1022,13 @@
 
         <!-- INSTALADORES -->
         <div class="tab-content" data-tab-content="instaladores">
+            <div class="section-illustration">
+                <div class="illust-container">
+                    <div class="illust-item i-doc">📄</div>
+                    <div class="illust-item i-shield">✍️</div>
+                    <div class="illust-item i-search">🏭</div>
+                </div>
+            </div>
             <h2 class="section-title">¿Por qué Nexell Dox?</h2>
             <p class="section-sub">Somos instaladores como tú. Sabemos lo que necesitas porque lo hacemos cada día.</p>
             <div class="ventajas-grid">
@@ -936,36 +1066,49 @@
             <p class="section-sub">Selecciona tu caso. Nos encargamos de la documentación y los trámites.</p>
             <div class="servicios-grid">
                 <div class="servicio-card bg-azul" data-reglamento="rite rsif">
+                    <div class="servicio-visual sv-clima">❄️</div>
                     <span class="servicio-tag tag-rebt">CLIMATIZACIÓN</span>
                     <h3><a href="/legalizar-aire-acondicionado">Aire acondicionado / Split</a></h3>
                     <p>¿Te instalaron uno o varios splits y no tienes documentación? Generamos la memoria técnica RITE y gestionamos la legalización ante Industria.</p>
                     <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-verde" data-reglamento="rite rsif">
+                    <div class="servicio-visual sv-green">🌿</div>
                     <span class="servicio-tag tag-rite-verde">CLIMATIZACIÓN</span>
                     <h3><a href="/legalizar-aerotermia">Aerotermia</a></h3>
                     <p>Instalación de aerotermia para calefacción, ACS o frío. Documentación RITE completa con cálculos de cargas térmicas y selección de equipo.</p>
                     <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-naranja" data-reglamento="rite">
+                    <div class="servicio-visual sv-orange">🔥</div>
                     <span class="servicio-tag tag-rite-naranja">CLIMATIZACIÓN</span>
                     <h3><a href="/legalizar-caldera">Caldera / Calentador</a></h3>
                     <p>Cambio de caldera, calentador de gas o instalación nueva. Memoria técnica y certificación para la compañía de gas.</p>
                     <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-rojo" data-reglamento="rebt">
+                    <div class="servicio-visual sv-red">⚡</div>
                     <span class="servicio-tag tag-rebt">ELECTRICIDAD</span>
                     <h3><a href="/legalizar-instalacion-electrica">Instalación eléctrica</a></h3>
                     <p>Ampliación de potencia, nueva instalación o modificación del cuadro. Memoria técnica REBT, boletín y gestión con la compañía eléctrica.</p>
                     <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
+                <div class="servicio-card bg-esmeralda" data-reglamento="rite">
+                    <div class="servicio-visual sv-emerald">💚</div>
+                    <span class="servicio-tag tag-cae">AHORRO ENERGÉTICO</span>
+                    <h3><a href="/certificados-ahorro-energetico">Certificados de Ahorro Energético (CAE)</a></h3>
+                    <p>Monetiza tu instalación eficiente. Si has instalado aerotermia, caldera de condensación o mejoras térmicas, te gestionamos los CAE y recuperas parte de la inversión.</p>
+                    <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
+                </div>
                 <div class="servicio-card bg-gris">
+                    <div class="servicio-visual sv-grey">🏠</div>
                     <span class="servicio-tag tag-gris">INTEGRAL</span>
                     <h3>Reforma completa</h3>
                     <p>¿Has reformado y tienes electricidad + clima sin legalizar? Pack completo con toda la documentación y trámites unificados.</p>
                     <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-gris">
+                    <div class="servicio-visual sv-purple">🔍</div>
                     <span class="servicio-tag tag-gris">INSPECCIÓN</span>
                     <h3><a href="/inspeccion-oca">Preparación inspección periódica</a></h3>
                     <p>¿Te toca inspección de tu instalación? Revisamos la documentación, detectamos deficiencias y te preparamos para superarla.</p>
@@ -986,6 +1129,7 @@
             <p class="section-sub">Todo lo que necesitas para legalizar, certificar y documentar tus instalaciones.</p>
             <div class="servicios-grid">
                 <div class="servicio-card bg-rojo" data-reglamento="rebt">
+                    <div class="servicio-visual sv-red">⚡</div>
                     <span class="servicio-tag tag-rebt">REBT</span>
                     <h3><a href="/memoria-tecnica-diseno">Memoria Técnica Eléctrica</a></h3>
                     <p>MTD para viviendas, locales, oficinas e industria. Cálculos de sección, caída de tensión y protecciones incluidos.</p>
@@ -993,6 +1137,7 @@
                     <div class="servicio-entrega">Entrega: 24-48h</div>
                 </div>
                 <div class="servicio-card bg-azul" data-reglamento="rite">
+                    <div class="servicio-visual sv-clima">🌡️</div>
                     <span class="servicio-tag tag-rite">RITE</span>
                     <h3>Memoria Técnica Térmica</h3>
                     <p>MTD para climatización y ACS. Cargas térmicas, selección de equipos, conductos y tuberías.</p>
@@ -1000,6 +1145,7 @@
                     <div class="servicio-entrega">Entrega: 24-48h</div>
                 </div>
                 <div class="servicio-card bg-verde" data-reglamento="rsif">
+                    <div class="servicio-visual sv-green">❄️</div>
                     <span class="servicio-tag tag-rsif">RSIF</span>
                     <h3>Documentación frigorífica</h3>
                     <p>Memorias y certificados para instalaciones frigoríficas. Carga de refrigerante, clasificación de local, tuberías.</p>
@@ -1007,6 +1153,7 @@
                     <div class="servicio-entrega">Entrega: 48h</div>
                 </div>
                 <div class="servicio-card bg-rojo" data-reglamento="rebt">
+                    <div class="servicio-visual sv-red">🔢</div>
                     <span class="servicio-tag tag-rebt">REBT</span>
                     <h3>Cálculos eléctricos</h3>
                     <p>Previsión de cargas, secciones por ITC-BT-19, protecciones, coordinación. Tablas y esquemas unifilares.</p>
@@ -1014,13 +1161,23 @@
                     <div class="servicio-entrega">Entrega: 24h</div>
                 </div>
                 <div class="servicio-card bg-naranja">
+                    <div class="servicio-visual sv-orange">📦</div>
                     <span class="servicio-tag tag-multi">MULTI</span>
                     <h3>Pack legalización</h3>
                     <p>MTD + Certificado instalación + Gestión ante Industria. Llave en mano para dar de alta.</p>
                     <div class="servicio-precio">Desde 400 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 48-72h</div>
                 </div>
+                <div class="servicio-card bg-esmeralda" data-reglamento="rite">
+                    <div class="servicio-visual sv-emerald">💚</div>
+                    <span class="servicio-tag tag-cae">CAE · RD 36/2023</span>
+                    <h3><a href="/certificados-ahorro-energetico">Certificados de Ahorro Energético</a></h3>
+                    <p>Tramitación de CAE para tus clientes. Aerotermia, calderas de condensación, mejoras térmicas. Ingresos extra por cada instalación eficiente.</p>
+                    <div class="servicio-precio">Desde 300 € <span>+ IVA</span></div>
+                    <div class="servicio-entrega">Entrega: 48-72h</div>
+                </div>
                 <div class="servicio-card bg-gris">
+                    <div class="servicio-visual sv-purple">🔍</div>
                     <span class="servicio-tag tag-gris">INSPECCIÓN</span>
                     <h3><a href="/inspeccion-oca">Preparación inspección OCA</a></h3>
                     <p>Revisión documental, checklist de defectos, preparación de documentación para superar la inspección.</p>
@@ -1028,6 +1185,7 @@
                     <div class="servicio-entrega">Entrega: 48h</div>
                 </div>
                 <div class="servicio-card bg-gris">
+                    <div class="servicio-visual sv-grey">📊</div>
                     <span class="servicio-tag tag-gris">AUDITORÍA</span>
                     <h3>Auditoría de instalaciones</h3>
                     <p>Evaluación del estado de instalaciones existentes. Informe de deficiencias y plan de actuación priorizado.</p>
@@ -1035,6 +1193,7 @@
                     <div class="servicio-entrega">Entrega: 72h</div>
                 </div>
                 <div class="servicio-card bg-gris">
+                    <div class="servicio-visual sv-grey">📝</div>
                     <span class="servicio-tag tag-gris">INFORME</span>
                     <h3>Informes técnicos</h3>
                     <p>Informes periciales, dictámenes técnicos, valoraciones de instalaciones. Soporte a reclamaciones.</p>
@@ -1149,6 +1308,15 @@
     <div class="container">
         <!-- PARTICULARES -->
         <div class="tab-content active" data-tab-content="particulares">
+            <div class="proceso-visual">
+                <div class="proceso-dot">📩</div>
+                <div class="proceso-line"></div>
+                <div class="proceso-dot">🔎</div>
+                <div class="proceso-line"></div>
+                <div class="proceso-dot">📋</div>
+                <div class="proceso-line"></div>
+                <div class="proceso-dot">✅</div>
+            </div>
             <h2 class="section-title">Así de fácil</h2>
             <p class="section-sub">De tu consulta a la legalización en 4 pasos.</p>
             <div class="proceso-steps proceso-steps-4">
@@ -1177,6 +1345,13 @@
 
         <!-- INSTALADORES -->
         <div class="tab-content" data-tab-content="instaladores">
+            <div class="proceso-visual">
+                <div class="proceso-dot">📤</div>
+                <div class="proceso-line"></div>
+                <div class="proceso-dot">⚙️</div>
+                <div class="proceso-line"></div>
+                <div class="proceso-dot">✍️</div>
+            </div>
             <h2 class="section-title">Así de fácil</h2>
             <p class="section-sub">De tu solicitud al documento firmado en 3 pasos.</p>
             <div class="proceso-steps">
@@ -1261,6 +1436,9 @@
 <!-- GARANTÍAS -->
 <section id="garantias">
     <div class="container">
+        <div class="garantias-visual">
+            <div class="garantias-shield">🛡️</div>
+        </div>
         <h2 class="section-title">Garantías</h2>
         <p class="section-sub">Trabajamos con el mismo rigor que aplicamos a nuestras propias instalaciones.</p>
         <div class="garantias-grid">
@@ -1452,6 +1630,7 @@
                             <option value="legalizar-caldera">Legalizar caldera / calentador</option>
                             <option value="legalizar-electrica">Legalizar instalación eléctrica</option>
                             <option value="legalizar-reforma">Reforma completa (electricidad + clima)</option>
+                            <option value="cae-particular">Certificado Ahorro Energético (CAE)</option>
                             <option value="inspeccion-particular">Preparación inspección periódica</option>
                         </optgroup>
                         <!-- Instaladores -->
@@ -1461,6 +1640,7 @@
                             <option value="rsif">Documentación frigorífica (RSIF)</option>
                             <option value="calculos">Cálculos eléctricos / térmicos</option>
                             <option value="legalizacion">Pack legalización completo</option>
+                            <option value="cae">Certificados Ahorro Energético (CAE)</option>
                             <option value="inspeccion-oca">Preparación inspección OCA</option>
                             <option value="auditoria">Auditoría de instalaciones</option>
                             <option value="informe">Informe técnico / pericial</option>
@@ -1496,7 +1676,10 @@
 <!-- FOOTER -->
 <footer>
     <div class="container">
-        <img src="logo-nexell-dox.png" alt="Nexell Dox - Legalización de instalaciones eléctricas y térmicas" style="height:100px; margin-bottom:1rem; filter: brightness(0) invert(1); opacity:0.9;">
+        <div style="margin-bottom:1.5rem;">
+            <span style="font-size: 2rem; font-weight: 800; letter-spacing: -1px; color: white;">NEXELL</span>
+            <span style="font-size: 2rem; font-weight: 300; letter-spacing: 2px; color: var(--verde);">DOX</span>
+        </div>
         <p>Un servicio de <a href="https://nexell.es" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.9); border-bottom: 1px dashed rgba(255,255,255,0.4);">Nexell Instalaciones ↗</a></p>
         <p>Construction Efficient Building and Services S.L. · CIF B87004370 · R.I. 206529</p>
         <div class="footer-asociaciones">
@@ -1572,7 +1755,8 @@
         });
     });
 
-    // BADGE FILTER — interactive badges scroll to servicios and highlight matching cards
+    // REGULATION SELECTOR — toggle filter with smooth card transitions
+    let activeFilter = null;
     document.querySelectorAll('.badge[data-filter]').forEach(badge => {
         badge.addEventListener('click', function(e) {
             e.preventDefault();
@@ -1581,28 +1765,37 @@
             const serviciosSection = document.getElementById('servicios');
             if (!serviciosSection) return;
 
+            // Toggle: if same filter clicked again, reset
+            if (activeFilter === filter) {
+                activeFilter = null;
+                this.classList.remove('active');
+                document.querySelectorAll('.servicio-card').forEach(c => {
+                    c.classList.remove('card-hidden', 'card-visible');
+                });
+                return;
+            }
+
+            // Set active
+            activeFilter = filter;
+            document.querySelectorAll('.badge[data-filter]').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
             // Smooth scroll to servicios
             serviciosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-            // Wait for scroll to complete, then highlight
+            // Filter cards with animation
             setTimeout(() => {
-                // Remove any existing highlights
-                document.querySelectorAll('.highlight-pulse').forEach(el => el.classList.remove('highlight-pulse'));
-
-                // Find matching cards
-                const cards = document.querySelectorAll('.servicio-card[data-reglamento]');
-                cards.forEach(card => {
+                document.querySelectorAll('.servicio-card[data-reglamento]').forEach(card => {
                     const reglamentos = card.dataset.reglamento.split(' ');
                     if (reglamentos.includes(filter)) {
-                        card.classList.add('highlight-pulse');
+                        card.classList.remove('card-hidden');
+                        card.classList.add('card-visible');
+                    } else {
+                        card.classList.remove('card-visible');
+                        card.classList.add('card-hidden');
                     }
                 });
-
-                // Remove highlight after animation
-                setTimeout(() => {
-                    document.querySelectorAll('.highlight-pulse').forEach(el => el.classList.remove('highlight-pulse'));
-                }, 1500);
-            }, 600);
+            }, 400);
         });
     });
 
