@@ -43,7 +43,9 @@
             { "@type": "Question", "name": "Cuanto cuesta preparar una inspeccion OCA?", "acceptedAnswer": { "@type": "Answer", "text": "El servicio de preparacion documental para una inspeccion OCA cuesta entre 300 y 500 euros. Esto incluye la revision y actualizacion de toda la documentacion tecnica, la auditoria previa de la instalacion y el informe de defectos a subsanar. La tasa del OCA por la inspeccion es un coste aparte." } },
             { "@type": "Question", "name": "Que pasa si la instalacion no pasa la inspeccion?", "acceptedAnswer": { "@type": "Answer", "text": "Si se detectan defectos graves, el OCA emite un informe desfavorable y el titular tiene un plazo (normalmente 6 meses) para subsanar los defectos y solicitar una re-inspeccion. Si hay defectos muy graves que impliquen riesgo inminente, se puede ordenar la desconexion de la instalacion hasta su correccion." } },
             { "@type": "Question", "name": "Cada cuanto tiempo hay que pasar la inspeccion?", "acceptedAnswer": { "@type": "Answer", "text": "La periodicidad depende del tipo de instalacion. Para instalaciones electricas en locales de publica concurrencia y mas de 100 kW, cada 5 anos. Para viviendas con instalaciones antiguas (mas de 20 anos), depende de la comunidad autonoma. Las instalaciones termicas tienen sus propias periodicidades segun el RITE y la potencia." } },
-            { "@type": "Question", "name": "Nexell Docs se encarga de la inspeccion completa?", "acceptedAnswer": { "@type": "Answer", "text": "Nexell Docs se encarga de la preparacion documental: revisamos tu documentacion, la actualizamos si es necesario, realizamos una auditoria previa para detectar defectos subsanables, y te indicamos exactamente que corregir antes de la inspeccion. La inspeccion en si la realiza el OCA (organismo de control autorizado), que es una entidad independiente." } }
+            { "@type": "Question", "name": "Nexell Docs se encarga de la inspeccion completa?", "acceptedAnswer": { "@type": "Answer", "text": "Nexell Docs se encarga de la preparacion documental: revisamos tu documentacion, la actualizamos si es necesario, realizamos una auditoria previa para detectar defectos subsanables, y te indicamos exactamente que corregir antes de la inspeccion. La inspeccion en si la realiza el OCA (organismo de control autorizado), que es una entidad independiente." } },
+            { "@type": "Question", "name": "Cuanto cuesta la inspeccion de la OCA?", "acceptedAnswer": { "@type": "Answer", "text": "El coste de la inspeccion OCA en si varia segun la comunidad autonoma y el tamano de la instalacion, generalmente entre 150-400 euros. Nexell Docs cobra aparte la preparacion documental y auditoria previa (300-500 euros), que es lo que garantiza que pases la inspeccion a la primera." } },
+            { "@type": "Question", "name": "Que pasa si suspendo la inspeccion OCA?", "acceptedAnswer": { "@type": "Answer", "text": "La OCA emite un acta desfavorable y tienes un plazo (generalmente 3-6 meses segun comunidad autonoma) para corregir los defectos y solicitar reinspeccion. Si no corriges, la OCA comunica a Industria, que puede ordenar el corte de suministro." } }
         ]
     }
     </script>
@@ -182,8 +184,25 @@
     </div>
 </section>
 
-<!-- CUANDO ES OBLIGATORIA -->
+<!-- NORMATIVA APLICABLE -->
 <section class="bg-light">
+    <div class="content-block">
+        <h2>Normativa aplicable a las inspecciones OCA</h2>
+        <p>Las inspecciones de los Organismos de Control Autorizado se regulan por distintas normativas segun el tipo de instalacion:</p>
+
+        <h3>ITC-BT-05 (REBT): inspecciones electricas</h3>
+        <p>La Instruccion Tecnica Complementaria ITC-BT-05 del Reglamento Electrotecnico de Baja Tension establece las inspecciones obligatorias. La <strong>inspeccion inicial</strong> es obligatoria para: locales de publica concurrencia, instalaciones de mas de 100 kW, quirofanos y salas de intervencion, locales con riesgo de incendio o explosion, piscinas y fuentes. La <strong>inspeccion periodica</strong> se realiza cada 5 anos para las mismas categorias, y tambien para viviendas con mas de 20 anos y potencia superior a 5.750 W.</p>
+
+        <h3>RITE (IT 4.3): inspecciones termicas</h3>
+        <p>La Instruccion Tecnica IT 4.3 del RITE establece las inspecciones periodicas de eficiencia energetica para instalaciones termicas de mas de 70 kW. La OCA verifica la eficiencia energetica de los equipos, el estado del mantenimiento y la documentacion en regla.</p>
+
+        <h3>Ley 21/1992 de Industria</h3>
+        <p>Las OCAs son entidades privadas acreditadas por ENAC (Entidad Nacional de Acreditacion) para actuar en nombre de la Administracion. Su acta de inspeccion tiene valor administrativo y puede derivar en requerimientos de Industria si se detectan defectos.</p>
+    </div>
+</section>
+
+<!-- CUANDO ES OBLIGATORIA -->
+<section>
     <div class="content-block">
         <h2>Cuando es obligatoria la inspeccion OCA</h2>
         <div class="two-col" style="margin-top: 1rem;">
@@ -210,6 +229,56 @@
     </div>
 </section>
 
+<!-- CALENDARIO DE INSPECCIONES -->
+<section class="bg-light">
+    <div class="content-block">
+        <h2>Calendario de inspecciones obligatorias</h2>
+        <p>Consulta en esta tabla si tu instalacion esta obligada a pasar inspeccion OCA y con que periodicidad:</p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+            <thead>
+                <tr>
+                    <th style="background: var(--azul-oscuro); color: white; padding: 1rem; font-size: 0.9rem; font-weight: 600; text-align: left;">Tipo de instalacion</th>
+                    <th style="background: var(--azul-oscuro); color: white; padding: 1rem; font-size: 0.9rem; font-weight: 600; text-align: left;">Inspeccion inicial</th>
+                    <th style="background: var(--azul-oscuro); color: white; padding: 1rem; font-size: 0.9rem; font-weight: 600; text-align: left;">Periodicidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0; font-weight: 600; color: var(--azul-oscuro);">Vivienda &lt;5.750 W</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">No obligatoria</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">No obligatoria</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0; font-weight: 600; color: var(--azul-oscuro);">Vivienda &gt;5.750 W, &gt;20 anos</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">—</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">Cada 5 anos</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0; font-weight: 600; color: var(--azul-oscuro);">Local comercial (publica concurrencia)</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">Obligatoria</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">Cada 5 anos</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0; font-weight: 600; color: var(--azul-oscuro);">Industrial &gt;100 kW</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">Obligatoria</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">Cada 5 anos</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); font-weight: 600; color: var(--azul-oscuro);">Garajes &gt;25 plazas</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto);">Obligatoria</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto);">Cada 5 anos</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight-box" style="margin-top: 1rem;">
+            <h4>Nota sobre comunidades autonomas</h4>
+            <p>Algunas comunidades autonomas han establecido requisitos adicionales, como la inspeccion obligatoria para viviendas con instalaciones de mas de 20 anos independientemente de la potencia. Consulta la normativa especifica de tu comunidad autonoma.</p>
+        </div>
+    </div>
+</section>
+
 <!-- QUE REVISAN -->
 <section>
     <div class="content-block">
@@ -223,6 +292,30 @@
             <li><strong>Proteccion contra contactos</strong>: directos e indirectos, grados de proteccion IP</li>
             <li><strong>Mediciones</strong>: resistencia de aislamiento, continuidad, resistencia de tierra</li>
         </ul>
+
+        <div class="two-col" style="margin-top: 2rem;">
+            <div>
+                <h3>Detalle de la inspeccion electrica (ITC-BT-05)</h3>
+                <ul>
+                    <li><strong>Verificacion visual</strong>: estado de canalizaciones, cuadros, cableado, senalizacion y tapas de cajas de derivacion</li>
+                    <li><strong>Resistencia de aislamiento</strong>: minimo 0,5 M&#8486; entre conductores y entre conductores y tierra (segun ITC-BT-19)</li>
+                    <li><strong>Resistencia de tierra</strong>: maximo 37 &#8486; para diferencial de 30 mA (segun ITC-BT-18), maximo 800 &#8486; para diferencial de 300 mA</li>
+                    <li><strong>Continuidad de conductores de proteccion</strong>: todos los PE deben tener continuidad hasta el borne de tierra</li>
+                    <li><strong>Protecciones</strong>: magnetotermicos calibrados correctamente, diferenciales operativos (prueba de disparo manual)</li>
+                    <li><strong>Documentacion</strong>: MTD o Proyecto registrado, CIE vigente, esquema unifilar actualizado</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Detalle de la inspeccion termica (IT 4.3)</h3>
+                <ul>
+                    <li><strong>Estado del equipo</strong>: verificacion visual de calderas, climatizadores, bombas de calor y sus circuitos</li>
+                    <li><strong>Libro de mantenimiento</strong>: existencia del libro o registro de operaciones de mantenimiento realizadas</li>
+                    <li><strong>Documentacion RITE</strong>: MTD o Proyecto registrado, certificado de instalacion termica</li>
+                    <li><strong>Eficiencia energetica</strong>: rendimiento de generadores de calor y frio dentro de los limites del RITE</li>
+                    <li><strong>Contrato de mantenimiento</strong>: existencia de contrato vigente con empresa habilitada para instalaciones &gt;70 kW</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -268,6 +361,29 @@
         <div class="highlight-box warning" style="margin-top: 2rem;">
             <h4>Mejor prevenir que suspender</h4>
             <p>Una inspeccion desfavorable implica costes adicionales: correccion de defectos, tasa de re-inspeccion, y posibles sanciones si no se subsanan en plazo. Nuestra auditoria previa detecta estos problemas antes de que llegue el OCA, ahorrando tiempo y dinero.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CLASIFICACION DE DEFECTOS -->
+<section>
+    <div class="content-block">
+        <h2>Clasificacion de defectos y sus consecuencias</h2>
+        <p>El OCA clasifica los defectos detectados en tres niveles de gravedad, cada uno con consecuencias distintas:</p>
+
+        <div class="three-col" style="margin-top: 1.5rem;">
+            <div class="info-card" style="border-top: 4px solid #F59E0B;">
+                <h4 style="color: #92400E;">Defecto leve</h4>
+                <p>Falta de senalizacion en cuadros, ausencia de tapas en cajas de derivacion, etiquetado ilegible. <strong>No impide el acta favorable</strong>, pero se debe subsanar. El OCA lo registra en el acta como observacion.</p>
+            </div>
+            <div class="info-card" style="border-top: 4px solid var(--rojo-nexell);">
+                <h4 style="color: #991B1B;">Defecto grave</h4>
+                <p>Diferencial que no dispara, ausencia de toma de tierra, secciones de cable insuficientes, falta de MTD registrada. <strong>Impide el acta favorable</strong>: hay que corregir y solicitar reinspeccion.</p>
+            </div>
+            <div class="info-card" style="border-top: 4px solid #7F1D1D;">
+                <h4 style="color: #7F1D1D;">Defecto muy grave</h4>
+                <p>Riesgo inmediato para las personas: conductores desnudos accesibles, falta total de proteccion diferencial, riesgo de electrocucion. <strong>La OCA puede ordenar el corte de suministro inmediato</strong> hasta la correccion.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -341,6 +457,14 @@
             <div class="faq-item">
                 <button class="faq-question">Nexell Docs se encarga de la inspeccion completa?</button>
                 <div class="faq-answer"><div class="faq-answer-inner">Nexell Docs se encarga de toda la preparacion documental y tecnica previa. La inspeccion propiamente dicha la realiza el OCA, que es una entidad independiente acreditada. Nosotros nos aseguramos de que toda tu documentacion este en orden y te indicamos los defectos a corregir para que la inspeccion sea favorable.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Cuanto cuesta la inspeccion de la OCA?</button>
+                <div class="faq-answer"><div class="faq-answer-inner">El coste de la inspeccion OCA en si varia segun la comunidad autonoma y el tamano de la instalacion, generalmente entre 150 y 400 euros. Nexell Docs cobra aparte la preparacion documental y auditoria previa (300-500 euros), que es lo que garantiza que pases la inspeccion a la primera. Son dos costes independientes: la preparacion (nosotros) y la inspeccion (el OCA).</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Que pasa si suspendo la inspeccion OCA?</button>
+                <div class="faq-answer"><div class="faq-answer-inner">La OCA emite un acta desfavorable y tienes un plazo (generalmente 3-6 meses segun la comunidad autonoma) para corregir los defectos y solicitar reinspeccion. Si no corriges en plazo, la OCA lo comunica al organo competente de Industria, que puede ordenar el corte de suministro. Ademas, la reinspeccion tiene un coste adicional. Por eso insistimos en la importancia de la auditoria previa: es mucho mas economico corregir antes que reinspeccionar despues.</div></div>
             </div>
         </div>
     </div>

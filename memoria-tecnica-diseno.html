@@ -43,7 +43,9 @@
             { "@type": "Question", "name": "Cuanto tiempo es valida una MTD?", "acceptedAnswer": { "@type": "Answer", "text": "La MTD no tiene una fecha de caducidad como tal. Es valida mientras la instalacion no se modifique sustancialmente. Si se realiza una reforma importante, ampliacion de potencia o cambio de uso del local, es necesario elaborar una nueva MTD que refleje la situacion actualizada." } },
             { "@type": "Question", "name": "Cuanto cuesta una Memoria Tecnica de Diseno?", "acceptedAnswer": { "@type": "Answer", "text": "La MTD electrica para vivienda o local cuesta entre 250 y 400 euros. La MTD termica (RITE) cuesta entre 300 y 500 euros. Para instalaciones industriales, el precio oscila entre 600 y 1.200 euros dependiendo de la complejidad." } },
             { "@type": "Question", "name": "Que informacion necesitan para elaborar la MTD?", "acceptedAnswer": { "@type": "Answer", "text": "Para la MTD electrica: datos del titular, ubicacion, potencia prevista, numero de circuitos, secciones de cable y protecciones. Para la MTD termica: datos del titular, equipos instalados (marca, modelo, potencia), sistema de distribucion y superficie del inmueble. En ambos casos, fotos o esquemas de la instalacion facilitan el trabajo." } },
-            { "@type": "Question", "name": "Puedo hacer yo mismo la MTD?", "acceptedAnswer": { "@type": "Answer", "text": "No. La MTD debe estar firmada por un instalador autorizado con la habilitacion correspondiente y numero de registro industrial (R.I.) vigente. Un particular no puede firmar su propia memoria tecnica, ya que el documento requiere la responsabilidad tecnica de un profesional habilitado." } }
+            { "@type": "Question", "name": "Puedo hacer yo mismo la MTD?", "acceptedAnswer": { "@type": "Answer", "text": "No. La MTD debe estar firmada por un instalador autorizado con la habilitacion correspondiente y numero de registro industrial (R.I.) vigente. Un particular no puede firmar su propia memoria tecnica, ya que el documento requiere la responsabilidad tecnica de un profesional habilitado." } },
+            { "@type": "Question", "name": "Que datos necesito para encargar una MTD electrica?", "acceptedAnswer": { "@type": "Answer", "text": "Necesitamos: direccion de la instalacion, uso (vivienda, local, industria), potencia contratada o prevista, numero de circuitos, y si es posible, fotos del cuadro electrico y la instalacion. Con eso elaboramos el esquema unifilar y los calculos." } },
+            { "@type": "Question", "name": "La MTD caduca?", "acceptedAnswer": { "@type": "Answer", "text": "La MTD en si no tiene fecha de caducidad. Sin embargo, si realizas una modificacion sustancial de la instalacion (ampliacion de potencia, nuevos circuitos, reforma superior al 50%), necesitas una nueva MTD que refleje el estado actual." } }
         ]
     }
     </script>
@@ -131,6 +133,7 @@
             .hero { padding: 2rem 1.2rem 4rem; } .hero h1 { font-size: 1.7rem; } .hero .hero-sub { font-size: 0.95rem; }
             section { padding: 3rem 1.2rem; } .section-title { font-size: 1.5rem; } .content-block h2 { font-size: 1.4rem; }
             .two-col { grid-template-columns: 1fr; gap: 1.5rem; } .pricing-grid { grid-template-columns: 1fr; }
+            section [style*="grid-template-columns: repeat(4"] { grid-template-columns: 1fr 1fr !important; }
             .related-grid { grid-template-columns: 1fr; }
             .compare-table { font-size: 0.8rem; } .compare-table th, .compare-table td { padding: 0.6rem; }
         }
@@ -205,6 +208,121 @@
                     <li>Programa de mantenimiento</li>
                 </ul>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- QUE CONTIENE UNA MTD -->
+<section>
+    <div class="content-block">
+        <h2>Que contiene una Memoria Tecnica de Diseno</h2>
+        <p>El contenido de la MTD esta definido por la normativa y varia segun se trate de una instalacion electrica o termica:</p>
+
+        <div class="two-col" style="margin-top: 1rem;">
+            <div>
+                <h3>MTD Electrica (REBT)</h3>
+                <ul>
+                    <li><strong>Datos del titular y del instalador autorizado</strong>: identificacion, numero de R.I. y habilitacion</li>
+                    <li><strong>Descripcion de la instalacion</strong>: uso, superficie, potencia prevista</li>
+                    <li><strong>Prevision de cargas segun ITC-BT-10</strong>: calculo de la potencia necesaria para cada uso</li>
+                    <li><strong>Esquema unifilar</strong>: representacion grafica de la instalacion completa</li>
+                    <li><strong>Calculos justificativos</strong>: intensidades, secciones de cable (ITC-BT-19), caidas de tension (max 3% alumbrado, 5% fuerza), protecciones (magnetotermicos, diferenciales)</li>
+                    <li><strong>Descripcion de circuitos segun ITC-BT-25</strong>: circuitos C1 a C12 en viviendas (iluminacion, tomas generales, cocina, lavadora, bano, etc.)</li>
+                </ul>
+            </div>
+            <div>
+                <h3>MTD Termica (RITE)</h3>
+                <ul>
+                    <li><strong>Datos del titular y de la empresa instaladora habilitada</strong>: identificacion, R.I. y habilitacion RITE</li>
+                    <li><strong>Descripcion del equipo</strong>: marca, modelo, potencia nominal, refrigerante utilizado</li>
+                    <li><strong>Calculo de cargas termicas</strong>: necesidades de calefaccion y/o refrigeracion del local</li>
+                    <li><strong>Descripcion del sistema de distribucion</strong>: conductos, tuberias, fancoils, radiadores</li>
+                    <li><strong>Eficiencia energetica y etiquetado</strong>: clasificacion energetica del equipo y cumplimiento de rendimientos minimos</li>
+                    <li><strong>Cumplimiento CTE DB-HE</strong>: justificacion de la demanda energetica y contribucion renovable si aplica</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NORMATIVA APLICABLE DETALLADA -->
+<section class="bg-light">
+    <div class="content-block">
+        <h2>Normativa que regula la MTD</h2>
+        <p>Las dos normativas principales que definen el contenido y los limites de aplicacion de la MTD son:</p>
+
+        <h3>REBT — ITC-BT-04: MTD electrica</h3>
+        <p>La Instruccion Tecnica Complementaria ITC-BT-04 del Reglamento Electrotecnico de Baja Tension define el contenido obligatorio de la Memoria Tecnica de Diseno electrica. Es aplicable a instalaciones de hasta 100 kW en baja tension que no esten en locales de publica concurrencia ni tengan riesgo especial.</p>
+
+        <h3>RITE — IT 1.2.4.1: MTD termica</h3>
+        <p>La Instruccion Tecnica IT 1.2.4.1 del Reglamento de Instalaciones Termicas en los Edificios define el contenido de la MTD termica. Es aplicable a instalaciones de hasta 70 kW de potencia termica nominal.</p>
+
+        <div class="highlight-box" style="margin-top: 1.5rem;">
+            <h4>Diferencia clave: MTD vs Proyecto</h4>
+            <p>La MTD la puede firmar un tecnico habilitado (instalador con carne y R.I. vigente). El Proyecto tecnico lo firma un ingeniero (superior o tecnico segun potencia y tipo de instalacion). El umbral es 100 kW para electricas y 70 kW para termicas.</p>
+        </div>
+    </div>
+</section>
+
+<!-- RIESGOS DE NO TENER MTD -->
+<section>
+    <div class="content-block">
+        <h2>Riesgos de no tener la Memoria Tecnica de Diseno</h2>
+        <p>La MTD no es un tramite opcional. Sin ella, se desencadena una cadena de consecuencias que puede afectar gravemente al titular de la instalacion:</p>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; text-align: center;">
+            <div class="info-card" style="border-top: 3px solid var(--rojo-nexell); padding: 1.5rem 1rem;">
+                <h4 style="font-size: 0.85rem;">Sin MTD</h4>
+                <p style="font-size: 0.8rem;">La instalacion no puede registrarse ante Industria</p>
+            </div>
+            <div class="info-card" style="border-top: 3px solid var(--rojo-nexell); padding: 1.5rem 1rem;">
+                <h4 style="font-size: 0.85rem;">Sin registro</h4>
+                <p style="font-size: 0.8rem;">No hay boletin ni certificado de instalacion valido</p>
+            </div>
+            <div class="info-card" style="border-top: 3px solid var(--rojo-nexell); padding: 1.5rem 1rem;">
+                <h4 style="font-size: 0.85rem;">Sin certificado</h4>
+                <p style="font-size: 0.8rem;">No se puede dar de alta el suministro electrico ni registrar la instalacion termica</p>
+            </div>
+            <div class="info-card" style="border-top: 3px solid var(--rojo-nexell); padding: 1.5rem 1rem;">
+                <h4 style="font-size: 0.85rem;">Sin suministro</h4>
+                <p style="font-size: 0.8rem;">Sin seguro, sin legalidad, expuesto a sanciones</p>
+            </div>
+        </div>
+
+        <p style="margin-top: 1.5rem;"><strong>Cadena de consecuencias:</strong> MTD &rarr; Registro Industria &rarr; Suministro &rarr; Seguro &rarr; Legalidad. Si falla el primer eslabon, falla toda la cadena.</p>
+    </div>
+</section>
+
+<!-- QUIEN PUEDE FIRMAR UNA MTD (detallado) -->
+<section class="bg-light">
+    <div class="content-block">
+        <h2>Quien puede firmar una MTD: requisitos legales</h2>
+        <p>La firma de la MTD implica una declaracion de responsabilidad tecnica. Solo pueden firmarla profesionales con la habilitacion especifica:</p>
+
+        <div class="two-col" style="margin-top: 1rem;">
+            <div>
+                <h3>MTD Electrica</h3>
+                <p>Instalador autorizado en baja tension con la categoria correspondiente:</p>
+                <ul>
+                    <li><strong>Categoria basica (IBTE)</strong>: hasta 10 kW</li>
+                    <li><strong>Categoria especialista (IBTB)</strong>: hasta 100 kW</li>
+                </ul>
+                <p>El instalador debe tener un Registro Industrial (R.I.) vigente en la comunidad autonoma donde ejerce.</p>
+            </div>
+            <div>
+                <h3>MTD Termica</h3>
+                <p>Empresa instaladora habilitada en instalaciones termicas con la habilitacion RITE correspondiente:</p>
+                <ul>
+                    <li>Habilitacion RITE vigente</li>
+                    <li>Registro Industrial (R.I.) activo</li>
+                </ul>
+                <p>Para instalaciones con refrigerantes fluorados, se requiere ademas habilitacion RSIF.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 1.5rem;">
+            <h4>Nexell Instalaciones: habilitacion completa</h4>
+            <p>Director Tecnico: Rosen Iliev Marhov. R.I. 206529 con habilitaciones REBT (especialista en baja tension), RITE (instalaciones termicas) y RSIF (frigorista N1). Podemos firmar MTDs electricas, termicas y frigorificas en todo el territorio nacional.</p>
         </div>
     </div>
 </section>
@@ -332,6 +450,14 @@
             <div class="faq-item">
                 <button class="faq-question">Puedo hacer yo mismo la MTD?</button>
                 <div class="faq-answer"><div class="faq-answer-inner">No. La MTD es un documento oficial que requiere la firma y el sello de un instalador autorizado con numero de Registro Industrial vigente. Es una declaracion de responsabilidad tecnica que solo puede emitir un profesional habilitado. Nexell Docs se encarga de todo el proceso: elaboracion, firma y entrega.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Que datos necesito para encargar una MTD electrica?</button>
+                <div class="faq-answer"><div class="faq-answer-inner">Necesitamos: direccion de la instalacion, uso (vivienda, local, industria), potencia contratada o prevista, numero de circuitos, y si es posible, fotos del cuadro electrico y la instalacion. Con eso elaboramos el esquema unifilar y los calculos justificativos. Cuanta mas informacion nos facilites, mas rapida y precisa sera la entrega.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">La MTD caduca?</button>
+                <div class="faq-answer"><div class="faq-answer-inner">La MTD en si no tiene fecha de caducidad. Sin embargo, si realizas una modificacion sustancial de la instalacion (ampliacion de potencia, nuevos circuitos, reforma superior al 50% de la instalacion), necesitas una nueva MTD que refleje el estado actual. Tambien es necesaria una nueva MTD si cambia el uso del local (por ejemplo, de vivienda a local comercial).</div></div>
             </div>
         </div>
     </div>

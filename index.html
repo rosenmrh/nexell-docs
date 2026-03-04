@@ -109,6 +109,9 @@
                 }
             ]
         },
+        "knowsAbout": ["REBT", "RITE", "RSIF", "Legalización de instalaciones", "Memorias técnicas de diseño", "Inspecciones OCA"],
+        "numberOfEmployees": {"@type": "QuantitativeValue", "value": 4},
+        "foundingDate": "2005",
         "sameAs": [],
         "priceRange": "€€",
         "openingHoursSpecification": {
@@ -536,6 +539,47 @@
         .diferencial-row .ellos { color: #991B1B; font-weight: 600; }
         .diferencial-row .nosotros { color: #065F46; font-weight: 700; }
 
+        /* CIFRAS / SOCIAL PROOF */
+        .cifras {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul) 100%);
+            color: white;
+        }
+        .cifras .section-title { color: white; }
+        .cifras .section-sub { color: rgba(255,255,255,0.7); }
+        .cifras-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        .cifra-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.2s, background 0.2s;
+        }
+        .cifra-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.12);
+        }
+        .cifra-numero {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.85) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cifra-texto {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.4;
+        }
+
         /* GARANTÍAS */
         .garantias-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -646,6 +690,9 @@
             .proceso-steps, .proceso-steps-4 { grid-template-columns: 1fr 1fr; }
             .garantias-grid { grid-template-columns: 1fr; }
             .diferencial-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .cifras-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .cifra-numero { font-size: 2.2rem; }
+            .cifra-card { padding: 1.5rem 1rem; }
             .colab-grid { grid-template-columns: 1fr; }
 
             /* FORMULARIO */
@@ -655,6 +702,10 @@
             /* FOOTER */
             .footer-asociaciones { flex-direction: column; gap: 0.5rem; }
             .faq-list { padding: 0 0.5rem; }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .cifras-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         /* FAQ ACCORDION */
@@ -1005,6 +1056,40 @@
                     <span class="label">Revisión Industria/OCA</span>
                     <span class="nosotros">Incluida sin coste</span>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CIFRAS / SOCIAL PROOF -->
+<section class="cifras" id="cifras">
+    <div class="container">
+        <h2 class="section-title">Nexell en cifras</h2>
+        <p class="section-sub">Datos reales. Habilitaciones oficiales. Cero humo.</p>
+        <div class="cifras-grid">
+            <div class="cifra-card">
+                <div class="cifra-numero">+20 años</div>
+                <div class="cifra-texto">de experiencia en instalaciones eléctricas y térmicas</div>
+            </div>
+            <div class="cifra-card">
+                <div class="cifra-numero">R.I. 206529</div>
+                <div class="cifra-texto">Registro Industrial habilitado: REBT, RITE, RSIF</div>
+            </div>
+            <div class="cifra-card">
+                <div class="cifra-numero">Toda España</div>
+                <div class="cifra-texto">Documentación técnica digital. Entregamos en cualquier punto del país</div>
+            </div>
+            <div class="cifra-card">
+                <div class="cifra-numero">24–48h</div>
+                <div class="cifra-texto">Plazo de entrega estándar para documentación técnica</div>
+            </div>
+            <div class="cifra-card">
+                <div class="cifra-numero">Revisión 0 €</div>
+                <div class="cifra-texto">Si Industria u OCA pide correcciones, las hacemos gratis</div>
+            </div>
+            <div class="cifra-card">
+                <div class="cifra-numero">+200</div>
+                <div class="cifra-texto">instalaciones documentadas y legalizadas en la Comunidad de Madrid</div>
             </div>
         </div>
     </div>
