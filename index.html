@@ -128,34 +128,82 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "¿Cuánto tarda la legalización de una instalación de aire acondicionado?",
+                "name": "¿Es obligatorio legalizar el aire acondicionado?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "La documentación técnica (memoria técnica y cálculos) se entrega en 24-48 horas. El trámite ante Industria depende de la comunidad autónoma, generalmente entre 1-4 semanas."
+                    "text": "Sí. Según el RITE (Reglamento de Instalaciones Térmicas en los Edificios), toda instalación de climatización con potencia térmica superior a 5 kW debe registrarse ante la comunidad autónoma. Sin la legalización, la instalación no tiene cobertura frente al seguro y puede conllevar sanciones de Industria."
                 }
             },
             {
                 "@type": "Question",
-                "name": "¿Necesito legalizar mi instalación de aire acondicionado?",
+                "name": "¿Cuánto cuesta legalizar una instalación eléctrica?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Sí. Según el RITE, toda instalación térmica de potencia superior a 5 kW requiere documentación técnica y registro ante Industria. Las instalaciones sin legalizar pueden conllevar sanciones y problemas con el seguro."
+                    "text": "El coste depende del tipo de instalación. Para una vivienda, la memoria técnica de diseño (MTD) según el REBT parte desde 250 euros. Un pack completo con MTD, certificado de instalación y gestión ante Industria parte desde 400 euros. Solicita presupuesto sin compromiso indicando los datos de tu instalación."
                 }
             },
             {
                 "@type": "Question",
-                "name": "¿Qué es una Memoria Técnica de Diseño (MTD)?",
+                "name": "¿Qué pasa si no legalizo mi instalación?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Es el documento técnico que describe y justifica una instalación eléctrica o térmica según la normativa vigente (REBT o RITE). Es obligatoria para legalizar la instalación ante la comunidad autónoma."
+                    "text": "Una instalación sin legalizar puede acarrear multas de entre 600 y 6.000 euros por parte de Industria. Además, en caso de siniestro (incendio, daños a terceros), la compañía de seguros puede denegar la cobertura al no existir documentación reglamentaria que acredite el estado de la instalación."
                 }
             },
             {
                 "@type": "Question",
-                "name": "¿Dais servicio en toda España?",
+                "name": "¿Qué diferencia hay entre una Memoria Técnica y un Proyecto?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Sí. Al ser documentación técnica digital, trabajamos con clientes de todo el territorio nacional. La entrega se realiza por correo electrónico."
+                    "text": "La Memoria Técnica de Diseño (MTD) es obligatoria para instalaciones de menor potencia y la firma un instalador o técnico habilitado. El Proyecto técnico es necesario cuando se superan ciertos umbrales de potencia (por ejemplo, más de 100 kW en REBT o más de 70 kW en RITE) y requiere la firma de un ingeniero con visado colegial."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Necesito legalizar la aerotermia?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí. La aerotermia es una instalación térmica regulada por el RITE y debe legalizarse ante Industria igual que cualquier sistema de climatización. Esto incluye la memoria técnica con cálculos de cargas térmicas, selección de equipo y esquema de principio de la instalación."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuánto tarda el proceso completo?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "La documentación técnica (memoria técnica, cálculos, esquemas) se entrega en 24-48 horas laborables. El trámite de registro ante la comunidad autónoma depende de cada administración: en Madrid suele tardar entre 1 y 4 semanas tras la presentación."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Trabajáis con instaladores de fuera de Madrid?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí. Al tratarse de documentación técnica digital, trabajamos con instaladores y particulares de todo el territorio nacional. Toda la comunicación y entrega de documentos se realiza de forma telemática, por correo electrónico o plataforma segura."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué es una inspección OCA y cuándo es obligatoria?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Una OCA (Organismo de Control Autorizado) realiza inspecciones reglamentarias periódicas de instalaciones. Son obligatorias para instalaciones eléctricas de más de 100 kW, locales de pública concurrencia, industrias, y garajes. La periodicidad suele ser cada 5 años. Te preparamos toda la documentación para superarla sin incidencias."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Puedo legalizar una instalación antigua?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí, siempre que la instalación cumpla con los requisitos de seguridad mínimos de la normativa vigente. Si tiene deficiencias, te informamos de las correcciones necesarias antes de proceder. En muchos casos también ofrecemos el servicio de reparación y adecuación para dejarla en regla."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué documentación necesito para legalizar mi reforma?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Para una reforma que incluya electricidad y climatización necesitarás la memoria técnica de cada instalación modificada, los certificados de instalación correspondientes y el registro ante Industria. Si nos envías los datos de tu reforma, te indicamos exactamente qué documentos necesitas y nos encargamos de todo."
                 }
             }
         ]
@@ -606,6 +654,66 @@
 
             /* FOOTER */
             .footer-asociaciones { flex-direction: column; gap: 0.5rem; }
+            .faq-list { padding: 0 0.5rem; }
+        }
+
+        /* FAQ ACCORDION */
+        .faq { background: var(--gris-claro); }
+        .faq-list {
+            max-width: 800px; margin: 0 auto;
+            display: flex; flex-direction: column; gap: 0;
+        }
+        .faq-item {
+            border: 1px solid #E2E8F0;
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
+            background: white;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+        .faq-item:hover {
+            box-shadow: 0 2px 12px rgba(31,78,120,0.08);
+        }
+        .faq-question {
+            width: 100%; padding: 1.2rem 1.5rem;
+            background: none; border: none; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            font-family: inherit; font-size: 1rem; font-weight: 600;
+            color: var(--azul-oscuro); text-align: left;
+            transition: color 0.2s;
+        }
+        .faq-question:hover { color: var(--azul-claro); }
+        .faq-toggle {
+            flex-shrink: 0; width: 28px; height: 28px;
+            border-radius: 50%; background: var(--gris-claro);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; font-weight: 700; color: var(--azul);
+            transition: all 0.3s; margin-left: 1rem;
+        }
+        .faq-item.open .faq-toggle {
+            background: var(--azul); color: white;
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            padding: 0 1.5rem;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding: 0 1.5rem 1.2rem;
+        }
+        .faq-answer p {
+            font-size: 0.92rem; color: var(--gris-texto);
+            line-height: 1.7;
+        }
+        /* Service card internal links */
+        .servicio-card h3 a {
+            color: inherit; text-decoration: none;
+            transition: color 0.2s;
+        }
+        .servicio-card h3 a:hover {
+            color: var(--azul-claro);
         }
     </style>
 </head>
@@ -614,8 +722,8 @@
 <!-- NAV -->
 <nav>
     <a href="#" class="nav-brand">
-        <img src="logo-nexell-instalaciones.png" alt="Nexell Instalaciones">
-        <img src="logo-nexell-docs.png" alt="Nexell Docs">
+        <img src="logo-nexell-instalaciones.png" alt="Nexell Instalaciones - Empresa de instalaciones eléctricas y térmicas en Madrid">
+        <img src="logo-nexell-docs.png" alt="Nexell Docs - Oficina Técnica Virtual para legalización de instalaciones">
     </a>
     <button class="nav-hamburger" aria-label="Menú" onclick="document.querySelector('.nav-links').classList.toggle('open')">
         <span></span><span></span><span></span>
@@ -625,6 +733,7 @@
         <a href="#proceso" onclick="this.parentElement.classList.remove('open')">Cómo funciona</a>
         <a href="#colaboradores" onclick="this.parentElement.classList.remove('open')">Red técnica</a>
         <a href="#garantias" onclick="this.parentElement.classList.remove('open')">Garantías</a>
+        <a href="#faq" onclick="this.parentElement.classList.remove('open')">FAQ</a>
         <a href="#contacto" class="nav-cta" onclick="this.parentElement.classList.remove('open')">Solicitar presupuesto</a>
     </div>
 </nav>
@@ -728,25 +837,25 @@
             <div class="servicios-grid">
                 <div class="servicio-card bg-azul">
                     <span class="servicio-tag tag-rebt">CLIMATIZACIÓN</span>
-                    <h3>Aire acondicionado / Split</h3>
+                    <h3><a href="/legalizar-aire-acondicionado">Aire acondicionado / Split</a></h3>
                     <p>¿Te instalaron uno o varios splits y no tienes documentación? Generamos la memoria técnica RITE y gestionamos la legalización ante Industria.</p>
                     <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-verde">
                     <span class="servicio-tag tag-rite-verde">CLIMATIZACIÓN</span>
-                    <h3>Aerotermia</h3>
+                    <h3><a href="/legalizar-aerotermia">Aerotermia</a></h3>
                     <p>Instalación de aerotermia para calefacción, ACS o frío. Documentación RITE completa con cálculos de cargas térmicas y selección de equipo.</p>
                     <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-naranja">
                     <span class="servicio-tag tag-rite-naranja">CLIMATIZACIÓN</span>
-                    <h3>Caldera / Calentador</h3>
+                    <h3><a href="/legalizar-caldera">Caldera / Calentador</a></h3>
                     <p>Cambio de caldera, calentador de gas o instalación nueva. Memoria técnica y certificación para la compañía de gas.</p>
                     <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-rojo">
                     <span class="servicio-tag tag-rebt">ELECTRICIDAD</span>
-                    <h3>Instalación eléctrica</h3>
+                    <h3><a href="/legalizar-instalacion-electrica">Instalación eléctrica</a></h3>
                     <p>Ampliación de potencia, nueva instalación o modificación del cuadro. Memoria técnica REBT, boletín y gestión con la compañía eléctrica.</p>
                     <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
@@ -758,7 +867,7 @@
                 </div>
                 <div class="servicio-card bg-gris">
                     <span class="servicio-tag tag-gris">INSPECCIÓN</span>
-                    <h3>Preparación inspección periódica</h3>
+                    <h3><a href="/inspeccion-oca">Preparación inspección periódica</a></h3>
                     <p>¿Te toca inspección de tu instalación? Revisamos la documentación, detectamos deficiencias y te preparamos para superarla.</p>
                     <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
@@ -778,7 +887,7 @@
             <div class="servicios-grid">
                 <div class="servicio-card bg-rojo">
                     <span class="servicio-tag tag-rebt">REBT</span>
-                    <h3>Memoria Técnica Eléctrica</h3>
+                    <h3><a href="/memoria-tecnica-diseno">Memoria Técnica Eléctrica</a></h3>
                     <p>MTD para viviendas, locales, oficinas e industria. Cálculos de sección, caída de tensión y protecciones incluidos.</p>
                     <div class="servicio-precio">Desde 250 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 24-48h</div>
@@ -813,7 +922,7 @@
                 </div>
                 <div class="servicio-card bg-gris">
                     <span class="servicio-tag tag-gris">INSPECCIÓN</span>
-                    <h3>Preparación inspección OCA</h3>
+                    <h3><a href="/inspeccion-oca">Preparación inspección OCA</a></h3>
                     <p>Revisión documental, checklist de defectos, preparación de documentación para superar la inspección.</p>
                     <div class="servicio-precio">Desde 300 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 48h</div>
@@ -1053,6 +1162,106 @@
     </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+    <div class="container">
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <p class="section-sub">Resolvemos las dudas más habituales sobre legalización de instalaciones.</p>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Es obligatorio legalizar el aire acondicionado?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Sí. Según el RITE (Reglamento de Instalaciones Térmicas en los Edificios), toda instalación de climatización con potencia térmica superior a 5 kW debe registrarse ante la comunidad autónoma. Sin la legalización, la instalación no tiene cobertura frente al seguro y puede conllevar sanciones de Industria.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Cuánto cuesta legalizar una instalación eléctrica?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>El coste depende del tipo de instalación. Para una vivienda, la memoria técnica de diseño (MTD) según el REBT parte desde 250 euros. Un pack completo con MTD, certificado de instalación y gestión ante Industria parte desde 400 euros. Solicita presupuesto sin compromiso indicando los datos de tu instalación.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Qué pasa si no legalizo mi instalación?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Una instalación sin legalizar puede acarrear multas de entre 600 y 6.000 euros por parte de Industria. Además, en caso de siniestro (incendio, daños a terceros), la compañía de seguros puede denegar la cobertura al no existir documentación reglamentaria que acredite el estado de la instalación.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Qué diferencia hay entre una Memoria Técnica y un Proyecto?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>La Memoria Técnica de Diseño (MTD) es obligatoria para instalaciones de menor potencia y la firma un instalador o técnico habilitado. El Proyecto técnico es necesario cuando se superan ciertos umbrales de potencia (por ejemplo, más de 100 kW en REBT o más de 70 kW en RITE) y requiere la firma de un ingeniero con visado colegial.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Necesito legalizar la aerotermia?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Sí. La aerotermia es una instalación térmica regulada por el RITE y debe legalizarse ante Industria igual que cualquier sistema de climatización. Esto incluye la memoria técnica con cálculos de cargas térmicas, selección de equipo y esquema de principio de la instalación.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Cuánto tarda el proceso completo?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>La documentación técnica (memoria técnica, cálculos, esquemas) se entrega en 24-48 horas laborables. El trámite de registro ante la comunidad autónoma depende de cada administración: en Madrid suele tardar entre 1 y 4 semanas tras la presentación.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Trabajáis con instaladores de fuera de Madrid?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Sí. Al tratarse de documentación técnica digital, trabajamos con instaladores y particulares de todo el territorio nacional. Toda la comunicación y entrega de documentos se realiza de forma telemática, por correo electrónico o plataforma segura.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Qué es una inspección OCA y cuándo es obligatoria?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Una OCA (Organismo de Control Autorizado) realiza inspecciones reglamentarias periódicas de instalaciones. Son obligatorias para instalaciones eléctricas de más de 100 kW, locales de pública concurrencia, industrias, y garajes. La periodicidad suele ser cada 5 años. Te preparamos toda la documentación para superarla sin incidencias.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Puedo legalizar una instalación antigua?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Sí, siempre que la instalación cumpla con los requisitos de seguridad mínimos de la normativa vigente. Si tiene deficiencias, te informamos de las correcciones necesarias antes de proceder. En muchos casos también ofrecemos el servicio de reparación y adecuación para dejarla en regla.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>¿Qué documentación necesito para legalizar mi reforma?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Para una reforma que incluya electricidad y climatización necesitarás la memoria técnica de cada instalación modificada, los certificados de instalación correspondientes y el registro ante Industria. Si nos envías los datos de tu reforma, te indicamos exactamente qué documentos necesitas y nos encargamos de todo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CONTACTO / FORMULARIO -->
 <section class="contacto" id="contacto">
     <div class="container">
@@ -1139,7 +1348,7 @@
 <!-- FOOTER -->
 <footer>
     <div class="container">
-        <img src="logo-nexell-docs-blanco.png" alt="Nexell Docs" style="height:70px; margin-bottom:1rem; filter:brightness(10);">
+        <img src="logo-nexell-docs-blanco.png" alt="Nexell Docs - Legalización de instalaciones eléctricas y térmicas" style="height:70px; margin-bottom:1rem; filter:brightness(10);">
         <p>Un servicio de <a href="#">Nexell Instalaciones</a></p>
         <p>Construction Efficient Building and Services S.L. · CIF B87004370 · R.I. 206529</p>
         <div class="footer-asociaciones">
@@ -1188,6 +1397,24 @@
             e.preventDefault();
             const target = document.querySelector(a.getAttribute('href'));
             if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    // FAQ ACCORDION
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.parentElement;
+            const isOpen = item.classList.contains('open');
+            // Close all others
+            document.querySelectorAll('.faq-item.open').forEach(el => {
+                el.classList.remove('open');
+                el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+            // Toggle current
+            if (!isOpen) {
+                item.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
         });
     });
 
