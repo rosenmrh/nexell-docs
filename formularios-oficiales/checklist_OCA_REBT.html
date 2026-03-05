@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist — Inspección OCA / EICI Instalación Eléctrica REBT | Nexell</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; font-size: 11pt; line-height: 1.5; color: #000; padding: 20px; max-width: 210mm; margin: 0 auto; }
+        h1 { font-size: 14pt; text-align: center; margin-bottom: 5px; }
+        h2 { font-size: 12pt; background: #e8e8e8; padding: 5px 10px; margin: 20px 0 10px; border-left: 4px solid #c00; }
+        h3 { font-size: 11pt; margin: 10px 0 5px; color: #333; }
+        .header { text-align: center; border-bottom: 2px solid #c00; padding-bottom: 10px; margin-bottom: 20px; }
+        .header p { font-size: 9pt; color: #555; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 8px 10px; border-bottom: 1px solid #eee; display: flex; align-items: flex-start; gap: 10px; }
+        .checklist li:hover { background: #f9f9f9; }
+        .checklist input[type="checkbox"] { margin-top: 3px; min-width: 16px; min-height: 16px; }
+        .priority-high { border-left: 3px solid #c00; padding-left: 7px; }
+        .priority-medium { border-left: 3px solid #f90; padding-left: 7px; }
+        .priority-low { border-left: 3px solid #0a0; padding-left: 7px; }
+        .tag { font-size: 8pt; padding: 2px 6px; border-radius: 3px; color: #fff; display: inline-block; margin-left: 5px; }
+        .tag-obligatorio { background: #c00; }
+        .tag-recomendado { background: #f90; }
+        .tag-opcional { background: #0a0; }
+        .notes { font-size: 9pt; color: #666; margin-top: 3px; }
+        .client-info { background: #fff8e8; padding: 15px; border: 1px solid #e0d0a0; border-radius: 5px; margin-bottom: 20px; }
+        .client-info table { width: 100%; border-collapse: collapse; }
+        .client-info td { padding: 3px 8px; border: none; }
+        .client-info td:first-child { font-weight: bold; width: 200px; }
+        input[type="text"], input[type="date"] {
+            border: none; border-bottom: 1px dotted #999; background: transparent; padding: 2px 0;
+            font-family: inherit; font-size: inherit; width: 250px;
+        }
+        .summary { background: #f0f7ff; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .summary h3 { color: #036; }
+        @media print {
+            body { padding: 0; font-size: 10pt; }
+            .no-print { display: none; }
+            @page { margin: 15mm; size: A4; }
+            .checklist li { page-break-inside: avoid; }
+        }
+        .no-print { background: #0066cc; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px; font-size: 12pt; margin: 10px 5px; }
+        .toolbar { text-align: center; margin-bottom: 20px; padding: 15px; background: #f0f7ff; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+    <button class="no-print" onclick="window.print()">🖨️ Imprimir</button>
+    <button class="no-print" onclick="document.querySelectorAll('input[type=checkbox]').forEach(e => e.checked = false)">🔄 Desmarcar todo</button>
+</div>
+
+<div class="header">
+    <h1>Checklist de Documentación</h1>
+    <h1>Inspección OCA / EICI — Instalación Eléctrica (REBT)</h1>
+    <p>Construction Efficient Building and Services S.L. — R.I. 206529</p>
+</div>
+
+<div class="client-info">
+    <h3>Datos de la Inspección</h3>
+    <table>
+        <tr><td>Cliente:</td><td><input type="text" placeholder="Nombre del cliente"></td></tr>
+        <tr><td>Dirección instalación:</td><td><input type="text" placeholder="Dirección"></td></tr>
+        <tr><td>Fecha inspección:</td><td><input type="date"></td></tr>
+        <tr><td>OCA / EICI:</td><td><input type="text" placeholder="SCI / ICN / Otra"></td></tr>
+        <tr><td>Tipo inspección:</td><td><input type="text" placeholder="Inicial / Periódica / Por defectos"></td></tr>
+    </table>
+</div>
+
+<h2>A. Documentación Administrativa</h2>
+<ul class="checklist">
+    <li class="priority-high"><input type="checkbox"><span>Certificado de Instalación Eléctrica (CIE / Boletín) <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Modelo oficial con código EXIN (desde 2022). Original + copia.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Memoria Técnica de Diseño (MTD) o Proyecto técnico <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">MTD para ≤100 kW. Proyecto visado para &gt;100 kW o locales de pública concurrencia.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Esquema unifilar de la instalación <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Actualizado, con todos los circuitos, secciones y protecciones.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Contrato de suministro eléctrico o certificado de la distribuidora <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Acredita la potencia contratada y el CUPS.</span></span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Declaración Responsable del instalador <span class="tag tag-recomendado">SI PROCEDE</span><br><span class="notes">Cuando el CIE no está visado por ECA.</span></span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Justificante de pago de tasa DGIEM (Modelo 030) <span class="tag tag-recomendado">SI PROCEDE</span><br><span class="notes">Liquidación de tasa de registro industrial.</span></span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Certificado de empresa instaladora habilitada <span class="tag tag-recomendado">RECOMENDADO</span><br><span class="notes">Copia del certificado de R.I. de Nexell (206529).</span></span></li>
+    <li class="priority-low"><input type="checkbox"><span>Carné de instalador autorizado <span class="tag tag-opcional">OPCIONAL</span><br><span class="notes">Para identificar al técnico responsable.</span></span></li>
+</ul>
+
+<h2>B. Documentación Técnica del Material</h2>
+<ul class="checklist">
+    <li class="priority-high"><input type="checkbox"><span>Certificados de conformidad CE del cuadro eléctrico <span class="tag tag-obligatorio">OBLIGATORIO</span></span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Fichas técnicas de los interruptores diferenciales <span class="tag tag-recomendado">RECOMENDADO</span></span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Fichas técnicas de los magnetotérmicos / PIA <span class="tag tag-recomendado">RECOMENDADO</span></span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Certificado del conductor (marca, sección, aislamiento) <span class="tag tag-recomendado">RECOMENDADO</span></span></li>
+</ul>
+
+<h2>C. Verificaciones Previas a la Inspección</h2>
+<ul class="checklist">
+    <li class="priority-high"><input type="checkbox"><span>IGA (Interruptor General Automático) accesible y señalizado</span></li>
+    <li class="priority-high"><input type="checkbox"><span>Cuadro de mando y protección completo y etiquetado</span></li>
+    <li class="priority-high"><input type="checkbox"><span>Diferenciales funcionando correctamente (test manual)</span></li>
+    <li class="priority-high"><input type="checkbox"><span>Toma de tierra medida y dentro de valores (≤ 800 Ω vivienda)</span></li>
+    <li class="priority-high"><input type="checkbox"><span>Resistencia de aislamiento ≥ 0,5 MΩ</span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Secciones de conductores correctas según circuito</span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Canalización correcta (tubos, bandejas, empotrado)</span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Mecanismos en buen estado (enchufes, interruptores)</span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Accesibilidad a cajas de registro y derivación</span></li>
+    <li class="priority-low"><input type="checkbox"><span>Identificación de circuitos en cuadro</span></li>
+    <li class="priority-low"><input type="checkbox"><span>Protección de la envolvente IP adecuado</span></li>
+</ul>
+
+<h2>D. Defectos Frecuentes a Revisar</h2>
+<ul class="checklist">
+    <li><input type="checkbox"><span>Ausencia de diferencial en algún circuito</span></li>
+    <li><input type="checkbox"><span>Diferencial de sensibilidad incorrecta (&gt;30 mA en vivienda)</span></li>
+    <li><input type="checkbox"><span>Sección insuficiente para la potencia del circuito</span></li>
+    <li><input type="checkbox"><span>Falta de conductor de protección (tierra) en algún circuito</span></li>
+    <li><input type="checkbox"><span>IGA no accesible o incorrecto</span></li>
+    <li><input type="checkbox"><span>Cuadro sin tapa o con elementos accesibles</span></li>
+    <li><input type="checkbox"><span>Empalmes fuera de cajas de derivación</span></li>
+    <li><input type="checkbox"><span>Enchufes en zona 0/1/2 de baño sin protección adecuada</span></li>
+</ul>
+
+<div class="summary">
+    <h3>Contacto para solicitar inspección</h3>
+    <p><strong>SCI (Sociedad de Certificación Industrial):</strong> sci@scisa.es — Tel: 91 884 43 93 — extranet.scisa.es</p>
+    <p><strong>ICN:</strong> Tramitación vía Portal del Instalador telemático</p>
+    <p style="margin-top:10px; font-size:9pt;">Nexell — Construction Efficient Building and Services S.L. — R.I. 206529 — CIF B87004370 — Tel: 672 585 491</p>
+</div>
+
+</body>
+</html>

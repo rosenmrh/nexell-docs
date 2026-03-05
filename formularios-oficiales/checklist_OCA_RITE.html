@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist — Inspección OCA / EICI Instalación Térmica RITE | Nexell</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; font-size: 11pt; line-height: 1.5; color: #000; padding: 20px; max-width: 210mm; margin: 0 auto; }
+        h1 { font-size: 14pt; text-align: center; margin-bottom: 5px; }
+        h2 { font-size: 12pt; background: #e8e8e8; padding: 5px 10px; margin: 20px 0 10px; border-left: 4px solid #c60; }
+        h3 { font-size: 11pt; margin: 10px 0 5px; color: #333; }
+        .header { text-align: center; border-bottom: 2px solid #c60; padding-bottom: 10px; margin-bottom: 20px; }
+        .header p { font-size: 9pt; color: #555; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 8px 10px; border-bottom: 1px solid #eee; display: flex; align-items: flex-start; gap: 10px; }
+        .checklist input[type="checkbox"] { margin-top: 3px; min-width: 16px; min-height: 16px; }
+        .priority-high { border-left: 3px solid #c00; padding-left: 7px; }
+        .priority-medium { border-left: 3px solid #f90; padding-left: 7px; }
+        .priority-low { border-left: 3px solid #0a0; padding-left: 7px; }
+        .tag { font-size: 8pt; padding: 2px 6px; border-radius: 3px; color: #fff; display: inline-block; margin-left: 5px; }
+        .tag-obligatorio { background: #c00; }
+        .tag-recomendado { background: #f90; }
+        .tag-opcional { background: #0a0; }
+        .notes { font-size: 9pt; color: #666; margin-top: 3px; }
+        .client-info { background: #fff8e8; padding: 15px; border: 1px solid #e0d0a0; border-radius: 5px; margin-bottom: 20px; }
+        .client-info table { width: 100%; border-collapse: collapse; }
+        .client-info td { padding: 3px 8px; border: none; }
+        .client-info td:first-child { font-weight: bold; width: 200px; }
+        input[type="text"], input[type="date"] {
+            border: none; border-bottom: 1px dotted #999; background: transparent; padding: 2px 0;
+            font-family: inherit; font-size: inherit; width: 250px;
+        }
+        .summary { background: #fff5e8; padding: 15px; border-radius: 5px; margin: 20px 0; border: 1px solid #e0c080; }
+        @media print {
+            body { padding: 0; font-size: 10pt; }
+            .no-print { display: none; }
+            @page { margin: 15mm; size: A4; }
+        }
+        .no-print { background: #0066cc; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px; font-size: 12pt; margin: 10px 5px; }
+        .toolbar { text-align: center; margin-bottom: 20px; padding: 15px; background: #f0f7ff; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+    <button class="no-print" onclick="window.print()">🖨️ Imprimir</button>
+    <button class="no-print" onclick="document.querySelectorAll('input[type=checkbox]').forEach(e => e.checked = false)">🔄 Desmarcar todo</button>
+</div>
+
+<div class="header">
+    <h1>Checklist de Documentación</h1>
+    <h1>Inspección OCA / EICI — Instalación Térmica (RITE)</h1>
+    <p>Construction Efficient Building and Services S.L. — R.I. 206529</p>
+</div>
+
+<div class="client-info">
+    <h3>Datos de la Inspección</h3>
+    <table>
+        <tr><td>Cliente:</td><td><input type="text" placeholder="Nombre del cliente"></td></tr>
+        <tr><td>Dirección instalación:</td><td><input type="text" placeholder="Dirección"></td></tr>
+        <tr><td>Tipo de instalación:</td><td><input type="text" placeholder="Aerotermia / A.A. / Caldera..."></td></tr>
+        <tr><td>Potencia (kW):</td><td><input type="text" placeholder="kW"></td></tr>
+        <tr><td>Fecha inspección:</td><td><input type="date"></td></tr>
+        <tr><td>EICI:</td><td><input type="text" placeholder="SCI / ICN"></td></tr>
+    </table>
+</div>
+
+<h2>A. Documentación para Instalaciones &lt;70 kW (sin proyecto)</h2>
+<ul class="checklist">
+    <li class="priority-high"><input type="checkbox"><span>3 copias del MOD IT 3.1.5 (solicitud + memoria técnica) <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Firmado por titular y empresa instaladora. Usar plantilla Nexell.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>3 copias del MOD IT 3.1.8 (certificado de instalación térmica) <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Firmado por empresa instaladora habilitada RITE.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Justificante de pago de tasa DGIEM (Modelo 030) <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Tasa de registro de instalación térmica.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Justificante de pago de tarifa EICI <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Tarifa del organismo de control (SCI o ICN).</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Certificado de empresa instaladora habilitada RITE <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Copia del certificado de habilitación de Nexell (R.I. 206529).</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Carné de instalador RITE <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Carné vigente del técnico que firma la instalación.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Manual de uso y mantenimiento <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Entregado al titular. Incluye instrucciones de seguridad y mantenimiento periódico.</span></span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Ficha técnica del equipo (fabricante) <span class="tag tag-recomendado">RECOMENDADO</span><br><span class="notes">Datos de potencia, rendimiento (COP/SCOP/SEER), refrigerante.</span></span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Declaración CE de conformidad <span class="tag tag-recomendado">RECOMENDADO</span></span></li>
+    <li class="priority-low"><input type="checkbox"><span>Fotografías de la instalación <span class="tag tag-opcional">OPCIONAL</span></span></li>
+</ul>
+
+<h2>B. Documentación Adicional para Instalaciones &gt;70 kW (con proyecto)</h2>
+<ul class="checklist">
+    <li class="priority-high"><input type="checkbox"><span>Proyecto técnico visado por colegio profesional <span class="tag tag-obligatorio">OBLIGATORIO</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>MOD IT 3.1.6 — Certificado de montaje <span class="tag tag-obligatorio">OBLIGATORIO</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>MOD IT 3.1.9 — Certificado de instalación (con proyecto) <span class="tag tag-obligatorio">OBLIGATORIO</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Justificante de pago de tasa DGIEM <span class="tag tag-obligatorio">OBLIGATORIO</span></span></li>
+</ul>
+
+<h2>C. Verificaciones Previas a la Inspección</h2>
+<ul class="checklist">
+    <li class="priority-high"><input type="checkbox"><span>Equipo accesible para inspección visual</span></li>
+    <li class="priority-high"><input type="checkbox"><span>Placa de características visible y legible</span></li>
+    <li class="priority-high"><input type="checkbox"><span>Etiqueta de refrigerante visible (tipo, carga)</span></li>
+    <li class="priority-high"><input type="checkbox"><span>Sistema de evacuación de condensados correcto</span></li>
+    <li class="priority-high"><input type="checkbox"><span>Conexiones eléctricas protegidas</span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Soportes antivibratorios instalados</span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Aislamiento de tuberías correcto</span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Sistema de regulación y control operativo</span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Válvulas de seguridad en su sitio (caldera)</span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Ventilación del local de la caldera (si gas)</span></li>
+    <li class="priority-low"><input type="checkbox"><span>Limpieza general de la instalación</span></li>
+    <li class="priority-low"><input type="checkbox"><span>Acceso despejado para el inspector</span></li>
+</ul>
+
+<h2>D. Defectos Frecuentes en Inspecciones RITE</h2>
+<ul class="checklist">
+    <li><input type="checkbox"><span>Falta de aislamiento térmico en tuberías</span></li>
+    <li><input type="checkbox"><span>Evacuación de condensados incorrecta o inexistente</span></li>
+    <li><input type="checkbox"><span>Unidad exterior sin soporte adecuado</span></li>
+    <li><input type="checkbox"><span>Falta de sistema de regulación/termostato</span></li>
+    <li><input type="checkbox"><span>Ausencia de manual de uso y mantenimiento</span></li>
+    <li><input type="checkbox"><span>Ventilación insuficiente en local de caldera</span></li>
+    <li><input type="checkbox"><span>Discrepancia entre documentación y equipo real instalado</span></li>
+    <li><input type="checkbox"><span>Protecciones eléctricas inadecuadas para el equipo</span></li>
+</ul>
+
+<div class="summary">
+    <h3>Exenciones de registro RITE</h3>
+    <p>NO se requiere registro cuando:</p>
+    <ul style="margin-left:20px; margin-top:5px;">
+        <li>Potencia térmica &lt; 5 kW</li>
+        <li>Sustitución de generador ≤70 kW con variación de potencia ≤25% y misma fuente energética</li>
+    </ul>
+    <p style="margin-top:10px;"><strong>Contacto SCI:</strong> sci@scisa.es — 91 884 43 93</p>
+    <p><strong>Portal tramitación:</strong> sede.comunidad.madrid/inscripciones-registro/instalaciones-termicas-no-industriales</p>
+    <p style="margin-top:10px; font-size:9pt;">Nexell — R.I. 206529 — Tel: 672 585 491 — nexell@nexell.es</p>
+</div>
+
+</body>
+</html>

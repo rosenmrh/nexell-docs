@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist — CAE Ficha RES060 (Sustitución caldera por bomba de calor) | Nexell</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; font-size: 11pt; line-height: 1.5; color: #000; padding: 20px; max-width: 210mm; margin: 0 auto; }
+        h1 { font-size: 14pt; text-align: center; margin-bottom: 5px; }
+        h2 { font-size: 12pt; background: #e8e8e8; padding: 5px 10px; margin: 20px 0 10px; border-left: 4px solid #060; }
+        h3 { font-size: 11pt; margin: 10px 0 5px; color: #333; }
+        .header { text-align: center; border-bottom: 2px solid #060; padding-bottom: 10px; margin-bottom: 20px; }
+        .header p { font-size: 9pt; color: #555; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 8px 10px; border-bottom: 1px solid #eee; display: flex; align-items: flex-start; gap: 10px; }
+        .checklist input[type="checkbox"] { margin-top: 3px; min-width: 16px; min-height: 16px; }
+        .priority-high { border-left: 3px solid #c00; padding-left: 7px; }
+        .priority-medium { border-left: 3px solid #f90; padding-left: 7px; }
+        .priority-low { border-left: 3px solid #0a0; padding-left: 7px; }
+        .tag { font-size: 8pt; padding: 2px 6px; border-radius: 3px; color: #fff; display: inline-block; margin-left: 5px; }
+        .tag-obligatorio { background: #c00; }
+        .tag-recomendado { background: #f90; }
+        .tag-info { background: #06c; }
+        .notes { font-size: 9pt; color: #666; margin-top: 3px; }
+        .client-info { background: #e8f5e8; padding: 15px; border: 1px solid #a0d0a0; border-radius: 5px; margin-bottom: 20px; }
+        .client-info table { width: 100%; border-collapse: collapse; }
+        .client-info td { padding: 3px 8px; border: none; }
+        .client-info td:first-child { font-weight: bold; width: 200px; }
+        input[type="text"], input[type="date"], input[type="number"] {
+            border: none; border-bottom: 1px dotted #999; background: transparent; padding: 2px 0;
+            font-family: inherit; font-size: inherit; width: 250px;
+        }
+        .info-box { background: #e8f0ff; padding: 15px; border-radius: 5px; margin: 15px 0; border: 1px solid #b0c8e8; }
+        .money-box { background: #e8ffe8; padding: 15px; border-radius: 5px; margin: 15px 0; border: 1px solid #a0d0a0; }
+        table.data { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        table.data td, table.data th { border: 1px solid #ccc; padding: 5px 8px; }
+        table.data th { background: #f0f0f0; }
+        @media print {
+            body { padding: 0; font-size: 10pt; }
+            .no-print { display: none; }
+            @page { margin: 15mm; size: A4; }
+        }
+        .no-print { background: #0066cc; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px; font-size: 12pt; margin: 10px 5px; }
+        .toolbar { text-align: center; margin-bottom: 20px; padding: 15px; background: #f0f7ff; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+    <button class="no-print" onclick="window.print()">🖨️ Imprimir</button>
+    <button class="no-print" onclick="document.querySelectorAll('input[type=checkbox]').forEach(e => e.checked = false)">🔄 Desmarcar todo</button>
+</div>
+
+<div class="header">
+    <h1>Checklist CAE — Ficha RES060</h1>
+    <h1>Sustitución de Caldera por Bomba de Calor</h1>
+    <p>Certificados de Ahorro Energético — Sistema CAE (RD 36/2023)</p>
+    <p>Construction Efficient Building and Services S.L. — R.I. 206529</p>
+</div>
+
+<div class="client-info">
+    <h3>Datos de la Actuación</h3>
+    <table>
+        <tr><td>Cliente / Titular:</td><td><input type="text" placeholder="Nombre del titular"></td></tr>
+        <tr><td>Dirección instalación:</td><td><input type="text" placeholder="Dirección"></td></tr>
+        <tr><td>Equipo antiguo (caldera):</td><td><input type="text" placeholder="Marca, modelo, combustible"></td></tr>
+        <tr><td>Equipo nuevo (bomba calor):</td><td><input type="text" placeholder="Marca, modelo"></td></tr>
+        <tr><td>Potencia equipo nuevo (kW):</td><td><input type="number" step="0.1" placeholder="kW"></td></tr>
+        <tr><td>SCOP del equipo nuevo:</td><td><input type="number" step="0.1" placeholder="SCOP"></td></tr>
+        <tr><td>Fecha de instalación:</td><td><input type="date"></td></tr>
+        <tr><td>Zona climática (CTE):</td><td><input type="text" placeholder="A3, A4, B3, B4, C1-C4, D1-D3, E1"></td></tr>
+    </table>
+</div>
+
+<h2>A. Documentación ANTES de la Instalación</h2>
+<ul class="checklist">
+    <li class="priority-high"><input type="checkbox"><span>Convenio CAE firmado entre titular y Sujeto Delegado/Obligado <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Debe firmarse ANTES de realizar la instalación. Sin convenio previo no se pueden emitir CAEs.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Fotografías del equipo antiguo (caldera) IN SITU <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Fotos claras de: placa de características, equipo completo instalado, ubicación en el local.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Prueba de existencia de la caldera antigua <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Factura de compra/mantenimiento, contrato de gas, última revisión obligatoria, etc.</span></span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Datos del suministro de gas anterior <span class="tag tag-recomendado">RECOMENDADO</span><br><span class="notes">Facturas de gas de los últimos 12 meses (para calcular ahorro real).</span></span></li>
+</ul>
+
+<h2>B. Documentación de la Instalación</h2>
+<ul class="checklist">
+    <li class="priority-high"><input type="checkbox"><span>Factura de compra e instalación del equipo nuevo <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Debe incluir: modelo exacto, SCOP, potencia nominal desglosada (calefacción/ACS), número de serie.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Ficha técnica del fabricante del equipo nuevo <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Con datos de SCOP, potencia, refrigerante, clasificación energética.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Declaración CE de conformidad del equipo <span class="tag tag-obligatorio">OBLIGATORIO</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Certificado de instalación del instalador autorizado (MOD IT 3.1.8) <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Emitido por empresa instaladora habilitada RITE. Usar plantilla Nexell.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Fotografías del equipo nuevo instalado <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Fotos de: equipo exterior, equipo interior/depósito, cuadro eléctrico, tuberías, placa de características.</span></span></li>
+</ul>
+
+<h2>C. Ficha RES060 — Datos Necesarios para Rellenar</h2>
+<ul class="checklist">
+    <li class="priority-high"><input type="checkbox"><span>Zona climática CTE de la instalación <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Según Anexo IV de la ficha. Madrid capital = D3. Consultar tabla de equivalencias CTE.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>SCOP del equipo nuevo (según Reglamento Delegado UE 811/2013) <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Dato del fabricante para la zona climática de referencia (Average/Colder/Warmer).</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Potencia nominal de calefacción del equipo nuevo (kW) <span class="tag tag-obligatorio">OBLIGATORIO</span></span></li>
+    <li class="priority-medium"><input type="checkbox"><span>¿Hay caldera de apoyo? (Solo zonas D y E) <span class="tag tag-recomendado">SI APLICA</span><br><span class="notes">Según Anexo II: en zonas D/E se permite caldera de apoyo. Declarar si existe.</span></span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Cálculo de ahorro energético según fórmula de la ficha <span class="tag tag-info">CÁLCULO</span><br><span class="notes">AEf = (1 - 1/SCOPnet) × PN × Horas_equiv_zona × FCS</span></span></li>
+</ul>
+
+<h2>D. Proceso de Emisión de CAE</h2>
+<ul class="checklist">
+    <li class="priority-high"><input type="checkbox"><span>Verificación por entidad acreditada ENAC <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Entidades: OCA, AENOR, LGAI, Bureau Veritas, EQA, SGS Tecnos. Esquema RDE-33.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Dictamen favorable del verificador <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Puede solicitar subsanación de documentación. Resultado: favorable o desfavorable.</span></span></li>
+    <li class="priority-high"><input type="checkbox"><span>Solicitud de emisión en Sede Electrónica MITECO <span class="tag tag-obligatorio">OBLIGATORIO</span><br><span class="notes">Procedimiento nº 1035. Mínimo expediente: 30 MWh (agregable en misma CCAA).</span></span></li>
+    <li class="priority-medium"><input type="checkbox"><span>Expediente agregado ≥ 30 MWh <span class="tag tag-info">REQUISITO</span><br><span class="notes">Se pueden agregar varias actuaciones dentro de la misma CCAA hasta alcanzar 30 MWh.</span></span></li>
+</ul>
+
+<div class="info-box">
+    <h3>Ficha RES060 — PDF Autocompletable</h3>
+    <p>Descargar desde MITECO: <a href="https://www.miteco.gob.es/en/energia/eficiencia/cae/catalogo-de-fichas/catalogo-vigente-de-fichas/residencial.html">Catálogo de fichas residenciales</a></p>
+    <p style="margin-top:5px;">Variante <strong>RES060S</strong>: para casos de pobreza energética (bonificación adicional).</p>
+    <p style="margin-top:10px;"><strong>Anexos de la ficha RES060:</strong></p>
+    <ul style="margin-left:20px; margin-top:5px;">
+        <li><strong>Anexo II</strong>: Caldera de apoyo (zonas D/E)</li>
+        <li><strong>Anexo III</strong>: Equivalencias zonas climáticas CTE</li>
+        <li><strong>Anexo IV</strong>: Fórmula de cálculo SCOP y horas equivalentes</li>
+        <li><strong>Anexo V</strong>: Documentación técnica requerida</li>
+    </ul>
+</div>
+
+<div class="money-box">
+    <h3>Valor Económico Estimado del CAE</h3>
+    <table class="data">
+        <tr><th>Concepto</th><th>Valor</th></tr>
+        <tr><td>Precio mercado CAE</td><td>115 — 140 EUR/MWh</td></tr>
+        <tr><td>Ahorro típico residencial</td><td>~10.000 kWh/año</td></tr>
+        <tr><td>Valor estimado por vivienda</td><td>300 — 1.000 EUR</td></tr>
+        <tr><td>Mínimo expediente</td><td>30 MWh (agregable)</td></tr>
+        <tr><td>Vida útil ficha RES060</td><td>15 años</td></tr>
+    </table>
+    <p style="margin-top:10px; font-size:9pt;"><strong>Nota:</strong> Desde diciembre 2024, solo entidades con establecimiento permanente en España pueden poseer CAEs.</p>
+</div>
+
+<div class="info-box">
+    <h3>Contactos y Enlaces</h3>
+    <p><strong>MITECO — Emisión CAE:</strong> Procedimiento 1035 en sede.miteco.gob.es</p>
+    <p><strong>MITECO — Transmisión CAE:</strong> Procedimiento 1043</p>
+    <p><strong>MITECO — Liquidación CAE:</strong> Procedimiento 1041</p>
+    <p><strong>FAQ CAE (MITECO):</strong> Documento de Preguntas Frecuentes v1.5</p>
+    <p style="margin-top:10px; font-size:9pt;">Nexell — R.I. 206529 — Tel: 672 585 491 — nexell@nexell.es</p>
+</div>
+
+</body>
+</html>
