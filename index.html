@@ -10,6 +10,12 @@
       gtag('js', new Date());
       gtag('config', 'AW-17992598707');
     </script>
+<!-- Google Ads Conversion Tracking -->
+<script>
+function ndx_track_form(){gtag('event','conversion',{'send_to':'AW-17992598707/ALwKCOypjIMcELOJxYND','value':350.0,'currency':'EUR'});}
+function ndx_track_call(){gtag('event','conversion',{'send_to':'AW-17992598707/6Y-BCO-pjIMcELOJxYND','value':1.0,'currency':'EUR'});}
+document.addEventListener('click',function(e){var l=e.target.closest('a[href^="tel:"]');if(l)ndx_track_call();});
+</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexell Dox — Legalización de Instalaciones | Particulares e Instaladores</title>
     <meta name="description" content="Legaliza tu instalación eléctrica, aire acondicionado, caldera o aerotermia. Servicio para particulares e instaladores. Memorias técnicas, cálculos, legalizaciones. Entrega en 24-48h. Toda España.">
@@ -1849,6 +1855,7 @@
             })
         })
         .then(r => {
+            ndx_track_form();
             btn.textContent = '✓ Solicitud enviada correctamente';
             btn.style.background = '#065F46';
             this.reset();
