@@ -159,6 +159,28 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         .normativa-list li { padding: 0.8rem 1rem 0.8rem 1.2rem; border-left: 3px solid var(--azul-claro); margin-bottom: 0.6rem; background: white; border-radius: 0 8px 8px 0; font-size: 0.9rem; color: var(--gris-texto); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
         .normativa-list li strong { color: var(--azul-oscuro); }
 
+        /* CONTACTO / FORMULARIO */
+        .contacto { background: var(--azul-oscuro); color: white; }
+        .contacto .section-title { color: white; }
+        .contacto .section-sub { color: rgba(255,255,255,0.7); }
+        .form-container { max-width: 650px; margin: 0 auto; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; color: rgba(255,255,255,0.8); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 2px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); color: white; font-size: 0.95rem; font-family: inherit; transition: border-color 0.2s; }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.4); }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--verde); }
+        .form-group select option { background: var(--azul-oscuro); color: white; }
+        .form-submit { width: 100%; padding: 1rem; border: none; border-radius: 8px; background: var(--verde); color: white; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; margin-top: 0.5rem; }
+        .form-submit:hover { background: var(--verde-hover); transform: translateY(-2px); }
+        .form-checkbox { display: flex; align-items: flex-start; gap: 0.6rem; margin-top: 0.8rem; text-align: left; }
+        .form-checkbox input[type="checkbox"] { margin-top: 0.25rem; width: 16px; height: 16px; accent-color: var(--verde); flex-shrink: 0; cursor: pointer; }
+        .form-checkbox label { font-size: 0.78rem; color: rgba(255,255,255,0.65); line-height: 1.4; cursor: pointer; }
+        .form-checkbox label a { color: var(--verde); text-decoration: underline; }
+        .form-checkbox.required label { color: rgba(255,255,255,0.75); }
+        .installer-fields { display: none; }
+        .installer-fields.visible { display: block; }
+
         @media (max-width: 768px) {
             nav { padding: 0.5rem 1rem; } .nav-brand img { height: 50px; }
             .breadcrumb { padding: 5.5rem 1.2rem 0; }
@@ -167,6 +189,8 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             .two-col { grid-template-columns: 1fr; gap: 1.5rem; } .related-grid { grid-template-columns: 1fr; }
             .steps-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
             .ventajas-table th, .ventajas-table td { padding: 0.7rem 0.8rem; font-size: 0.8rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .form-container { padding: 0 0.5rem; }
         }
         @media (max-width: 480px) {
             .steps-grid { grid-template-columns: 1fr; }
@@ -177,7 +201,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
 
 <nav>
     <a href="/" class="nav-brand"><img src="logo-nexell-dox.png" alt="Nexell Dox"></a>
-    <a href="/#contacto" class="nav-cta-btn">Solicitar presupuesto</a>
+    <a href="#contacto" class="nav-cta-btn">Solicitar presupuesto</a>
 </nav>
 
 <div class="breadcrumb">
@@ -193,7 +217,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         </div>
         <h1>Certificados de Ahorro Energetico (CAE): <span>rentabiliza tu instalacion</span></h1>
         <p class="hero-sub">Al sustituir tu caldera por aerotermia y legalizar la instalacion, puedes generar certificados CAE y obtener entre 1.500 y 2.500 euros. Te explicamos todo el proceso.</p>
-        <a href="/#contacto" class="cta-btn">Solicitar presupuesto gratis</a>
+        <a href="#contacto" class="cta-btn">Solicitar presupuesto gratis</a>
     </div>
 </section>
 
@@ -407,14 +431,138 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
     </div>
 </section>
 
-<!-- NEXELL DOCS + CAE -->
-<section class="cta-section">
+<!-- CONTACTO / FORMULARIO -->
+<section class="contacto" id="contacto">
     <div class="container">
-        <h2 class="section-title">Necesitas la MTD RITE para generar tus CAE?</h2>
-        <p>La legalizacion RITE es el primer paso para generar Certificados de Ahorro Energetico. Nosotros elaboramos la memoria tecnica que necesitas. Tu cobras los certificados.</p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a href="/#contacto" class="cta-btn">Solicitar presupuesto gratis</a>
-            <a href="/legalizar-aerotermia" class="cta-btn" style="background: transparent; border: 2px solid white; box-shadow: none;">Ver servicio de legalizacion RITE</a>
+        <h2 class="section-title">Solicita tu presupuesto para Certificados de Ahorro Energetico</h2>
+        <p class="section-sub">Rellena los datos de tu instalacion y te informamos sobre como generar tus CAE.</p>
+        <div class="form-container">
+            <form id="solicitud-form" action="#" method="POST">
+                <input type="hidden" name="servicio" value="Certificados Ahorro Energetico (CAE)">
+                <input type="hidden" name="pagina_origen" value="certificados-ahorro-energetico">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nombre / Empresa *</label>
+                        <input type="text" name="nombre" placeholder="Tu nombre o razon social" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefono *</label>
+                        <input type="tel" name="telefono" placeholder="600 000 000" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de cliente *</label>
+                        <select name="tipo_cliente" required id="tipo-cliente-select">
+                            <option value="">Selecciona...</option>
+                            <option value="particular">Particular</option>
+                            <option value="instalador">Instalador / Empresa</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de actuacion *</label>
+                    <select name="tipo_actuacion" required>
+                        <option value="">Selecciona...</option>
+                        <option value="sustitucion-caldera-aerotermia">Sustitucion de caldera por aerotermia</option>
+                        <option value="sustitucion-caldera-eficiente">Sustitucion de caldera por otra mas eficiente</option>
+                        <option value="instalacion-aerotermia">Instalacion de aerotermia (sin sustitucion)</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Equipo antiguo (si aplica)</label>
+                        <input type="text" name="equipo_antiguo" placeholder="Ej: Caldera gas Junkers 24kW">
+                    </div>
+                    <div class="form-group">
+                        <label>Equipo nuevo instalado *</label>
+                        <input type="text" name="equipo_nuevo" placeholder="Ej: Aerotermia Daikin Altherma" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Marca y modelo del equipo nuevo *</label>
+                        <input type="text" name="marca_modelo_nuevo" placeholder="Marca y modelo exacto" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Potencia del equipo nuevo (kW) *</label>
+                        <input type="number" name="potencia_kw" placeholder="Ej: 8" step="0.1" min="0" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Fecha de instalacion *</label>
+                        <input type="date" name="fecha_instalacion" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Instalacion legalizada? *</label>
+                        <select name="instalacion_legalizada" required>
+                            <option value="">Selecciona...</option>
+                            <option value="si">Si</option>
+                            <option value="no">No</option>
+                            <option value="en-proceso">En proceso</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>N.o de viviendas o unidades (si es bloque)</label>
+                    <input type="number" name="num_viviendas" placeholder="1" min="1">
+                </div>
+                <!-- Campos extra para instaladores -->
+                <div class="installer-fields" id="installer-fields">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>CIF de la empresa instaladora</label>
+                            <input type="text" name="cif_empresa" placeholder="B12345678">
+                        </div>
+                        <div class="form-group">
+                            <label>N.o de actuaciones totales</label>
+                            <input type="number" name="num_actuaciones" placeholder="1" min="1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Gestion en bloque?</label>
+                        <select name="gestion_bloque">
+                            <option value="">Selecciona...</option>
+                            <option value="si">Si, varias viviendas/actuaciones</option>
+                            <option value="no">No, actuacion individual</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Provincia / Localidad de la instalacion *</label>
+                    <input type="text" name="ubicacion" placeholder="Ej: Madrid, Alcobendas" required>
+                </div>
+                <div class="form-group">
+                    <label>Observaciones adicionales</label>
+                    <textarea name="observaciones" rows="3" placeholder="Cualquier dato adicional..."></textarea>
+                </div>
+                <div class="form-checkbox required">
+                    <input type="checkbox" id="acepta-privacidad" name="acepta_privacidad" required>
+                    <label for="acepta-privacidad">He leido y acepto la <a href="/politica-privacidad" target="_blank">Politica de Privacidad</a> y las <a href="/condiciones-servicio" target="_blank">Condiciones de Servicio</a>. *</label>
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="acepta-comercial" name="acepta_comercial">
+                    <label for="acepta-comercial">Deseo recibir informacion sobre servicios de Nexell Dox.</label>
+                </div>
+                <button type="submit" class="form-submit">Enviar solicitud →</button>
+                <p style="text-align:center; margin-top:1rem; font-size:0.8rem; opacity:0.6;">
+                    Respuesta garantizada en menos de 2 horas en horario laboral.
+                </p>
+                <div style="text-align:center; margin-top:2rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.15);">
+                    <p style="font-size:0.95rem; color:rgba(255,255,255,0.7); margin-bottom:0.5rem;">Prefieres contacto directo?</p>
+                    <p style="font-size:1.1rem; font-weight:600;">
+                        <a href="tel:+34672585491" style="color:var(--verde); text-decoration:none;">672 585 491</a>
+                        &nbsp;&middot;&nbsp;
+                        <a href="mailto:nexell@nexell.es" style="color:var(--verde); text-decoration:none;">nexell@nexell.es</a>
+                    </p>
+                </div>
+            </form>
         </div>
     </div>
 </section>
@@ -498,6 +646,50 @@ document.querySelectorAll('.faq-question').forEach(btn => {
         const isActive = btn.classList.contains('active');
         document.querySelectorAll('.faq-question').forEach(q => { q.classList.remove('active'); q.nextElementSibling.style.maxHeight = null; });
         if (!isActive) { btn.classList.add('active'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+    });
+});
+
+// Toggle installer fields
+document.getElementById('tipo-cliente-select').addEventListener('change', function() {
+    var fields = document.getElementById('installer-fields');
+    if (this.value === 'instalador') { fields.classList.add('visible'); } else { fields.classList.remove('visible'); }
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+
+// Form submission
+document.getElementById('solicitud-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = this.querySelector('.form-submit');
+    var originalText = btn.textContent;
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+    fetch('https://hook.eu1.make.com/su7f2kymvomrx6c3twf3o2piv0oq9ugk', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            ...Object.fromEntries(new FormData(this)),
+            acepta_privacidad: document.getElementById('acepta-privacidad').checked ? 'si' : 'no',
+            acepta_comercial: document.getElementById('acepta-comercial').checked ? 'si' : 'no'
+        })
+    })
+    .then(function() {
+        if (typeof ndx_track_form === 'function') ndx_track_form();
+        btn.textContent = 'Solicitud enviada correctamente';
+        btn.style.background = '#065F46';
+        e.target.reset();
+    })
+    .catch(function() {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        alert('Error al enviar. Intentalo de nuevo o llamanos al 672 585 491.');
     });
 });
 </script>
