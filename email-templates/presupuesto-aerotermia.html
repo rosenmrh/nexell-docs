@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto Legalización Aerotermia — Nexell Dox</title>
+    <!--
+        PLANTILLA DE EMAIL PARA MAKE.COM
+        ================================
+        Variables a sustituir en Make.com (módulo Email):
+        {{nombre}}        - Nombre del cliente
+        {{email}}         - Email del cliente
+        {{marca}}         - Marca del equipo
+        {{modelo}}        - Modelo del equipo
+        {{potencia_kw}}   - Potencia en kW
+        {{tipo_sistema}}  - Tipo de sistema (aire-agua, aire-aire, híbrido)
+        {{uso_principal}} - Uso principal (calefacción, ACS, etc.)
+        {{refrigerante}}  - Tipo de refrigerante
+        {{ubicacion}}     - Ubicación de la instalación
+        {{sustituye_caldera}} - Si sustituye caldera (si/no)
+        {{honorarios}}    - Honorarios Nexell calculados
+        {{tasa_industria}} - Tasa fija (17,20 EUR)
+        {{rsif_coste}}    - Coste RSIF si aplica (0 o 350)
+        {{subtotal}}      - Subtotal
+        {{iva}}           - IVA 21%
+        {{total}}         - Total con IVA
+        {{fecha}}         - Fecha de emisión
+        {{id_solicitud}}  - ID de la solicitud (SOL-XXX)
+    -->
+</head>
+<body style="margin:0; padding:0; background-color:#f4f4f4; font-family:Arial, Helvetica, sans-serif;">
+
+<!-- Wrapper -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f4;">
+<tr><td align="center" style="padding:20px 10px;">
+
+<!-- Email container -->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+
+    <!-- Header -->
+    <tr>
+        <td style="background-color:#1F4E78; padding:30px 40px; text-align:center;">
+            <h1 style="color:#ffffff; margin:0; font-size:24px; font-weight:bold; letter-spacing:1px;">NEXELL DOX</h1>
+            <p style="color:#8DC63F; margin:5px 0 0; font-size:13px; letter-spacing:2px;">INGENIERÍA Y LEGALIZACIONES</p>
+        </td>
+    </tr>
+
+    <!-- Greeting -->
+    <tr>
+        <td style="padding:30px 40px 15px;">
+            <p style="font-size:16px; color:#333; margin:0;">Hola <strong>{{nombre}}</strong>,</p>
+            <p style="font-size:14px; color:#555; margin:10px 0 0; line-height:1.6;">
+                Gracias por solicitar presupuesto para <strong>legalizar tu instalación de aerotermia</strong>.
+                A continuación te detallamos el presupuesto orientativo para tu instalación.
+            </p>
+        </td>
+    </tr>
+
+    <!-- Installation Summary -->
+    <tr>
+        <td style="padding:15px 40px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f0f7ff; border-radius:6px; border:1px solid #d0e0f0;">
+                <tr>
+                    <td style="padding:20px;">
+                        <h3 style="color:#1F4E78; margin:0 0 12px; font-size:14px; text-transform:uppercase; letter-spacing:1px;">Datos de tu instalación</h3>
+                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td style="padding:4px 0; font-size:13px; color:#666; width:40%;">Tipo de sistema:</td>
+                                <td style="padding:4px 0; font-size:13px; color:#333; font-weight:bold;">{{tipo_sistema}}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:4px 0; font-size:13px; color:#666;">Uso principal:</td>
+                                <td style="padding:4px 0; font-size:13px; color:#333; font-weight:bold;">{{uso_principal}}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:4px 0; font-size:13px; color:#666;">Equipo:</td>
+                                <td style="padding:4px 0; font-size:13px; color:#333; font-weight:bold;">{{marca}} {{modelo}}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:4px 0; font-size:13px; color:#666;">Potencia:</td>
+                                <td style="padding:4px 0; font-size:13px; color:#333; font-weight:bold;">{{potencia_kw}} kW</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:4px 0; font-size:13px; color:#666;">Refrigerante:</td>
+                                <td style="padding:4px 0; font-size:13px; color:#333; font-weight:bold;">{{refrigerante}}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:4px 0; font-size:13px; color:#666;">Ubicación:</td>
+                                <td style="padding:4px 0; font-size:13px; color:#333; font-weight:bold;">{{ubicacion}}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <!-- Quote Table -->
+    <tr>
+        <td style="padding:15px 40px;">
+            <h3 style="color:#1F4E78; margin:0 0 12px; font-size:14px; text-transform:uppercase; letter-spacing:1px;">Presupuesto orientativo</h3>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #ddd; border-radius:6px; overflow:hidden;">
+                <tr style="background-color:#f8f8f8;">
+                    <td style="padding:10px 15px; font-size:13px; font-weight:bold; color:#333; border-bottom:1px solid #ddd;">Concepto</td>
+                    <td style="padding:10px 15px; font-size:13px; font-weight:bold; color:#333; text-align:right; border-bottom:1px solid #ddd;">Importe</td>
+                </tr>
+                <tr>
+                    <td style="padding:10px 15px; font-size:13px; color:#333; border-bottom:1px solid #eee;">Honorarios Nexell Dox — Legalización aerotermia</td>
+                    <td style="padding:10px 15px; font-size:13px; color:#333; text-align:right; border-bottom:1px solid #eee; white-space:nowrap;">desde {{honorarios}} €</td>
+                </tr>
+                <tr>
+                    <td style="padding:10px 15px; font-size:13px; color:#333; border-bottom:1px solid #eee;">Tasa registro Industria (Comunidad de Madrid)</td>
+                    <td style="padding:10px 15px; font-size:13px; color:#333; text-align:right; border-bottom:1px solid #eee; white-space:nowrap;">{{tasa_industria}} €</td>
+                </tr>
+                <!-- RSIF row: solo incluir si rsif_coste > 0 -->
+                <!--{{#if rsif_coste}}-->
+                <tr>
+                    <td style="padding:10px 15px; font-size:13px; color:#333; border-bottom:1px solid #eee;">Documentación RSIF (instalación frigorífica)</td>
+                    <td style="padding:10px 15px; font-size:13px; color:#333; text-align:right; border-bottom:1px solid #eee; white-space:nowrap;">{{rsif_coste}} €</td>
+                </tr>
+                <!--{{/if}}-->
+                <tr style="background-color:#f8f8f8;">
+                    <td style="padding:10px 15px; font-size:13px; font-weight:bold; color:#333; border-bottom:1px solid #ddd;">Subtotal</td>
+                    <td style="padding:10px 15px; font-size:13px; font-weight:bold; color:#333; text-align:right; border-bottom:1px solid #ddd; white-space:nowrap;">desde {{subtotal}} €</td>
+                </tr>
+                <tr>
+                    <td style="padding:10px 15px; font-size:13px; color:#666; border-bottom:1px solid #eee;">IVA (21%)</td>
+                    <td style="padding:10px 15px; font-size:13px; color:#666; text-align:right; border-bottom:1px solid #eee; white-space:nowrap;">{{iva}} €</td>
+                </tr>
+                <tr style="background-color:#1F4E78;">
+                    <td style="padding:12px 15px; font-size:15px; font-weight:bold; color:#ffffff;">TOTAL (IVA incluido)</td>
+                    <td style="padding:12px 15px; font-size:15px; font-weight:bold; color:#8DC63F; text-align:right; white-space:nowrap;">desde {{total}} €</td>
+                </tr>
+            </table>
+            <p style="font-size:11px; color:#999; margin:8px 0 0; font-style:italic;">
+                * Este presupuesto es orientativo. El precio definitivo se confirma tras la visita técnica presencial.
+            </p>
+        </td>
+    </tr>
+
+    <!-- What's included -->
+    <tr>
+        <td style="padding:15px 40px;">
+            <h3 style="color:#1F4E78; margin:0 0 10px; font-size:14px;">¿Qué incluye el servicio?</h3>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td style="padding:4px 0; font-size:13px; color:#333;">
+                        ✅ Memoria Técnica de Diseño RITE (MOD IT 3.1.5)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:4px 0; font-size:13px; color:#333;">
+                        ✅ Certificado de Instalación Térmica (MOD IT 3.1.8)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:4px 0; font-size:13px; color:#333;">
+                        ✅ Tramitación completa ante Industria (Comunidad de Madrid)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:4px 0; font-size:13px; color:#333;">
+                        ✅ Presentación ante EICI (SCI / ICN)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:4px 0; font-size:13px; color:#333;">
+                        ✅ Certificado de registro de la instalación
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <!-- Next steps -->
+    <tr>
+        <td style="padding:15px 40px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#e8f5e8; border-radius:6px; border:1px solid #c0e0c0;">
+                <tr>
+                    <td style="padding:20px;">
+                        <h3 style="color:#2e7d32; margin:0 0 8px; font-size:14px;">Siguiente paso</h3>
+                        <p style="font-size:13px; color:#333; margin:0; line-height:1.6;">
+                            Un técnico de Nexell te contactará en <strong>menos de 2 horas</strong> para confirmar los detalles
+                            de tu instalación y coordinar una visita técnica si es necesario.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <!-- CTA Button -->
+    <tr>
+        <td style="padding:15px 40px; text-align:center;">
+            <p style="font-size:13px; color:#555; margin:0 0 10px;">¿Tienes dudas? Llámanos directamente:</p>
+            <a href="tel:+34672585491" style="display:inline-block; background-color:#8DC63F; color:#ffffff; text-decoration:none; padding:12px 30px; border-radius:6px; font-size:15px; font-weight:bold;">
+                📞 672 585 491
+            </a>
+        </td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+        <td style="background-color:#1F4E78; padding:25px 40px; text-align:center;">
+            <p style="color:#ffffff; font-size:13px; margin:0; font-weight:bold;">Nexell Dox</p>
+            <p style="color:#aaa; font-size:11px; margin:5px 0 0;">Construction Efficient Building and Services S.L.</p>
+            <p style="color:#aaa; font-size:11px; margin:3px 0 0;">CIF: B87004370 — R.I.: 206529 — Comunidad de Madrid</p>
+            <p style="color:#aaa; font-size:11px; margin:3px 0 0;">📞 672 585 491 — ✉️ nexell@nexell.es</p>
+            <p style="color:#aaa; font-size:11px; margin:3px 0 0;">Camarma de Esteruelas, Madrid</p>
+            <hr style="border:none; border-top:1px solid #2a5f8a; margin:15px 0;">
+            <p style="color:#888; font-size:10px; margin:0;">
+                Ref: {{id_solicitud}} — {{fecha}}
+            </p>
+            <p style="color:#888; font-size:10px; margin:5px 0 0;">
+                Este email ha sido generado automáticamente. Si no has solicitado este presupuesto, ignora este mensaje.
+            </p>
+        </td>
+    </tr>
+
+</table>
+<!-- /Email container -->
+
+</td></tr>
+</table>
+<!-- /Wrapper -->
+
+</body>
+</html>
