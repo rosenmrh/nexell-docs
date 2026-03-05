@@ -696,6 +696,16 @@
         }
         .form-submit:hover { background: var(--verde-hover); transform: translateY(-2px); }
 
+        /* LEGAL LINKS & RGPD */
+        .legal-links { margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+        .legal-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+        .legal-links a:hover { color: rgba(255,255,255,0.9); }
+        .form-checkbox { display: flex; align-items: flex-start; gap: 0.6rem; margin-top: 0.8rem; text-align: left; }
+        .form-checkbox input[type="checkbox"] { margin-top: 0.25rem; width: 16px; height: 16px; accent-color: var(--verde); flex-shrink: 0; cursor: pointer; }
+        .form-checkbox label { font-size: 0.78rem; color: rgba(255,255,255,0.65); line-height: 1.4; cursor: pointer; }
+        .form-checkbox label a { color: var(--verde); text-decoration: underline; }
+        .form-checkbox.required label { color: rgba(255,255,255,0.75); }
+
         /* FOOTER */
         footer {
             background: #0A1929; color: rgba(255,255,255,0.5);
@@ -1665,6 +1675,14 @@
                     <label>Describe brevemente la instalación *</label>
                     <textarea name="descripcion" rows="4" placeholder="Tipo de instalación, equipo/marca, superficie del local/vivienda, fotos si tienes... lo que puedas aportar." required></textarea>
                 </div>
+                <div class="form-checkbox required">
+                    <input type="checkbox" id="acepta-privacidad" name="acepta_privacidad" required>
+                    <label for="acepta-privacidad">He leído y acepto la <a href="/politica-privacidad.html" target="_blank">Política de Privacidad</a> y las <a href="/condiciones-servicio.html" target="_blank">Condiciones de Servicio</a>. *</label>
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="acepta-comercial" name="acepta_comercial">
+                    <label for="acepta-comercial">Deseo recibir información sobre servicios de Nexell Dox.</label>
+                </div>
                 <button type="submit" class="form-submit">Enviar solicitud →</button>
                 <p style="text-align:center; margin-top:1rem; font-size:0.8rem; opacity:0.6;">
                     Respuesta garantizada en menos de 2 horas en horario laboral.
@@ -1703,8 +1721,13 @@
                 <a href="https://nexell.es" target="_blank" rel="noopener" style="color: var(--verde); text-decoration: none; font-weight: 600;">nexell.es</a>
             </p>
         </div>
+        <div class="legal-links">
+            <a href="/aviso-legal.html">Aviso Legal</a>
+            <a href="/politica-privacidad.html">Política de Privacidad</a>
+            <a href="/condiciones-servicio.html">Condiciones de Servicio</a>
+        </div>
         <div class="footer-legal">
-            <p>Servicio en todo el territorio nacional · nexell@nexell.es · 672 585 491</p>
+            <p>Empresa habilitada — Registro Industrial n.º 206529 (Comunidad de Madrid)</p>
             <p style="margin-top:0.5rem;">© 2026 Nexell Instalaciones. Todos los derechos reservados.</p>
         </div>
     </div>
@@ -1818,7 +1841,11 @@
         fetch('https://hook.eu1.make.com/su7f2kymvomrx6c3twf3o2piv0oq9ugk', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(Object.fromEntries(new FormData(this)))
+            body: JSON.stringify({
+                ...Object.fromEntries(new FormData(this)),
+                acepta_privacidad: document.getElementById('acepta-privacidad').checked ? 'si' : 'no',
+                acepta_comercial: document.getElementById('acepta-comercial').checked ? 'si' : 'no'
+            })
         })
         .then(r => {
             btn.textContent = '✓ Solicitud enviada correctamente';
