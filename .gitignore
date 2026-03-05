@@ -1,0 +1,21 @@
+# Archivos internos — NO subir al repo público
+backoffice/
+email-templates/
+formularios-oficiales/
+
+# Documentación interna
+ARQUITECTURA_NOTION_MAKE.md
+DOC_SEO_SEARCH_CONSOLE.md
+SEO_SUGERENCIAS.md
+
+# Scripts de automatización
+*.py
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+*.swp
+*.swo
+*~

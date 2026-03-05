@@ -8,6 +8,13 @@ Allow: /
 Disallow: /*.png$
 Disallow: /*.jpg$
 Disallow: /*.svg$
+Disallow: /*.md$
+Disallow: /*.py$
+
+# Bloquear directorios internos (por si se vuelven a subir por error)
+Disallow: /backoffice/
+Disallow: /email-templates/
+Disallow: /formularios-oficiales/
 
 # Sitemap
 Sitemap: https://nexelldox.com/sitemap.xml
