@@ -1,3 +1,13 @@
+# robots.txt — nexelldox.com
+# Oficina Técnica Virtual de Nexell Instalaciones
+
 User-agent: *
 Allow: /
+
+# Bloquear recursos no indexables
+Disallow: /*.png$
+Disallow: /*.jpg$
+Disallow: /*.svg$
+
+# Sitemap
 Sitemap: https://nexelldox.com/sitemap.xml
