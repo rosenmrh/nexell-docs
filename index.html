@@ -286,7 +286,16 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             display: flex; align-items: center; gap: 0.3rem;
             text-decoration: none;
         }
-        .nav-brand img { height: 110px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
+        .nav-logo-wrapper {
+            position: relative; display: inline-block;
+        }
+        .nav-logo-wrapper img { height: 110px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
+        .nav-dox-text {
+            position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+            font-size: 0.7rem; font-weight: 800; letter-spacing: 3px;
+            color: var(--naranja); text-transform: uppercase;
+            z-index: 2;
+        }
         .nav-links { display: flex; gap: 2rem; align-items: center; }
         .nav-links a {
             text-decoration: none; color: var(--gris-texto);
@@ -468,11 +477,12 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         }
         .ventaja-card:hover::before { opacity: 1; }
         .ventaja-icon {
-            width: 52px; height: 52px; border-radius: 14px;
+            width: 52px; height: 52px; border-radius: 0;
             background: linear-gradient(135deg, var(--azul), var(--azul-claro));
             display: flex; align-items: center; justify-content: center;
             font-size: 1.5rem; margin-bottom: 1.2rem;
             box-shadow: 0 4px 12px rgba(31,78,120,0.2);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
         }
         .ventaja-card h3 {
             font-size: 1.05rem; font-weight: 700; color: var(--azul-oscuro);
@@ -880,7 +890,8 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             /* NAV HAMBURGER */
             .nav-hamburger { display: flex; }
             nav { padding: 0.5rem 1rem; }
-            .nav-brand img { height: 70px; }
+            .nav-logo-wrapper img { height: 70px; }
+            .nav-dox-text { top: 8px; font-size: 0.55rem; letter-spacing: 2px; }
             .nav-links {
                 display: none; flex-direction: column;
                 position: absolute; top: 100%; left: 0; right: 0;
@@ -1125,8 +1136,10 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
 <!-- NAV -->
 <nav>
     <a href="/" class="nav-brand">
-        <img src="logo-nexell-instalaciones.png" alt="Nexell Instalaciones - Empresa de instalaciones eléctricas y térmicas en Madrid">
-        <img src="logo-nexell-dox.png" alt="Nexell Dox - Oficina Técnica Virtual para legalización de instalaciones">
+        <div class="nav-logo-wrapper">
+            <span class="nav-dox-text">DOX</span>
+            <img src="logo-nexell-instalaciones.png" alt="Nexell Instalaciones - Empresa de instalaciones eléctricas y térmicas en Madrid">
+        </div>
     </a>
     <button class="nav-hamburger" aria-label="Menú" onclick="document.querySelector('.nav-links').classList.toggle('open')">
         <span></span><span></span><span></span>
