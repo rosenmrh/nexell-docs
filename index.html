@@ -122,10 +122,26 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                         "name": "Preparación Inspección OCA",
                         "description": "Preparación documental para inspecciones periódicas de organismos de control"
                     }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Regularización de Instalaciones",
+                        "description": "Documentación técnica para legalizar instalaciones existentes sin papeles ante Industria"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Certificados de Ahorro Energético (CAE)",
+                        "description": "Tramitación de CAE para instalaciones eficientes según RD 36/2023"
+                    }
                 }
             ]
         },
-        "knowsAbout": ["REBT", "RITE", "RSIF", "Legalización de instalaciones", "Memorias técnicas de diseño", "Inspecciones OCA"],
+        "knowsAbout": ["REBT", "RITE", "RSIF", "Legalización de instalaciones", "Memorias técnicas de diseño", "Inspecciones OCA", "Regularización de instalaciones", "Certificados de Ahorro Energético"],
         "numberOfEmployees": {"@type": "QuantitativeValue", "value": 4},
         "foundingDate": "2005",
         "sameAs": [],
@@ -937,13 +953,44 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             .proceso-dot { width: 36px; height: 36px; font-size: 1rem; }
             .hero-shape { display: none; }
         }
+
+        /* WHATSAPP FLOTANTE */
+        .whatsapp-float {
+            position: fixed; bottom: 24px; right: 24px; z-index: 999;
+            width: 60px; height: 60px; border-radius: 50%;
+            background: #25D366; color: white;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            text-decoration: none; transition: all 0.3s;
+            font-size: 1.8rem;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
+        .whatsapp-float svg { width: 32px; height: 32px; fill: white; }
+
+        /* BARRA LLAMADA MÓVIL */
+        .mobile-call-bar {
+            display: none;
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 998;
+            background: var(--azul); padding: 0.6rem 1rem;
+            text-align: center;
+        }
+        .mobile-call-bar a {
+            color: white; text-decoration: none; font-weight: 700;
+            font-size: 1rem; display: flex; align-items: center;
+            justify-content: center; gap: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .mobile-call-bar { display: block; }
+            .whatsapp-float { bottom: 70px; }
+            footer { padding-bottom: 3.5rem; }
+        }
     </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-    <a href="#" class="nav-brand">
+    <a href="/" class="nav-brand">
         <img src="logo-nexell-instalaciones.png" alt="Nexell Instalaciones - Empresa de instalaciones eléctricas y térmicas en Madrid">
         <img src="logo-nexell-dox.png" alt="Nexell Dox - Oficina Técnica Virtual para legalización de instalaciones">
     </a>
@@ -1142,6 +1189,15 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                 </div>
             </div>
 
+                <div class="servicio-card bg-azul" data-reglamento="rebt rite">
+                    <div class="servicio-visual sv-clima">🔧</div>
+                    <span class="servicio-tag tag-multi">REGULARIZACIÓN</span>
+                    <h3><a href="/regularizacion-instalaciones">Regularizar instalación antigua</a></h3>
+                    <p>¿Tienes una instalación eléctrica o de climatización sin papeles? La documentamos y legalizamos ante Industria sin complicaciones.</p>
+                    <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
+                </div>
+            </div>
+
             <!-- ALERTA: detección de incidencias -->
             <div class="alerta-incidencias">
                 <h3>¿Tu instalación tiene defectos?</h3>
@@ -1161,6 +1217,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <p>MTD para viviendas, locales, oficinas e industria. Cálculos de sección, caída de tensión y protecciones incluidos.</p>
                     <div class="servicio-precio">Desde 250 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 24-48h</div>
+                    <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-azul" data-reglamento="rite">
                     <div class="servicio-visual sv-clima">🌡️</div>
@@ -1169,6 +1226,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <p>MTD para climatización y ACS. Cargas térmicas, selección de equipos, conductos y tuberías.</p>
                     <div class="servicio-precio">Desde 300 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 24-48h</div>
+                    <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-verde" data-reglamento="rsif">
                     <div class="servicio-visual sv-green">❄️</div>
@@ -1177,6 +1235,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <p>Memorias y certificados para instalaciones frigoríficas. Carga de refrigerante, clasificación de local, tuberías.</p>
                     <div class="servicio-precio">Desde 350 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 48h</div>
+                    <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-rojo" data-reglamento="rebt">
                     <div class="servicio-visual sv-red">🔢</div>
@@ -1185,6 +1244,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <p>Previsión de cargas, secciones por ITC-BT-19, protecciones, coordinación. Tablas y esquemas unifilares.</p>
                     <div class="servicio-precio">Desde 100 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 24h</div>
+                    <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-naranja">
                     <div class="servicio-visual sv-orange">📦</div>
@@ -1193,6 +1253,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <p>MTD + Certificado instalación + Gestión ante Industria. Llave en mano para dar de alta.</p>
                     <div class="servicio-precio">Desde 400 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 48-72h</div>
+                    <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-esmeralda" data-reglamento="rite">
                     <div class="servicio-visual sv-emerald">💚</div>
@@ -1201,6 +1262,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <p>Tramitación de CAE para tus clientes. Aerotermia, calderas de condensación, mejoras térmicas. Ingresos extra por cada instalación eficiente.</p>
                     <div class="servicio-precio">Desde 300 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 48-72h</div>
+                    <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-gris">
                     <div class="servicio-visual sv-purple">🔍</div>
@@ -1209,6 +1271,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <p>Revisión documental, checklist de defectos, preparación de documentación para superar la inspección.</p>
                     <div class="servicio-precio">Desde 300 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 48h</div>
+                    <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-gris">
                     <div class="servicio-visual sv-grey">📊</div>
@@ -1217,6 +1280,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <p>Evaluación del estado de instalaciones existentes. Informe de deficiencias y plan de actuación priorizado.</p>
                     <div class="servicio-precio">Desde 400 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 72h</div>
+                    <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
                 <div class="servicio-card bg-gris">
                     <div class="servicio-visual sv-grey">📝</div>
@@ -1225,6 +1289,16 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <p>Informes periciales, dictámenes técnicos, valoraciones de instalaciones. Soporte a reclamaciones.</p>
                     <div class="servicio-precio">Desde 200 € <span>+ IVA</span></div>
                     <div class="servicio-entrega">Entrega: 48-72h</div>
+                    <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
+                </div>
+                <div class="servicio-card bg-naranja" data-reglamento="rebt rite">
+                    <div class="servicio-visual sv-orange">🔧</div>
+                    <span class="servicio-tag tag-multi">REGULARIZACIÓN</span>
+                    <h3><a href="/regularizacion-instalaciones">Regularización de instalaciones</a></h3>
+                    <p>Documentación técnica para legalizar instalaciones existentes sin papeles. REBT, RITE o ambos. Asesoramiento + tramitación.</p>
+                    <div class="servicio-precio">Desde 250 € <span>+ IVA</span></div>
+                    <div class="servicio-entrega">Entrega: 48h</div>
+                    <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                 </div>
             </div>
         </div>
@@ -1658,6 +1732,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                             <option value="legalizar-reforma">Reforma completa (electricidad + clima)</option>
                             <option value="cae-particular">Certificado Ahorro Energético (CAE)</option>
                             <option value="inspeccion-particular">Preparación inspección periódica</option>
+                            <option value="regularizar">Regularizar instalación antigua</option>
                         </optgroup>
                         <!-- Instaladores -->
                         <optgroup label="Instaladores">
@@ -1838,35 +1913,51 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         });
     });
 
-    // Form handler (placeholder — se conectará a Make.com webhook)
+    // Form handler — Make.com webhook
     document.getElementById('solicitud-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        const btn = this.querySelector('.form-submit');
-        const originalText = btn.textContent;
+        var form = this;
+        var btn = form.querySelector('.form-submit');
+        var originalText = btn.textContent;
         btn.textContent = 'Enviando...';
         btn.disabled = true;
         fetch('https://hook.eu1.make.com/su7f2kymvomrx6c3twf3o2piv0oq9ugk', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                ...Object.fromEntries(new FormData(this)),
+                ...Object.fromEntries(new FormData(form)),
                 acepta_privacidad: document.getElementById('acepta-privacidad').checked ? 'si' : 'no',
-                acepta_comercial: document.getElementById('acepta-comercial').checked ? 'si' : 'no'
+                acepta_comercial: document.getElementById('acepta-comercial').checked ? 'si' : 'no',
+                origen: 'nexelldox.com'
             })
         })
-        .then(r => {
-            ndx_track_form();
+        .then(function(r) {
+            if (!r.ok) throw new Error('Error ' + r.status);
+            if (typeof ndx_track_form === 'function') ndx_track_form();
             btn.textContent = '✓ Solicitud enviada correctamente';
             btn.style.background = '#065F46';
-            this.reset();
+            form.reset();
         })
-        .catch(() => {
+        .catch(function() {
             btn.textContent = originalText;
             btn.disabled = false;
             alert('Error al enviar. Inténtalo de nuevo o llámanos al 672 585 491.');
         });
     });
 </script>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/34672585491?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20legalizaci%C3%B3n%20de%20instalaciones" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- BARRA LLAMADA MÓVIL -->
+<div class="mobile-call-bar">
+    <a href="tel:+34672585491">
+        <span>Llámanos ahora</span>
+        <span>672 585 491</span>
+    </a>
+</div>
 
 </body>
 </html>
