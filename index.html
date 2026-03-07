@@ -372,12 +372,16 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         /* Service cards filter animation */
         .servicio-card { transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
         .servicio-card.card-hidden {
-            opacity: 0.15; transform: scale(0.96);
-            filter: grayscale(0.5);
+            display: none !important;
         }
         .servicio-card.card-visible {
             opacity: 1; transform: scale(1);
             filter: none;
+            animation: cardFadeIn 0.35s ease-out;
+        }
+        @keyframes cardFadeIn {
+            from { opacity: 0; transform: scale(0.92) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         .cta-btn {
@@ -1294,6 +1298,24 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                         <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                     </div>
                 </div>
+                <div class="servicio-card bg-verde" data-reglamento="rebt">
+                    <img src="img/fotovoltaica.jpg" alt="Paneles solares fotovoltaicos en tejado" class="servicio-card-img" loading="lazy" width="800" height="400">
+                    <div class="servicio-card-body">
+                        <span class="servicio-tag tag-rebt">ELECTRICIDAD</span>
+                        <h3>Instalación fotovoltaica</h3>
+                        <p>¿Has instalado paneles solares y no tienes la documentación? Memoria técnica REBT (ITC-BT-40), registro de autoconsumo y trámites ante Industria y distribuidora.</p>
+                        <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
+                    </div>
+                </div>
+                <div class="servicio-card bg-azul" data-reglamento="rebt">
+                    <img src="img/irve.jpg" alt="Punto de recarga para vehículo eléctrico" class="servicio-card-img" loading="lazy" width="800" height="400">
+                    <div class="servicio-card-body">
+                        <span class="servicio-tag tag-rebt">ELECTRICIDAD</span>
+                        <h3>Punto de recarga IRVE</h3>
+                        <p>Legalización de infraestructura de recarga para vehículos eléctricos. Memoria técnica REBT (ITC-BT-52), certificado de instalación y registro en Industria.</p>
+                        <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
+                    </div>
+                </div>
                 <div class="servicio-card bg-esmeralda" data-reglamento="rite">
                     <img src="img/energia.jpg" alt="Eficiencia energética y ahorro" class="servicio-card-img" loading="lazy" width="800" height="400">
                     <div class="servicio-card-body">
@@ -1381,6 +1403,26 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                         <p>Previsión de cargas, secciones por ITC-BT-19, protecciones, coordinación. Tablas y esquemas unifilares.</p>
                         <div class="servicio-precio">Desde 100 € <span>+ IVA</span></div>
                         <div class="servicio-entrega">Entrega: 24h</div>
+                        <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
+                    </div>
+                </div>
+                <div class="servicio-card bg-verde" data-reglamento="rebt">
+                    <div class="servicio-card-body">
+                        <span class="servicio-tag tag-rebt">REBT</span>
+                        <h3>Legalización fotovoltaica</h3>
+                        <p>MTD para instalaciones de autoconsumo fotovoltaico. Cálculos ITC-BT-40, protecciones antivertido, esquemas unifilares y registro ante distribuidora e Industria.</p>
+                        <div class="servicio-precio">Desde 350 € <span>+ IVA</span></div>
+                        <div class="servicio-entrega">Entrega: 48h</div>
+                        <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
+                    </div>
+                </div>
+                <div class="servicio-card bg-azul" data-reglamento="rebt">
+                    <div class="servicio-card-body">
+                        <span class="servicio-tag tag-rebt">REBT</span>
+                        <h3>Legalización IRVE</h3>
+                        <p>Documentación para puntos de recarga de vehículos eléctricos. MTD según ITC-BT-52, cálculos de potencia, protecciones y gestión con Industria.</p>
+                        <div class="servicio-precio">Desde 300 € <span>+ IVA</span></div>
+                        <div class="servicio-entrega">Entrega: 48h</div>
                         <a href="#contacto" class="servicio-cta-inline">Solicitar presupuesto →</a>
                     </div>
                 </div>
@@ -2048,13 +2090,9 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             document.querySelectorAll('.badge[data-filter]').forEach(function(b) { b.classList.remove('active'); });
             this.classList.add('active');
 
-            // Smooth scroll to servicios
-            serviciosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-            // Filter cards — ONLY in active tab, handle cards with and without data-reglamento
-            setTimeout(function() {
-                var currentTab = serviciosSection.querySelector('.tab-content.active');
-                if (!currentTab) return;
+            // Filter cards immediately — ONLY in active tab
+            var currentTab = serviciosSection.querySelector('.tab-content.active');
+            if (currentTab) {
                 currentTab.querySelectorAll('.servicio-card').forEach(function(card) {
                     var reglamento = card.dataset.reglamento;
                     if (!reglamento) {
@@ -2071,7 +2109,10 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                         card.classList.add('card-hidden');
                     }
                 });
-            }, 400);
+            }
+
+            // Smooth scroll to servicios after filtering
+            serviciosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 
