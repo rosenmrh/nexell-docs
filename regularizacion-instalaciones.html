@@ -220,13 +220,66 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         .highlight-box.warning h4 { color: #991B1B; }
         .highlight-box p { margin-bottom: 0.5rem; font-size: 0.9rem; }
 
-        /* SITUATION CARDS */
-        .situations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; max-width: 1100px; margin: 0 auto; }
-        .situation-card { background: white; border: 2px solid #E2E8F0; border-radius: 12px; padding: 1.5rem; transition: all 0.3s; }
-        .situation-card:hover { border-color: var(--azul); box-shadow: 0 4px 15px rgba(31,78,120,0.1); transform: translateY(-2px); }
-        .situation-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
-        .situation-card h3 { font-size: 1rem; font-weight: 700; color: var(--texto); margin-bottom: 0.4rem; }
-        .situation-card p { font-size: 0.85rem; color: var(--texto-sec); margin: 0; }
+        /* SITUATION ACCORDION */
+        .situations-grid { display: flex; flex-direction: column; gap: 0; max-width: 800px; margin: 0 auto; }
+        .situation-card { background: white; border: 2px solid var(--borde); border-radius: 0; padding: 1.2rem 1.5rem; cursor: pointer; display: flex; align-items: center; gap: 1rem; transition: background 0.2s, border-color 0.2s; margin-top: -2px; position: relative; }
+        .situation-card:first-child { border-radius: 8px 8px 0 0; margin-top: 0; }
+        .situation-card:hover { background: var(--fondo-alt); }
+        .situation-card.active { border-color: var(--azul); background: var(--fondo-alt); border-bottom: 2px solid var(--azul); }
+        .situation-card::after { content: ''; width: 10px; height: 10px; border-right: 2px solid var(--azul); border-bottom: 2px solid var(--azul); transform: rotate(45deg); transition: transform 0.3s; flex-shrink: 0; margin-left: auto; }
+        .situation-card.active::after { transform: rotate(-135deg); }
+        .situation-icon { font-size: 1.8rem; flex-shrink: 0; line-height: 1; }
+        .situation-card-text { flex: 1; min-width: 0; }
+        .situation-card h3 { font-size: 1rem; font-weight: 700; color: var(--texto); margin-bottom: 0.2rem; }
+        .situation-card p { font-size: 0.82rem; color: var(--texto-sec); margin: 0; line-height: 1.4; }
+        .situation-detail { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; border-left: 2px solid var(--borde); border-right: 2px solid var(--borde); }
+        .situation-detail.open { border-color: var(--azul); }
+        .situation-detail-inner { padding: 1.5rem 2rem 2rem; background: white; border-top: 1px solid #EEF2F7; }
+        .sit-subsection { margin-bottom: 1.5rem; }
+        .sit-subsection:last-child { margin-bottom: 0; }
+        .sit-subsection h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--azul); margin-bottom: 0.5rem; }
+        .sit-subsection p { font-size: 0.88rem; color: var(--texto-sec); margin-bottom: 0.5rem; line-height: 1.6; }
+        .sit-subsection ul { margin: 0.3rem 0 0 1.2rem; font-size: 0.88rem; color: var(--texto-sec); line-height: 1.7; }
+        .sit-subsection ul li { margin-bottom: 0.3rem; }
+        .sit-cta { display: inline-block; margin-top: 1.2rem; padding: 0.7rem 1.5rem; background: var(--azul); color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem; font-weight: 600; transition: background 0.2s; }
+        .sit-cta:hover { background: var(--azul-hover); }
+
+        /* CASOS REALES */
+        .casos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: 2rem auto 0; }
+        .caso-card { background: white; border: 1.5px solid var(--borde); border-radius: 8px; padding: 1.8rem; }
+        .caso-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: var(--texto); margin-bottom: 1.2rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--azul); }
+        .caso-section { margin-bottom: 1rem; }
+        .caso-section:last-child { margin-bottom: 0; }
+        .caso-section strong { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--azul); display: block; margin-bottom: 0.3rem; }
+        .caso-section p { font-size: 0.85rem; color: var(--texto-sec); margin: 0; line-height: 1.6; }
+        .caso-resultado { background: #F0FFF4; border-radius: 6px; padding: 0.8rem 1rem; border-left: 3px solid var(--exito); }
+        .caso-resultado strong { color: #065F46; }
+        .caso-resultado p { color: #065F46; }
+
+        /* COSTES ORIENTATIVOS */
+        .costes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; max-width: 1100px; margin: 2rem auto 0; }
+        .coste-card { background: white; border: 1.5px solid var(--borde); border-radius: 8px; padding: 1.8rem; transition: border-color 0.2s; }
+        .coste-card:hover { border-color: var(--azul); }
+        .coste-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: var(--texto); margin-bottom: 0.5rem; }
+        .coste-card .coste-desc { font-size: 0.85rem; color: var(--texto-sec); margin-bottom: 1rem; line-height: 1.5; }
+        .coste-rango { display: inline-block; background: #E0F2FE; color: var(--azul); font-size: 1.4rem; font-weight: 800; padding: 0.4rem 1rem; border-radius: 6px; margin-bottom: 0.8rem; }
+        .coste-rango span { font-size: 0.8rem; font-weight: 400; }
+        .coste-factores { font-size: 0.82rem; color: var(--texto-sec); }
+        .coste-factores strong { color: var(--texto); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 0.3rem; }
+        .coste-factores ul { margin: 0 0 0 1rem; }
+        .coste-factores ul li { margin-bottom: 0.2rem; }
+        .coste-nota { max-width: 800px; margin: 2rem auto 0; text-align: center; }
+        .coste-nota p { font-size: 0.88rem; color: var(--texto-sec); line-height: 1.6; }
+
+        /* CONVERSION FINAL */
+        .conversion-final { background: linear-gradient(135deg, var(--azul) 0%, var(--azul-hover) 100%); color: white; text-align: center; }
+        .conversion-final .section-title { color: white; }
+        .conversion-final p { color: rgba(255,255,255,0.85); font-size: 1rem; max-width: 650px; margin: 0 auto 2rem; line-height: 1.7; }
+        .conversion-btns { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .conversion-btns .cta-btn { background: white; color: var(--azul); font-weight: 700; }
+        .conversion-btns .cta-btn:hover { background: var(--fondo-alt); }
+        .conversion-btns .cta-btn-sec { display: inline-block; padding: 0.8rem 2rem; border: 2px solid rgba(255,255,255,0.5); color: white; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; }
+        .conversion-btns .cta-btn-sec:hover { border-color: white; background: rgba(255,255,255,0.1); }
 
         /* PRICING */
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; max-width: 1100px; margin: 2rem auto 0; }
@@ -314,16 +367,19 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             .section-title { font-size: 1.5rem; }
             .content-block h2 { font-size: 1.4rem; }
             .two-col { grid-template-columns: 1fr; gap: 1.5rem; }
-            .situations-grid { grid-template-columns: 1fr 1fr; }
+            .casos-grid { grid-template-columns: 1fr; }
+            .costes-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
             .pricing-grid { grid-template-columns: 1fr; max-width: 350px; }
+            .conversion-btns { flex-direction: column; align-items: center; }
             .steps-grid { grid-template-columns: 1fr 1fr; }
             .related-grid { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
             .form-container { padding: 0 0.5rem; }
         }
         @media (max-width: 480px) {
-            .situations-grid { grid-template-columns: 1fr; }
             .steps-grid { grid-template-columns: 1fr; }
+            .situation-card p { display: none; }
+            .situation-detail-inner { padding: 1.2rem 1rem 1.5rem; }
         }
         /* WHATSAPP FLOTANTE */
         .whatsapp-float {
@@ -393,45 +449,612 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         <p class="section-sub" style="margin-left: auto; margin-right: auto;">Estas son las situaciones mas habituales en las que nuestros clientes necesitan regularizar una instalacion existente:</p>
     </div>
     <div class="situations-grid">
-        <div class="situation-card">
+
+        <!-- T1: Instalacion electrica sin boletin -->
+        <div class="situation-card" role="button" tabindex="0" aria-expanded="false" aria-controls="sit-detail-1">
             <span class="situation-icon">&#9889;</span>
-            <h3>Instalacion electrica sin boletin</h3>
-            <p>Se hizo una reforma o ampliacion y nunca se tramito el boletin electrico ni la memoria tecnica ante Industria.</p>
+            <div class="situation-card-text">
+                <h3>Instalacion electrica sin boletin</h3>
+                <p>Se hizo una reforma o ampliacion y nunca se tramito el boletin electrico ni la memoria tecnica ante Industria.</p>
+            </div>
         </div>
-        <div class="situation-card">
+        <div class="situation-detail" id="sit-detail-1" role="region">
+            <div class="situation-detail-inner">
+                <div class="sit-subsection">
+                    <h4>Procedimiento para legalizar una instalacion electrica sin boletin</h4>
+                    <p>Si tu <strong>instalacion electrica no tiene boletin</strong>, el primer paso es determinar el tipo de instalacion y la potencia para saber que documentacion es necesaria.</p>
+                    <ul>
+                        <li>Revision tecnica de la instalacion existente y determinacion del tipo (vivienda, local, industria)</li>
+                        <li>Verificacion del cuadro electrico, protecciones y secciones de cable</li>
+                        <li>Elaboracion de Memoria Tecnica de Diseno (MTD) o Proyecto segun potencia</li>
+                        <li>Emision del Certificado de Instalacion Electrica (CIE / boletin)</li>
+                        <li>Preparacion del expediente completo para registro ante la Comunidad de Madrid</li>
+                        <li>Asesoramiento o tramitacion telematica ante Industria</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Normativa aplicable</h4>
+                    <ul>
+                        <li><strong>REBT</strong> — Reglamento Electrotecnico para Baja Tension (RD 842/2002)</li>
+                        <li><strong>ITC-BT-04</strong> — Documentacion y puesta en servicio de instalaciones</li>
+                        <li><strong>ITC-BT-10</strong> — Prevision de cargas para suministros en baja tension</li>
+                        <li><strong>ITC-BT-25</strong> — Instalaciones interiores en viviendas</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Riesgos de no regularizar</h4>
+                    <ul>
+                        <li>Imposibilidad de modificar potencia contratada o cambiar de compania electrica</li>
+                        <li>Resultado desfavorable en inspecciones periodicas o ITE</li>
+                        <li>Problemas en la compraventa: bloqueo en notaria o retraso en escrituras</li>
+                        <li>Seguro puede rechazar siniestros derivados de la instalacion</li>
+                        <li>Sanciones de la Ley de Industria (3.001 a 60.000 euros)</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas de regularizar tu instalacion electrica</h4>
+                    <ul>
+                        <li>Seguridad juridica: tu instalacion queda registrada ante la administracion</li>
+                        <li>Puedes solicitar inspecciones y superar la ITE sin incidencias</li>
+                        <li>Trazabilidad documental completa ante cualquier reclamacion</li>
+                        <li>Acceso a subvenciones y programas de eficiencia energetica</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas economicas</h4>
+                    <ul>
+                        <li>Aumento del valor del inmueble en venta o alquiler</li>
+                        <li>Evitas sanciones administrativas que pueden multiplicar el coste de la regularizacion</li>
+                        <li>Posibilidad de tramitacion urgente si tienes plazo por compraventa u OCA</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Cuando conviene hacerlo</h4>
+                    <ul>
+                        <li>Antes de poner a la venta o alquilar la vivienda</li>
+                        <li>Antes de solicitar aumento de potencia o cambio de compania</li>
+                        <li>Si no dispones de boletin electrico ni documentacion de la instalacion</li>
+                        <li>Antes de una inspeccion periodica OCA o ITE</li>
+                    </ul>
+                </div>
+                <a href="#contacto" class="sit-cta">Solicitar revision de instalacion electrica &rarr;</a>
+            </div>
+        </div>
+
+        <!-- T2: Aire acondicionado sin legalizar -->
+        <div class="situation-card" role="button" tabindex="0" aria-expanded="false" aria-controls="sit-detail-2">
             <span class="situation-icon">&#10052;</span>
-            <h3>Aire acondicionado sin legalizar</h3>
-            <p>Se instalaron splits o equipos de climatizacion sin la documentacion RITE obligatoria para potencias superiores a 5 kW.</p>
+            <div class="situation-card-text">
+                <h3>Aire acondicionado sin legalizar</h3>
+                <p>Se instalaron splits o equipos de climatizacion sin la documentacion RITE obligatoria para potencias superiores a 5 kW.</p>
+            </div>
         </div>
-        <div class="situation-card">
+        <div class="situation-detail" id="sit-detail-2" role="region">
+            <div class="situation-detail-inner">
+                <div class="sit-subsection">
+                    <h4>Procedimiento para legalizar aire acondicionado segun el RITE</h4>
+                    <p>Para <strong>legalizar una instalacion de aire acondicionado</strong>, es necesario elaborar la documentacion tecnica que acredite el cumplimiento del Reglamento de Instalaciones Termicas en los Edificios.</p>
+                    <ul>
+                        <li>Analisis de la instalacion de climatizacion existente: tipo, potencia y refrigerante</li>
+                        <li>Verificacion de documentacion y fichas tecnicas de los equipos</li>
+                        <li>Elaboracion de Memoria Tecnica de Diseno conforme al RITE</li>
+                        <li>Preparacion del expediente para registro ante Industria</li>
+                        <li>Asesoramiento o tramitacion telematica del registro</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Normativa aplicable</h4>
+                    <ul>
+                        <li><strong>RITE</strong> — Reglamento de Instalaciones Termicas en los Edificios (RD 1027/2007, actualizado por RD 178/2021)</li>
+                        <li><strong>IT 1.2.4.1</strong> — Generacion de calor y frio: requisitos de documentacion</li>
+                        <li><strong>RSIF</strong> — Reglamento de Seguridad para Instalaciones Frigorificas (RD 552/2019) si la carga de refrigerante es significativa</li>
+                        <li>Umbral de 5 kW de potencia termica nominal para exigencia de registro</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Riesgos de no regularizar</h4>
+                    <ul>
+                        <li>Requerimiento de la comunidad de propietarios para retirar equipos en fachada</li>
+                        <li>Problemas con licencias de actividad en locales comerciales</li>
+                        <li>Sanciones por instalacion no registrada ante Industria</li>
+                        <li>Seguro puede no cubrir danos derivados de equipos no documentados</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas de legalizar tu climatizacion</h4>
+                    <ul>
+                        <li>Cumplimiento normativo completo ante cualquier inspeccion</li>
+                        <li>Documentacion disponible para comunidad de propietarios</li>
+                        <li>Facilita futuras ampliaciones o sustituciones de equipos</li>
+                        <li>Acceso a subvenciones de eficiencia energetica</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas economicas</h4>
+                    <ul>
+                        <li>Evita costes de desmontaje si la comunidad exige retirar equipos</li>
+                        <li>Posibilidad de acceder a Certificados de Ahorro Energetico (CAE)</li>
+                        <li>Regularizar ahora es mas economico que hacerlo con expediente sancionador abierto</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Cuando conviene hacerlo</h4>
+                    <ul>
+                        <li>Si instalaste splits o multisplit sin documentacion tecnica</li>
+                        <li>Antes de una inspeccion o renovacion de licencia de actividad</li>
+                        <li>Cuando la comunidad de propietarios solicita documentacion</li>
+                    </ul>
+                </div>
+                <a href="#contacto" class="sit-cta">Solicitar revision de climatizacion &rarr;</a>
+            </div>
+        </div>
+
+        <!-- T3: Venta o alquiler de inmueble -->
+        <div class="situation-card" role="button" tabindex="0" aria-expanded="false" aria-controls="sit-detail-3">
             <span class="situation-icon">&#127968;</span>
-            <h3>Venta o alquiler de inmueble</h3>
-            <p>Necesitas legalizar las instalaciones antes de vender o alquilar, porque te lo exigen en la notaria o la inmobiliaria.</p>
+            <div class="situation-card-text">
+                <h3>Venta o alquiler de inmueble</h3>
+                <p>Necesitas legalizar las instalaciones antes de vender o alquilar, porque te lo exigen en la notaria o la inmobiliaria.</p>
+            </div>
         </div>
-        <div class="situation-card">
+        <div class="situation-detail" id="sit-detail-3" role="region">
+            <div class="situation-detail-inner">
+                <div class="sit-subsection">
+                    <h4>Procedimiento para preparar la documentacion de instalaciones para venta o alquiler</h4>
+                    <p>Para <strong>vender o alquilar un inmueble</strong>, es habitual que la notaria, la inmobiliaria o el comprador soliciten documentacion tecnica de las instalaciones.</p>
+                    <ul>
+                        <li>Revision del estado de las instalaciones electrica y termica</li>
+                        <li>Verificacion de la documentacion existente (boletines, memorias, certificados)</li>
+                        <li>Elaboracion de la documentacion que falte (CIE, MTD electrica o termica)</li>
+                        <li>Preparacion del expediente para registro si la instalacion no estaba legalizada</li>
+                        <li>Asesoramiento sobre requisitos notariales y de ITE</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Normativa aplicable</h4>
+                    <ul>
+                        <li><strong>REBT</strong> (RD 842/2002) — Certificado de instalacion electrica obligatorio</li>
+                        <li><strong>RITE</strong> (RD 178/2021) — Documentacion de instalaciones termicas</li>
+                        <li>Normativa autonomica sobre ITE (Inspeccion Tecnica de Edificios)</li>
+                        <li>Requisitos notariales para transmision de inmuebles</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Riesgos de no regularizar</h4>
+                    <ul>
+                        <li>Bloqueo de la escritura publica por falta de documentacion tecnica</li>
+                        <li>Retraso en la operacion de compraventa o alquiler</li>
+                        <li>Penalizacion en el precio de venta por instalaciones irregulares</li>
+                        <li>Responsabilidad del vendedor por vicios ocultos</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas de regularizar antes de la operacion</h4>
+                    <ul>
+                        <li>Operacion de compraventa sin incidencias ni retrasos</li>
+                        <li>Mayor seguridad juridica para comprador y vendedor</li>
+                        <li>Cumplimiento de requisitos para la ITE del edificio</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas economicas</h4>
+                    <ul>
+                        <li>Inmueble con documentacion completa tiene mayor valor de mercado</li>
+                        <li>Evita negociaciones a la baja por instalaciones sin documentar</li>
+                        <li>Regularizar antes de vender es mas economico que hacerlo con urgencia</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Cuando conviene hacerlo</h4>
+                    <ul>
+                        <li>Antes de poner el inmueble a la venta o en alquiler</li>
+                        <li>Cuando la notaria o inmobiliaria solicita documentacion</li>
+                        <li>Si el edificio tiene ITE pendiente o desfavorable</li>
+                    </ul>
+                </div>
+                <a href="#contacto" class="sit-cta">Revisar documentacion de instalacion &rarr;</a>
+            </div>
+        </div>
+
+        <!-- T4: Inspeccion OCA pendiente -->
+        <div class="situation-card" role="button" tabindex="0" aria-expanded="false" aria-controls="sit-detail-4">
             <span class="situation-icon">&#128269;</span>
-            <h3>Inspeccion OCA pendiente</h3>
-            <p>Te han notificado una inspeccion periodica y descubres que la instalacion no esta documentada ni registrada.</p>
+            <div class="situation-card-text">
+                <h3>Inspeccion OCA pendiente</h3>
+                <p>Te han notificado una inspeccion periodica y descubres que la instalacion no esta documentada ni registrada.</p>
+            </div>
         </div>
-        <div class="situation-card">
+        <div class="situation-detail" id="sit-detail-4" role="region">
+            <div class="situation-detail-inner">
+                <div class="sit-subsection">
+                    <h4>Procedimiento para preparar una inspeccion OCA</h4>
+                    <p>La <strong>inspeccion OCA</strong> es obligatoria para determinadas instalaciones electricas y termicas. Si tu instalacion no tiene la documentacion tecnica completa, es necesario prepararla antes de la inspeccion.</p>
+                    <ul>
+                        <li>Revision del expediente existente de la instalacion</li>
+                        <li>Identificacion de la documentacion que falta</li>
+                        <li>Elaboracion de memoria tecnica, esquemas y calculos</li>
+                        <li>Revision tecnica de la instalacion antes de la inspeccion</li>
+                        <li>Asesoramiento sobre el proceso de inspeccion</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Normativa aplicable</h4>
+                    <ul>
+                        <li><strong>ITC-BT-05</strong> — Verificaciones e inspecciones de instalaciones electricas</li>
+                        <li><strong>REBT</strong> (RD 842/2002) — Instalaciones sujetas a inspeccion periodica</li>
+                        <li><strong>RITE</strong> (RD 178/2021) — Inspecciones de instalaciones termicas</li>
+                        <li>Instalaciones de mas de 100 kW, locales de publica concurrencia, garajes: inspeccion obligatoria</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Riesgos de no preparar la inspeccion</h4>
+                    <ul>
+                        <li>Resultado desfavorable con requerimiento de subsanacion</li>
+                        <li>Segunda inspeccion con coste adicional</li>
+                        <li>Posible paralizacion de la actividad hasta subsanar defectos</li>
+                        <li>Apertura de expediente sancionador por Industria</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas de preparar la documentacion</h4>
+                    <ul>
+                        <li>Mayor probabilidad de resultado favorable en la primera inspeccion</li>
+                        <li>Expediente completo ante el organismo de control</li>
+                        <li>Deteccion anticipada de defectos corregibles</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas economicas</h4>
+                    <ul>
+                        <li>Evita el coste de reinspecciones por resultado desfavorable</li>
+                        <li>Evita sanciones por incumplimiento de plazos de inspeccion</li>
+                        <li>Preparar la documentacion ahora es mas economico que hacerlo con expediente abierto</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Cuando conviene hacerlo</h4>
+                    <ul>
+                        <li>Cuando recibes notificacion de inspeccion periodica</li>
+                        <li>Si la instalacion no tiene documentacion o esta incompleta</li>
+                        <li>Antes de que venzan los plazos de inspeccion reglamentarios</li>
+                    </ul>
+                </div>
+                <a href="#contacto" class="sit-cta">Preparar documentacion para inspeccion OCA &rarr;</a>
+            </div>
+        </div>
+
+        <!-- T5: Subvencion o ayuda publica -->
+        <div class="situation-card" role="button" tabindex="0" aria-expanded="false" aria-controls="sit-detail-5">
             <span class="situation-icon">&#128176;</span>
-            <h3>Subvencion o ayuda publica</h3>
-            <p>Solicitas una subvencion (rehabilitacion, autoconsumo, CAE) y te exigen que la instalacion este legalizada.</p>
+            <div class="situation-card-text">
+                <h3>Subvencion o ayuda publica</h3>
+                <p>Solicitas una subvencion (rehabilitacion, autoconsumo, CAE) y te exigen que la instalacion este legalizada.</p>
+            </div>
         </div>
-        <div class="situation-card">
+        <div class="situation-detail" id="sit-detail-5" role="region">
+            <div class="situation-detail-inner">
+                <div class="sit-subsection">
+                    <h4>Procedimiento para cumplir requisitos documentales de subvenciones</h4>
+                    <p>Muchas <strong>subvenciones y ayudas publicas</strong> exigen que la instalacion este legalizada y documentada como requisito previo para la concesion.</p>
+                    <ul>
+                        <li>Analisis de los requisitos documentales de la convocatoria</li>
+                        <li>Revision de la instalacion existente y la documentacion disponible</li>
+                        <li>Elaboracion de la documentacion tecnica que falta</li>
+                        <li>Preparacion del expediente de legalizacion ante Industria</li>
+                        <li>Emision de Certificados de Ahorro Energetico (CAE) si aplica</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Normativa y requisitos</h4>
+                    <ul>
+                        <li>Requisitos del IDAE para programas de eficiencia energetica</li>
+                        <li><strong>CAE</strong> — Certificados de Ahorro Energetico (RD 36/2023)</li>
+                        <li>Programas de rehabilitacion energetica de edificios</li>
+                        <li>Cada convocatoria tiene requisitos documentales especificos</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Riesgos de no tener la documentacion</h4>
+                    <ul>
+                        <li>Exclusion de la convocatoria por no cumplir requisitos</li>
+                        <li>Devolucion de ayudas si no se justifica la instalacion correctamente</li>
+                        <li>Perdida de plazos por no disponer de la documentacion a tiempo</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas de regularizar</h4>
+                    <ul>
+                        <li>Acceso efectivo a la subvencion o ayuda publica</li>
+                        <li>Documentacion tecnica que respalda la solicitud</li>
+                        <li>Posibilidad de generar CAE con valor economico</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas economicas</h4>
+                    <ul>
+                        <li>El coste de regularizar se amortiza con la subvencion obtenida</li>
+                        <li>Los CAE tienen valor economico directo en el mercado</li>
+                        <li>Acceso a programas de financiacion ventajosa asociados a rehabilitacion</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Cuando conviene hacerlo</h4>
+                    <ul>
+                        <li>Antes de solicitar cualquier subvencion o ayuda publica</li>
+                        <li>Cuando necesitas justificar una instalacion existente ante la administracion</li>
+                        <li>Si quieres acceder a programas de rehabilitacion energetica</li>
+                    </ul>
+                </div>
+                <a href="#contacto" class="sit-cta">Preparar documentacion para subvencion &rarr;</a>
+            </div>
+        </div>
+
+        <!-- T6: Apertura de local o negocio -->
+        <div class="situation-card" role="button" tabindex="0" aria-expanded="false" aria-controls="sit-detail-6">
             <span class="situation-icon">&#127981;</span>
-            <h3>Apertura de local o negocio</h3>
-            <p>Necesitas licencia de actividad y las instalaciones del local no tienen la documentacion tecnica en regla.</p>
+            <div class="situation-card-text">
+                <h3>Apertura de local o negocio</h3>
+                <p>Necesitas licencia de actividad y las instalaciones del local no tienen la documentacion tecnica en regla.</p>
+            </div>
         </div>
-        <div class="situation-card">
+        <div class="situation-detail" id="sit-detail-6" role="region">
+            <div class="situation-detail-inner">
+                <div class="sit-subsection">
+                    <h4>Procedimiento para legalizar instalaciones de un local comercial</h4>
+                    <p>Antes de <strong>abrir un negocio</strong> es habitual que se revisen las instalaciones electricas y termicas del local para obtener la licencia de actividad.</p>
+                    <ul>
+                        <li>Revision tecnica del local: instalacion electrica y de climatizacion</li>
+                        <li>Verificacion de la documentacion existente</li>
+                        <li>Elaboracion de memoria tecnica o certificado para cada instalacion</li>
+                        <li>Preparacion del expediente completo para licencia de actividad</li>
+                        <li>Asesoramiento sobre requisitos especificos segun tipo de actividad</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Normativa aplicable</h4>
+                    <ul>
+                        <li><strong>REBT</strong> + <strong>ITC-BT-28</strong> — Instalaciones en locales de publica concurrencia</li>
+                        <li><strong>RITE</strong> — Documentacion de climatizacion en locales</li>
+                        <li>Normativa municipal sobre licencias de actividad</li>
+                        <li>Requisitos especificos segun tipo de actividad (hosteleria, comercio, oficina)</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Riesgos de no regularizar</h4>
+                    <ul>
+                        <li>Retrasos en la obtencion de la licencia de actividad</li>
+                        <li>Inspecciones desfavorables que paralicen la apertura</li>
+                        <li>Sanciones por actividad sin licencia o instalaciones irregulares</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas de regularizar</h4>
+                    <ul>
+                        <li>Seguridad juridica para la apertura del negocio</li>
+                        <li>Facilidad para obtener licencias y permisos</li>
+                        <li>Cumplimiento normativo ante cualquier inspeccion futura</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas economicas</h4>
+                    <ul>
+                        <li>Evita costes de paralizar la apertura por documentacion incompleta</li>
+                        <li>Evita sanciones municipales por actividad sin licencia</li>
+                        <li>Inversion que protege la actividad comercial a largo plazo</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Cuando conviene hacerlo</h4>
+                    <ul>
+                        <li>Antes de solicitar la licencia de actividad</li>
+                        <li>Si el local tiene instalaciones antiguas sin documentacion</li>
+                        <li>Cuando el ayuntamiento requiere documentacion tecnica para la licencia</li>
+                    </ul>
+                </div>
+                <a href="#contacto" class="sit-cta">Preparar documentacion para apertura de local &rarr;</a>
+            </div>
+        </div>
+
+        <!-- T7: Requerimiento de Industria -->
+        <div class="situation-card" role="button" tabindex="0" aria-expanded="false" aria-controls="sit-detail-7">
             <span class="situation-icon">&#128196;</span>
-            <h3>Requerimiento de Industria</h3>
-            <p>Has recibido un requerimiento de la Direccion General de Industria para presentar documentacion de una instalacion.</p>
+            <div class="situation-card-text">
+                <h3>Requerimiento de Industria</h3>
+                <p>Has recibido un requerimiento de la Direccion General de Industria para presentar documentacion de una instalacion.</p>
+            </div>
         </div>
-        <div class="situation-card">
+        <div class="situation-detail" id="sit-detail-7" role="region">
+            <div class="situation-detail-inner">
+                <div class="sit-subsection">
+                    <h4>Procedimiento para responder a un requerimiento de Industria</h4>
+                    <p>Cuando la administracion solicita informacion tecnica sobre una instalacion, es necesario <strong>analizar el requerimiento</strong> y preparar la documentacion correspondiente.</p>
+                    <ul>
+                        <li>Analisis del requerimiento recibido y plazos de respuesta</li>
+                        <li>Revision del expediente existente de la instalacion</li>
+                        <li>Elaboracion de la documentacion tecnica adicional necesaria</li>
+                        <li>Preparacion de la respuesta formal a la Direccion General de Industria</li>
+                        <li>Asesoramiento sobre el proceso administrativo y plazos</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Normativa aplicable</h4>
+                    <ul>
+                        <li><strong>Ley 21/1992</strong> de Industria — Regimen sancionador y plazos de subsanacion</li>
+                        <li><strong>REBT</strong> y <strong>RITE</strong> segun tipo de instalacion</li>
+                        <li>Procedimiento administrativo comun (Ley 39/2015)</li>
+                        <li>Plazos de subsanacion establecidos en el requerimiento</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Riesgos de no responder</h4>
+                    <ul>
+                        <li>Sanciones administrativas por incumplimiento de plazos</li>
+                        <li>Paralización de procedimientos asociados a la instalacion</li>
+                        <li>Apertura de expediente sancionador con consecuencias economicas graves</li>
+                        <li>Posible orden de cese de actividad o desmontaje</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas de actuar a tiempo</h4>
+                    <ul>
+                        <li>Regularizar la situacion administrativa evita sanciones</li>
+                        <li>Documentacion tecnica profesional respalda tu respuesta</li>
+                        <li>Posibilidad de subsanar sin consecuencias si se actua dentro de plazo</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas economicas</h4>
+                    <ul>
+                        <li>El coste de la documentacion es minimo comparado con las sanciones posibles</li>
+                        <li>Subsanar a tiempo evita recargos y costes procesales</li>
+                        <li>Cierra el expediente administrativo sin consecuencias adicionales</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Cuando conviene hacerlo</h4>
+                    <ul>
+                        <li>En cuanto recibas el requerimiento: los plazos son estrictos</li>
+                        <li>No esperes al ultimo dia: preparar la documentacion lleva tiempo</li>
+                        <li>Consulta antes de responder por tu cuenta a la administracion</li>
+                    </ul>
+                </div>
+                <a href="#contacto" class="sit-cta">Preparar respuesta a requerimiento &rarr;</a>
+            </div>
+        </div>
+
+        <!-- T8: Seguro rechaza siniestro -->
+        <div class="situation-card" role="button" tabindex="0" aria-expanded="false" aria-controls="sit-detail-8">
             <span class="situation-icon">&#128737;</span>
-            <h3>Seguro rechaza siniestro</h3>
-            <p>Tu aseguradora te exige documentacion de la instalacion para tramitar un siniestro o te ha rechazado una reclamacion.</p>
+            <div class="situation-card-text">
+                <h3>Seguro rechaza siniestro</h3>
+                <p>Tu aseguradora te exige documentacion de la instalacion para tramitar un siniestro o te ha rechazado una reclamacion.</p>
+            </div>
+        </div>
+        <div class="situation-detail" id="sit-detail-8" role="region">
+            <div class="situation-detail-inner">
+                <div class="sit-subsection">
+                    <h4>Procedimiento ante rechazo de siniestro por falta de documentacion</h4>
+                    <p>En caso de siniestro, las aseguradoras pueden solicitar <strong>documentacion tecnica de la instalacion</strong>. Si no la tienes, pueden rechazar o limitar la cobertura.</p>
+                    <ul>
+                        <li>Revision de la instalacion afectada por el siniestro</li>
+                        <li>Analisis del expediente existente y la documentacion disponible</li>
+                        <li>Elaboracion de informe tecnico sobre el estado de la instalacion</li>
+                        <li>Reconstruccion documental si falta informacion</li>
+                        <li>Asesoramiento sobre la documentacion necesaria para la reclamacion</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Normativa aplicable</h4>
+                    <ul>
+                        <li><strong>Art. 1102 Codigo Civil</strong> — Responsabilidad por negligencia</li>
+                        <li><strong>Ley de Contrato de Seguro</strong> — Deber de declaracion del riesgo</li>
+                        <li>Deber de documentacion y mantenimiento de instalaciones</li>
+                        <li>Normativa tecnica (REBT/RITE) como referencia de cumplimiento</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Riesgos de no disponer de documentacion</h4>
+                    <ul>
+                        <li>Rechazo total o parcial de la cobertura del seguro</li>
+                        <li>Conflictos con la aseguradora que requieran via judicial</li>
+                        <li>Responsabilidad civil ante terceros afectados por el siniestro</li>
+                        <li>Dificultad para demostrar el estado previo de la instalacion</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas de tener la documentacion en regla</h4>
+                    <ul>
+                        <li>Mayor respaldo ante reclamaciones a la aseguradora</li>
+                        <li>Claridad sobre el estado tecnico de la instalacion</li>
+                        <li>Informe tecnico profesional que respalda tu posicion</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Ventajas economicas</h4>
+                    <ul>
+                        <li>Recuperar la cobertura del seguro puede suponer miles de euros</li>
+                        <li>Documentar la instalacion ahora previene futuros rechazos</li>
+                        <li>Informe tecnico tiene un coste minimo comparado con la indemnizacion</li>
+                    </ul>
+                </div>
+                <div class="sit-subsection">
+                    <h4>Cuando conviene hacerlo</h4>
+                    <ul>
+                        <li>Inmediatamente si tu seguro ha rechazado un siniestro</li>
+                        <li>Antes de presentar una reclamacion, para reforzar tu expediente</li>
+                        <li>Preventivamente: regularizar antes de que ocurra un siniestro</li>
+                    </ul>
+                </div>
+                <a href="#contacto" class="sit-cta">Solicitar informe tecnico de instalacion &rarr;</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CASOS REALES -->
+<section>
+    <div class="container" style="text-align: center;">
+        <h2 class="section-title">Casos reales de regularizacion de instalaciones en Madrid</h2>
+        <p class="section-sub" style="margin-left: auto; margin-right: auto;">Situaciones reales de clientes que han regularizado sus instalaciones con nuestra ayuda.</p>
+    </div>
+    <div class="casos-grid">
+        <div class="caso-card">
+            <h3>Vivienda reformada sin boletin electrico</h3>
+            <div class="caso-section">
+                <strong>Situacion</strong>
+                <p>Un propietario habia realizado una reforma completa de la instalacion electrica durante una rehabilitacion de vivienda, pero la instalacion nunca se registro ante la administracion.</p>
+            </div>
+            <div class="caso-section">
+                <strong>Problema detectado</strong>
+                <p>Al intentar aumentar la potencia contratada, la compania electrica solicito el certificado de instalacion electrica actualizado.</p>
+            </div>
+            <div class="caso-section">
+                <strong>Solucion aplicada</strong>
+                <p>Se reviso la instalacion existente, se elaboro la memoria tecnica correspondiente y se emitio el certificado de instalacion electrica conforme al Reglamento Electrotecnico para Baja Tension.</p>
+            </div>
+            <div class="caso-section caso-resultado">
+                <strong>Resultado</strong>
+                <p>La instalacion pudo registrarse correctamente y el propietario pudo modificar su potencia contratada sin problemas.</p>
+            </div>
+        </div>
+        <div class="caso-card">
+            <h3>Local comercial con aire acondicionado sin registrar</h3>
+            <div class="caso-section">
+                <strong>Situacion</strong>
+                <p>Un local comercial tenia varios equipos de climatizacion instalados sin documentacion tecnica.</p>
+            </div>
+            <div class="caso-section">
+                <strong>Problema detectado</strong>
+                <p>Durante la tramitacion de la licencia de actividad, el ayuntamiento solicito la documentacion de la instalacion termica.</p>
+            </div>
+            <div class="caso-section">
+                <strong>Solucion aplicada</strong>
+                <p>Se analizo el sistema de climatizacion existente, se elaboro la memoria tecnica conforme al RITE y se preparo el expediente para su registro.</p>
+            </div>
+            <div class="caso-section caso-resultado">
+                <strong>Resultado</strong>
+                <p>El expediente se registro correctamente y el local pudo completar el proceso de licencia de actividad.</p>
+            </div>
+        </div>
+        <div class="caso-card">
+            <h3>Inspeccion OCA con expediente incompleto</h3>
+            <div class="caso-section">
+                <strong>Situacion</strong>
+                <p>Una empresa recibio aviso de inspeccion periodica obligatoria de su instalacion electrica.</p>
+            </div>
+            <div class="caso-section">
+                <strong>Problema detectado</strong>
+                <p>El expediente original de la instalacion estaba incompleto y no se disponia de toda la documentacion tecnica.</p>
+            </div>
+            <div class="caso-section">
+                <strong>Solucion aplicada</strong>
+                <p>Se reconstruyo la documentacion tecnica necesaria, se elaboro la memoria correspondiente y se reviso la instalacion antes de la inspeccion.</p>
+            </div>
+            <div class="caso-section caso-resultado">
+                <strong>Resultado</strong>
+                <p>La instalacion pudo presentarse correctamente a la inspeccion con la documentacion tecnica completa.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -583,6 +1206,100 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                 <h3>Toda Espana, entrega en 48h</h3>
                 <p>Al tratarse de documentacion digital firmada electronicamente, nuestro servicio es valido en todo el territorio nacional. La tramitacion ante Industria se gestiona telematicamente.</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- COSTES ORIENTATIVOS -->
+<section>
+    <div class="container" style="text-align: center;">
+        <h2 class="section-title">Costes orientativos de documentacion y legalizacion de instalaciones</h2>
+        <p class="section-sub" style="margin-left: auto; margin-right: auto;">Rangos de precios basados en el mercado actual. El presupuesto definitivo se emite tras evaluar cada caso.</p>
+    </div>
+    <div class="costes-grid">
+        <div class="coste-card">
+            <h3>Regularizacion de instalacion electrica en vivienda</h3>
+            <p class="coste-desc">Revision tecnica de la instalacion, elaboracion de memoria tecnica o certificado electrico y preparacion del expediente para su registro.</p>
+            <div class="coste-rango">150 &euro; &ndash; 450 &euro; <span>+ IVA</span></div>
+            <div class="coste-factores">
+                <strong>Factores que influyen</strong>
+                <ul>
+                    <li>Estado de la instalacion</li>
+                    <li>Potencia instalada</li>
+                    <li>Documentacion existente</li>
+                    <li>Necesidad de correcciones tecnicas</li>
+                </ul>
+            </div>
+        </div>
+        <div class="coste-card">
+            <h3>Boletin electrico (Certificado de Instalacion Electrica)</h3>
+            <p class="coste-desc">Comprobacion de la instalacion y emision del certificado electrico necesario para contratacion o modificacion de suministro.</p>
+            <div class="coste-rango">100 &euro; &ndash; 300 &euro; <span>+ IVA</span></div>
+            <div class="coste-factores">
+                <strong>Factores que influyen</strong>
+                <ul>
+                    <li>Estado del cuadro electrico</li>
+                    <li>Antiguedad de la instalacion</li>
+                    <li>Necesidad de pequenas adecuaciones</li>
+                </ul>
+            </div>
+        </div>
+        <div class="coste-card">
+            <h3>Regularizacion de instalacion electrica completa</h3>
+            <p class="coste-desc">Revision de instalacion existente, elaboracion de memoria o proyecto segun normativa y tramitacion del expediente ante Industria.</p>
+            <div class="coste-rango">400 &euro; &ndash; 700 &euro; <span>+ IVA</span></div>
+            <div class="coste-factores">
+                <strong>Factores que influyen</strong>
+                <ul>
+                    <li>Tipo de instalacion</li>
+                    <li>Potencia electrica</li>
+                    <li>Uso del inmueble</li>
+                    <li>Complejidad del expediente</li>
+                </ul>
+            </div>
+        </div>
+        <div class="coste-card">
+            <h3>Documentacion de climatizacion o aerotermia</h3>
+            <p class="coste-desc">Elaboracion de memoria tecnica y documentacion necesaria para instalaciones termicas conforme al RITE.</p>
+            <div class="coste-rango">250 &euro; &ndash; 600 &euro; <span>+ IVA</span></div>
+            <div class="coste-factores">
+                <strong>Factores que influyen</strong>
+                <ul>
+                    <li>Potencia termica</li>
+                    <li>Numero de equipos</li>
+                    <li>Tipo de sistema instalado</li>
+                </ul>
+            </div>
+        </div>
+        <div class="coste-card">
+            <h3>Documentacion tecnica para local o negocio</h3>
+            <p class="coste-desc">Revision de instalaciones electricas o termicas y elaboracion de documentacion necesaria para licencias o inspecciones.</p>
+            <div class="coste-rango">500 &euro; &ndash; 1.200 &euro; <span>+ IVA</span></div>
+            <div class="coste-factores">
+                <strong>Factores que influyen</strong>
+                <ul>
+                    <li>Superficie del local</li>
+                    <li>Potencia instalada</li>
+                    <li>Tipo de actividad</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="coste-nota">
+        <p>Cada instalacion es diferente y el coste final depende del estado de la instalacion y de la documentacion disponible. Antes de iniciar cualquier expediente realizamos una revision basica para determinar que documentacion es necesaria y cual es el procedimiento mas adecuado.</p>
+        <a href="#contacto" class="sit-cta" style="margin-top: 1.5rem;">Solicitar revision de instalacion &rarr;</a>
+    </div>
+</section>
+
+<!-- CONVERSION FINAL -->
+<section class="conversion-final">
+    <div class="container">
+        <h2 class="section-title">Necesitas regularizar una instalacion en la Comunidad de Madrid?</h2>
+        <p>Si tienes una instalacion electrica, de climatizacion o termica que no dispone de documentacion o no esta registrada, podemos ayudarte a revisar el caso y determinar que documentacion es necesaria.</p>
+        <p>Cada instalacion es diferente y en muchos casos el proceso de regularizacion es mas sencillo de lo que parece cuando se analiza correctamente el expediente.</p>
+        <div class="conversion-btns">
+            <a href="#contacto" class="cta-btn">Solicitar revision de caso</a>
+            <a href="#contacto" class="cta-btn-sec">Enviar datos de la instalacion</a>
         </div>
     </div>
 </section>
@@ -821,6 +1538,32 @@ document.querySelectorAll('.faq-question').forEach(btn => {
         document.querySelectorAll('.faq-question').forEach(q => { q.classList.remove('active'); q.nextElementSibling.style.maxHeight = null; });
         if (!isActive) { btn.classList.add('active'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
     });
+});
+
+// Situation accordion
+document.querySelectorAll('.situation-card').forEach(card => {
+    function toggle() {
+        const detail = card.nextElementSibling;
+        if (!detail || !detail.classList.contains('situation-detail')) return;
+        const isActive = card.classList.contains('active');
+        // Close all
+        document.querySelectorAll('.situation-card').forEach(c => {
+            c.classList.remove('active');
+            c.setAttribute('aria-expanded', 'false');
+            const d = c.nextElementSibling;
+            if (d && d.classList.contains('situation-detail')) { d.style.maxHeight = null; d.classList.remove('open'); }
+        });
+        // Open clicked if wasn't active
+        if (!isActive) {
+            card.classList.add('active');
+            card.setAttribute('aria-expanded', 'true');
+            detail.classList.add('open');
+            detail.style.maxHeight = detail.scrollHeight + 'px';
+            setTimeout(() => { card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 100);
+        }
+    }
+    card.addEventListener('click', toggle);
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
 });
 
 // Toggle installer fields
