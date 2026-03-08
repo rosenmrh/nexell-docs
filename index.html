@@ -1440,11 +1440,13 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
+                servicio: 'Consulta General',
+                pagina_origen: 'index',
                 nombre: form.nombre.value,
                 telefono: form.telefono.value,
                 email: form.email.value,
                 tipo_cliente: form.tipo_cliente.value,
-                descripcion: form.descripcion.value,
+                observaciones: form.descripcion.value,
                 acepta_privacidad: document.getElementById('acepta-privacidad').checked ? 'si' : 'no',
                 acepta_comercial: document.getElementById('acepta-comercial').checked ? 'si' : 'no',
                 origen: 'nexelldox.com'
