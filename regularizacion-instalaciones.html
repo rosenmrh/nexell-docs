@@ -76,66 +76,34 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "Cuanto cuesta regularizar una instalacion electrica?",
+                "name": "En cuanto tiempo se puede preparar la documentacion?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "La documentacion tecnica para regularizar una instalacion electrica de vivienda o local cuesta entre 250 y 400 euros. Para instalaciones industriales, entre 600 y 1.200 euros. Estos precios incluyen la memoria tecnica, calculos y asesoramiento para la tramitacion ante Industria."
+                    "text": "En muchos casos entre 24 y 48 horas una vez recibida la informacion necesaria. El plazo puede variar en funcion de la complejidad del expediente y del tipo de instalacion."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Puedo regularizar una instalacion electrica antigua sin obra?",
+                "name": "Que documentos necesitais para empezar?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Si la instalacion cumple con los minimos de seguridad del REBT, se puede documentar y registrar sin necesidad de hacer obras. Si no cumple, sera necesario adaptar algunos elementos antes de poder legalizar. Nexell Dox evalua tu caso y te indica exactamente que necesitas."
+                    "text": "Datos del titular, potencia instalada, fotos de la instalacion, plano o croquis del local o vivienda y datos del instalador si existen. Cuanta mas informacion recibamos, mas rapido y preciso sera el expediente."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Que pasa si me pillan con una instalacion sin legalizar?",
+                "name": "Podeis tramitar el expediente ante Industria?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "La Ley 21/1992 de Industria establece sanciones de entre 3.001 y 60.000 euros para infracciones graves, como tener una instalacion en funcionamiento sin la documentacion preceptiva. Ademas, puede exigirse el desmontaje y el seguro puede no cubrir siniestros."
+                    "text": "Si, en muchos casos podemos preparar y apoyar la tramitacion ante la Direccion General de Industria de la Comunidad de Madrid. Esto incluye la presentacion telematica y el seguimiento del estado del expediente."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Necesito que venga alguien a mi casa para regularizar la instalacion?",
+                "name": "Que ocurre si Industria pide correcciones?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "En la mayoria de los casos no es necesaria una visita presencial. Con fotos de la instalacion, datos del cuadro electrico y fichas tecnicas de los equipos podemos elaborar toda la documentacion. Solo en casos complejos o por requisito normativo se realizara visita tecnica."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Cuanto tarda regularizar una instalacion?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "La documentacion tecnica se entrega en 24-48 horas desde la recepcion de todos los datos. El registro ante Industria depende de la comunidad autonoma, generalmente entre 2 y 4 semanas para instalaciones estandar."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Pueden regularizar instalaciones en toda Espana?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Si. Al tratarse de documentacion tecnica digital firmada por Director Tecnico habilitado, nuestro servicio es valido en todo el territorio nacional. La tramitacion ante Industria se gestiona telematicamente en la comunidad autonoma correspondiente."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Que diferencia hay entre regularizar y legalizar una instalacion?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "En la practica son sinonimos. Regularizar o legalizar una instalacion significa presentar ante Industria la documentacion tecnica que acredita que la instalacion cumple con la normativa vigente. El proceso es el mismo: elaborar la memoria tecnica, firmarla por tecnico habilitado y registrarla."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Puedo regularizar una instalacion que hizo otro instalador?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Si. Nexell Dox puede elaborar la documentacion tecnica para cualquier instalacion existente, independientemente de quien la ejecutara. Lo importante es que la instalacion cumpla con la normativa. Si hay defectos, te indicamos que hay que corregir antes de poder legalizar."
+                    "text": "Revisamos la documentacion emitida dentro del mismo expediente. Si la administracion o un organismo de control solicita aclaraciones o subsanaciones, las atendemos sin coste adicional dentro del alcance del servicio contratado."
                 }
             }
         ]
@@ -256,20 +224,50 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         .caso-resultado strong { color: #065F46; }
         .caso-resultado p { color: #065F46; }
 
-        /* COSTES ORIENTATIVOS */
-        .costes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; max-width: 1100px; margin: 2rem auto 0; }
-        .coste-card { background: white; border: 1.5px solid var(--borde); border-radius: 8px; padding: 1.8rem; transition: border-color 0.2s; }
-        .coste-card:hover { border-color: var(--azul); }
-        .coste-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: var(--texto); margin-bottom: 0.5rem; }
-        .coste-card .coste-desc { font-size: 0.85rem; color: var(--texto-sec); margin-bottom: 1rem; line-height: 1.5; }
-        .coste-rango { display: inline-block; background: #E0F2FE; color: var(--azul); font-size: 1.4rem; font-weight: 800; padding: 0.4rem 1rem; border-radius: 6px; margin-bottom: 0.8rem; }
-        .coste-rango span { font-size: 0.8rem; font-weight: 400; }
-        .coste-factores { font-size: 0.82rem; color: var(--texto-sec); }
-        .coste-factores strong { color: var(--texto); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 0.3rem; }
-        .coste-factores ul { margin: 0 0 0 1rem; }
-        .coste-factores ul li { margin-bottom: 0.2rem; }
-        .coste-nota { max-width: 800px; margin: 2rem auto 0; text-align: center; }
-        .coste-nota p { font-size: 0.88rem; color: var(--texto-sec); line-height: 1.6; }
+
+
+        /* TABLA COMPARATIVA */
+        .comparativa-wrapper { max-width: 800px; margin: 2rem auto 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .comparativa-table { width: 100%; border-collapse: collapse; min-width: 500px; }
+        .comparativa-table thead th { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; font-weight: 700; padding: 1rem 1.2rem; text-align: left; border-bottom: 2px solid var(--borde); }
+        .comparativa-table thead th:first-child { color: var(--texto-sec); background: var(--fondo-alt); width: 25%; }
+        .comparativa-table thead th:nth-child(2) { color: var(--texto-sec); background: #F5F5F5; }
+        .comparativa-table thead th:nth-child(3) { color: var(--azul); background: #EFF6FF; }
+        .comparativa-table tbody td { padding: 1rem 1.2rem; font-size: 0.88rem; color: var(--texto-sec); border-bottom: 1px solid var(--borde); vertical-align: top; line-height: 1.6; }
+        .comparativa-table tbody td:first-child { font-weight: 600; color: var(--texto); background: var(--fondo-alt); }
+        .comparativa-table tbody td:nth-child(2) { background: #FAFAFA; }
+        .comparativa-table tbody td:nth-child(3) { background: #F8FBFF; }
+        .comparativa-nota { max-width: 700px; margin: 2rem auto 0; text-align: center; }
+        .comparativa-nota p { font-size: 0.9rem; color: var(--texto-sec); line-height: 1.7; margin-bottom: 0.5rem; }
+
+        /* CALCULADORA */
+        .calculadora { max-width: 650px; margin: 2rem auto 0; background: white; border: 1.5px solid var(--borde); border-radius: 8px; padding: 2rem; }
+        .calc-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+        .calc-field label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--texto); margin-bottom: 0.4rem; }
+        .calc-field select { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid var(--borde); border-radius: 6px; font-family: inherit; font-size: 0.9rem; color: var(--texto); background: white; cursor: pointer; transition: border-color 0.2s; appearance: auto; }
+        .calc-field select:focus { outline: none; border-color: var(--azul); }
+        .calc-result { margin-top: 1.5rem; padding: 1.5rem; background: #EFF6FF; border-radius: 8px; text-align: center; display: none; }
+        .calc-result.visible { display: block; }
+        .calc-result-label { font-size: 0.85rem; color: var(--texto-sec); margin-bottom: 0.3rem; }
+        .calc-result-value { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2rem; font-weight: 800; color: var(--azul); }
+        .calc-result-value span { font-size: 0.9rem; font-weight: 400; color: var(--texto-sec); }
+        .calc-nota { margin-top: 1rem; font-size: 0.82rem; color: var(--texto-sec); text-align: center; line-height: 1.5; }
+
+        /* VENTAJAS GRID */
+        .ventajas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: 2rem auto 0; }
+        .ventaja-col { background: white; border: 1.5px solid var(--borde); border-radius: 8px; padding: 1.8rem; }
+        .ventaja-col h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: var(--azul); margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--azul); }
+        .ventaja-col ul { list-style: none; margin: 0; padding: 0; }
+        .ventaja-col ul li { font-size: 0.88rem; color: var(--texto-sec); padding: 0.5rem 0; border-bottom: 1px solid var(--fondo-alt); line-height: 1.5; padding-left: 1.2rem; position: relative; }
+        .ventaja-col ul li::before { content: '\2713'; position: absolute; left: 0; color: var(--exito); font-weight: 700; }
+        .ventaja-col ul li:last-child { border-bottom: none; }
+
+        /* EXPEDIENTE LIST */
+        .expediente-block { max-width: 700px; margin: 2.5rem auto 0; background: var(--fondo-alt); border-radius: 8px; padding: 1.5rem 2rem; }
+        .expediente-block h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: var(--texto); margin-bottom: 0.8rem; }
+        .expediente-block ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; }
+        .expediente-block ul li { font-size: 0.88rem; color: var(--texto-sec); padding-left: 1.2rem; position: relative; }
+        .expediente-block ul li::before { content: '\2022'; position: absolute; left: 0; color: var(--azul); }
 
         /* CONVERSION FINAL */
         .conversion-final { background: linear-gradient(135deg, var(--azul) 0%, var(--azul-hover) 100%); color: white; text-align: center; }
@@ -280,18 +278,6 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         .conversion-btns .cta-btn:hover { background: var(--fondo-alt); }
         .conversion-btns .cta-btn-sec { display: inline-block; padding: 0.8rem 2rem; border: 2px solid rgba(255,255,255,0.5); color: white; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; }
         .conversion-btns .cta-btn-sec:hover { border-color: white; background: rgba(255,255,255,0.1); }
-
-        /* PRICING */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; max-width: 1100px; margin: 2rem auto 0; }
-        .pricing-card { background: white; border: 1.5px solid var(--borde); border-radius: 6px; padding: 2rem; text-align: center; max-width: 400px; margin: 2rem auto; transition: border-color 0.2s; }
-        .pricing-card:hover { border-color: var(--azul); }
-        .pricing-card.featured { border-color: var(--azul); position: relative; }
-        .pricing-card.featured::before { content: 'MAS SOLICITADO'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--azul); color: white; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; padding: 0.2rem 0.8rem; border-radius: 4px; white-space: nowrap; }
-        .pricing-tag { display: inline-block; background: #E0F2FE; color: var(--azul); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 0.2rem 0.7rem; border-radius: 4px; margin-bottom: 1rem; }
-        .pricing-amount { font-size: 2.5rem; font-weight: 800; color: var(--azul); }
-        .pricing-amount span { font-size: 0.85rem; font-weight: 400; color: var(--texto-sec); }
-        .pricing-desc { font-size: 0.8rem; color: var(--texto-sec); margin-top: 0.4rem; }
-        .pricing-note { font-size: 0.75rem; color: #9CA3AF; margin-top: 0.3rem; }
 
         /* STEPS */
         .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1100px; margin: 2rem auto 0; }
@@ -368,8 +354,9 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             .content-block h2 { font-size: 1.4rem; }
             .two-col { grid-template-columns: 1fr; gap: 1.5rem; }
             .casos-grid { grid-template-columns: 1fr; }
-            .costes-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
-            .pricing-grid { grid-template-columns: 1fr; max-width: 350px; }
+            .calc-fields { grid-template-columns: 1fr; }
+            .ventajas-grid { grid-template-columns: 1fr; }
+            .expediente-block ul { grid-template-columns: 1fr; }
             .conversion-btns { flex-direction: column; align-items: center; }
             .steps-grid { grid-template-columns: 1fr 1fr; }
             .related-grid { grid-template-columns: 1fr; }
@@ -436,7 +423,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             <span class="badge">RSIF</span>
             <span class="badge">Empresa habilitada</span>
         </div>
-        <h1>Regulariza tu instalacion <span>sin complicaciones</span></h1>
+        <h1>Legalizacion y regularizacion <span>de instalaciones en Madrid</span></h1>
         <p class="hero-sub">Tienes una instalacion electrica, de climatizacion o gas sin legalizar? Preparamos toda la documentacion tecnica para que la registres ante Industria. Sin obras, sin desplazamientos, sin sorpresas.</p>
         <a href="#contacto" class="cta-btn">Solicitar presupuesto gratis</a>
     </div>
@@ -1059,6 +1046,118 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
     </div>
 </section>
 
+<!-- TABLA COMPARATIVA -->
+<section class="bg-light">
+    <div class="container" style="text-align: center;">
+        <h2 class="section-title">Comparativa entre tramite basico y expediente tecnico completo</h2>
+        <p class="section-sub" style="margin-left: auto; margin-right: auto;">No todos los servicios de documentacion tecnica tienen el mismo alcance. Esta tabla resume las diferencias principales.</p>
+    </div>
+    <div class="comparativa-wrapper">
+        <table class="comparativa-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Tramite basico / certificado simple</th>
+                    <th>Expediente tecnico completo con Nexell Dox</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alcance</td>
+                    <td>Emision puntual del certificado cuando la instalacion ya cumple y solo requiere comprobacion y tramite.</td>
+                    <td>Revision tecnica, analisis documental, memoria o documentacion complementaria, regularizacion del expediente y apoyo en tramitacion.</td>
+                </tr>
+                <tr>
+                    <td>Precio orientativo</td>
+                    <td>Habitualmente desde 100 &euro; hasta 300 &euro; en servicios simples de boletin o certificado.</td>
+                    <td>Importe superior, ajustado al alcance real del expediente, la complejidad de la instalacion y la documentacion disponible.</td>
+                </tr>
+                <tr>
+                    <td>Revision documental</td>
+                    <td>Normalmente limitada o inexistente.</td>
+                    <td>Si, con analisis del estado documental y de los requisitos aplicables.</td>
+                </tr>
+                <tr>
+                    <td>Regularizacion de instalaciones antiguas</td>
+                    <td>No siempre incluida.</td>
+                    <td>Si, cuando el caso requiere reconstruccion o completado del expediente.</td>
+                </tr>
+                <tr>
+                    <td>Soporte ante requerimientos</td>
+                    <td>No suele incluir acompanamiento adicional.</td>
+                    <td>Si, con revision de correcciones o aclaraciones sobre la documentacion emitida.</td>
+                </tr>
+                <tr>
+                    <td>Enfoque normativo</td>
+                    <td>Orientado al tramite puntual.</td>
+                    <td>Orientado a resolver el expediente con criterio tecnico y documental.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="comparativa-nota">
+        <p>No todas las situaciones requieren el mismo nivel de documentacion. En algunos casos basta con un certificado. En otros, es necesario revisar la instalacion, reconstruir documentacion, elaborar memoria tecnica y preparar correctamente el expediente para su regularizacion.</p>
+        <a href="#contacto" class="sit-cta" style="margin-top: 1rem;">Solicitar revision de mi caso &rarr;</a>
+    </div>
+</section>
+
+<!-- CALCULADORA DE COSTE -->
+<section>
+    <div class="container" style="text-align: center;">
+        <h2 class="section-title">Calcula un coste orientativo de regularizacion</h2>
+        <p class="section-sub" style="margin-left: auto; margin-right: auto;">El coste depende del tipo de instalacion, del estado documental y de la complejidad del expediente.</p>
+    </div>
+    <div class="calculadora">
+        <div class="calc-fields">
+            <div class="calc-field">
+                <label for="calc-tipo">Tipo de instalacion</label>
+                <select id="calc-tipo">
+                    <option value="">Seleccionar...</option>
+                    <option value="vivienda">Instalacion electrica en vivienda</option>
+                    <option value="local">Instalacion electrica en local</option>
+                    <option value="clima">Aire acondicionado / climatizacion</option>
+                    <option value="aerotermia">Aerotermia</option>
+                    <option value="expediente">Expediente incompleto / documentacion perdida</option>
+                </select>
+            </div>
+            <div class="calc-field">
+                <label for="calc-docs">Estado de la documentacion</label>
+                <select id="calc-docs">
+                    <option value="">Seleccionar...</option>
+                    <option value="completa">Tengo casi toda la documentacion</option>
+                    <option value="parcial">Me faltan algunos documentos</option>
+                    <option value="ninguna">No tengo documentacion tecnica</option>
+                </select>
+            </div>
+            <div class="calc-field">
+                <label for="calc-complej">Complejidad del caso</label>
+                <select id="calc-complej">
+                    <option value="">Seleccionar...</option>
+                    <option value="baja">Baja</option>
+                    <option value="media">Media</option>
+                    <option value="alta">Alta</option>
+                </select>
+            </div>
+            <div class="calc-field">
+                <label for="calc-tramit">Tramitacion</label>
+                <select id="calc-tramit">
+                    <option value="">Seleccionar...</option>
+                    <option value="solo-doc">Solo documentacion</option>
+                    <option value="doc-tramit">Documentacion + apoyo en tramitacion</option>
+                </select>
+            </div>
+        </div>
+        <div class="calc-result" id="calc-result">
+            <div class="calc-result-label">Coste orientativo estimado</div>
+            <div class="calc-result-value" id="calc-value"></div>
+        </div>
+        <p class="calc-nota" id="calc-nota" style="display:none;">Este calculo es unicamente orientativo. El coste real depende del estado de la instalacion, la documentacion disponible y el alcance tecnico del expediente.</p>
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="#contacto" class="sit-cta">Solicitar revision tecnica &rarr;</a>
+        </div>
+    </div>
+</section>
+
 <!-- QUE SIGNIFICA REGULARIZAR -->
 <section class="bg-light">
     <div class="content-block">
@@ -1116,178 +1215,80 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
     </div>
 </section>
 
-<!-- PRECIOS -->
-<section class="bg-light">
-    <div class="container" style="text-align: center;">
-        <h2 class="section-title">Precios de regularizacion</h2>
-        <p class="section-sub" style="margin-left: auto; margin-right: auto;">Precios orientativos con IVA incluido para particulares. El presupuesto definitivo se emite tras evaluar tu caso concreto.</p>
-    </div>
-    <div class="pricing-grid">
-        <div class="pricing-card featured">
-            <span class="pricing-tag">REBT — Vivienda/Local</span>
-            <div class="pricing-amount">250 - 400 <span>EUR</span></div>
-            <p class="pricing-desc">MTD electrica + calculos + boletin</p>
-            <p class="pricing-note">Viviendas y locales hasta 100 kW</p>
-        </div>
-        <div class="pricing-card">
-            <span class="pricing-tag">REBT — Industrial</span>
-            <div class="pricing-amount">600 - 1.200 <span>EUR</span></div>
-            <p class="pricing-desc">MTD electrica industrial + calculos</p>
-            <p class="pricing-note">Naves, talleres, industria</p>
-        </div>
-        <div class="pricing-card">
-            <span class="pricing-tag">RITE — Climatizacion</span>
-            <div class="pricing-amount">300 - 500 <span>EUR</span></div>
-            <p class="pricing-desc">MTD termica + cargas + registro</p>
-            <p class="pricing-note">Splits, multisplit, VRF, conductos</p>
-        </div>
-        <div class="pricing-card">
-            <span class="pricing-tag">Pack Legalizacion</span>
-            <div class="pricing-amount">400 - 700 <span>EUR</span></div>
-            <p class="pricing-desc">MTD + CIE + tramitacion Industria</p>
-            <p class="pricing-note">Todo incluido, sin moverte de casa</p>
-        </div>
-        <div class="pricing-card">
-            <span class="pricing-tag">Preparacion OCA</span>
-            <div class="pricing-amount">300 - 500 <span>EUR</span></div>
-            <p class="pricing-desc">Documentacion + asesoramiento inspeccion</p>
-            <p class="pricing-note">Inspecciones periodicas obligatorias</p>
-        </div>
-    </div>
-    <p style="text-align: center; font-size: 0.8rem; color: var(--texto-sec); max-width: 600px; margin: 1.5rem auto 0;">Precios con IVA (21%) incluido para particulares. Profesionales y empresas: precios sin IVA. El presupuesto vinculante se emite tras evaluacion del caso.</p>
-</section>
-
-<!-- COMO FUNCIONA -->
+<!-- COMO REGULARIZAMOS -->
 <section>
     <div class="container" style="text-align: center;">
-        <h2 class="section-title">Como funciona el proceso</h2>
-        <p class="section-sub" style="margin-left: auto; margin-right: auto;">En 4 pasos sencillos, tu instalacion queda legalizada ante Industria.</p>
+        <h2 class="section-title">Como regularizamos una instalacion</h2>
+        <p class="section-sub" style="margin-left: auto; margin-right: auto;">Un proceso estructurado en 4 fases para resolver el expediente con criterio tecnico.</p>
     </div>
     <div class="steps-grid">
         <div class="step-card">
             <span class="step-number">1</span>
-            <h3>Nos envias los datos</h3>
-            <p>A traves del formulario o por email: datos del titular, fotos de la instalacion, fichas de equipos y cuadro electrico.</p>
+            <h3>Recogida de informacion</h3>
+            <p>Analizamos el tipo de instalacion, la documentacion disponible, las fotos, los datos del titular y los antecedentes del expediente.</p>
         </div>
         <div class="step-card">
             <span class="step-number">2</span>
-            <h3>Evaluamos tu caso</h3>
-            <p>Revisamos la informacion y te indicamos si la instalacion se puede documentar directamente o si necesita alguna correccion previa.</p>
+            <h3>Revision tecnica y normativa</h3>
+            <p>Comprobamos que documentacion es necesaria segun el tipo de instalacion y el alcance del caso, valorando memoria, certificado, subsanacion o regularizacion completa.</p>
         </div>
         <div class="step-card">
             <span class="step-number">3</span>
-            <h3>Elaboramos la documentacion</h3>
-            <p>Preparamos la memoria tecnica, calculos y esquemas. Entrega en PDF firmado por nuestro Director Tecnico (R.I. 206529) en 24-48h.</p>
+            <h3>Preparacion del expediente</h3>
+            <p>Elaboramos la documentacion tecnica necesaria y dejamos el expediente ordenado para su entrega o tramitacion.</p>
         </div>
         <div class="step-card">
             <span class="step-number">4</span>
-            <h3>Registro ante Industria</h3>
-            <p>Te guiamos en la presentacion o gestionamos la tramitacion telematica ante la Direccion General de Industria de tu comunidad autonoma.</p>
+            <h3>Apoyo hasta cierre documental</h3>
+            <p>Si la administracion o un organismo de control solicita aclaraciones sobre la documentacion emitida, revisamos el expediente dentro del mismo proceso.</p>
         </div>
+    </div>
+    <div class="expediente-block">
+        <h3>Que puede incluir el expediente</h3>
+        <ul>
+            <li>Memoria tecnica</li>
+            <li>Certificado de instalacion</li>
+            <li>Documentacion complementaria</li>
+            <li>Subsanaciones documentales</li>
+            <li>Apoyo en tramitacion</li>
+        </ul>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+        <a href="#contacto" class="sit-cta">Quiero revisar mi instalacion &rarr;</a>
     </div>
 </section>
 
-<!-- POR QUE NEXELL DOX -->
+<!-- VENTAJAS DE REGULARIZAR -->
 <section class="bg-light">
-    <div class="content-block">
-        <h2>Por que elegir Nexell Dox para regularizar tu instalacion</h2>
-        <div class="two-col">
-            <div>
-                <h3>Empresa habilitada, no intermediarios</h3>
-                <p>Somos empresa instaladora con Registro Industrial propio (R.I. 206529). La documentacion lleva la firma de nuestro Director Tecnico habilitado. No subcontratamos: tu documentacion la elaboramos nosotros.</p>
-
-                <h3>Experiencia real en instalaciones</h3>
-                <p>No somos solo una oficina tecnica. Ejecutamos y mantenemos instalaciones desde hace anos. Eso nos permite detectar problemas que una oficina tecnica convencional pasaria por alto.</p>
-            </div>
-            <div>
-                <h3>Sin desplazamiento en la mayoria de casos</h3>
-                <p>Trabajamos con fotos, planos y datos tecnicos. Solo requerimos visita presencial cuando la normativa lo exige o la complejidad de la instalacion lo requiere.</p>
-
-                <h3>Toda Espana, entrega en 48h</h3>
-                <p>Al tratarse de documentacion digital firmada electronicamente, nuestro servicio es valido en todo el territorio nacional. La tramitacion ante Industria se gestiona telematicamente.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- COSTES ORIENTATIVOS -->
-<section>
     <div class="container" style="text-align: center;">
-        <h2 class="section-title">Costes orientativos de documentacion y legalizacion de instalaciones</h2>
-        <p class="section-sub" style="margin-left: auto; margin-right: auto;">Rangos de precios basados en el mercado actual. El presupuesto definitivo se emite tras evaluar cada caso.</p>
+        <h2 class="section-title">Ventajas de regularizar tu instalacion</h2>
+        <p class="section-sub" style="margin-left: auto; margin-right: auto;">Regularizar no es solo cumplir con la normativa. Tiene ventajas directas sobre la seguridad juridica, el valor del inmueble y la operacion diaria de la instalacion.</p>
     </div>
-    <div class="costes-grid">
-        <div class="coste-card">
-            <h3>Regularizacion de instalacion electrica en vivienda</h3>
-            <p class="coste-desc">Revision tecnica de la instalacion, elaboracion de memoria tecnica o certificado electrico y preparacion del expediente para su registro.</p>
-            <div class="coste-rango">150 &euro; &ndash; 450 &euro; <span>+ IVA</span></div>
-            <div class="coste-factores">
-                <strong>Factores que influyen</strong>
-                <ul>
-                    <li>Estado de la instalacion</li>
-                    <li>Potencia instalada</li>
-                    <li>Documentacion existente</li>
-                    <li>Necesidad de correcciones tecnicas</li>
-                </ul>
-            </div>
+    <div class="ventajas-grid">
+        <div class="ventaja-col">
+            <h3>Ventajas legales</h3>
+            <ul>
+                <li>Cumplimiento normativo acreditado</li>
+                <li>Seguridad juridica ante inspecciones</li>
+                <li>Expediente tecnico completo y registrado</li>
+            </ul>
         </div>
-        <div class="coste-card">
-            <h3>Boletin electrico (Certificado de Instalacion Electrica)</h3>
-            <p class="coste-desc">Comprobacion de la instalacion y emision del certificado electrico necesario para contratacion o modificacion de suministro.</p>
-            <div class="coste-rango">100 &euro; &ndash; 300 &euro; <span>+ IVA</span></div>
-            <div class="coste-factores">
-                <strong>Factores que influyen</strong>
-                <ul>
-                    <li>Estado del cuadro electrico</li>
-                    <li>Antiguedad de la instalacion</li>
-                    <li>Necesidad de pequenas adecuaciones</li>
-                </ul>
-            </div>
+        <div class="ventaja-col">
+            <h3>Ventajas economicas</h3>
+            <ul>
+                <li>Evitar sanciones de la Ley de Industria</li>
+                <li>Facilitar venta o alquiler del inmueble</li>
+                <li>Reducir costes futuros por regularizacion urgente</li>
+            </ul>
         </div>
-        <div class="coste-card">
-            <h3>Regularizacion de instalacion electrica completa</h3>
-            <p class="coste-desc">Revision de instalacion existente, elaboracion de memoria o proyecto segun normativa y tramitacion del expediente ante Industria.</p>
-            <div class="coste-rango">400 &euro; &ndash; 700 &euro; <span>+ IVA</span></div>
-            <div class="coste-factores">
-                <strong>Factores que influyen</strong>
-                <ul>
-                    <li>Tipo de instalacion</li>
-                    <li>Potencia electrica</li>
-                    <li>Uso del inmueble</li>
-                    <li>Complejidad del expediente</li>
-                </ul>
-            </div>
+        <div class="ventaja-col">
+            <h3>Ventajas tecnicas</h3>
+            <ul>
+                <li>Instalacion correctamente documentada</li>
+                <li>Mejor mantenimiento y trazabilidad</li>
+                <li>Mayor facilidad ante futuras ampliaciones</li>
+            </ul>
         </div>
-        <div class="coste-card">
-            <h3>Documentacion de climatizacion o aerotermia</h3>
-            <p class="coste-desc">Elaboracion de memoria tecnica y documentacion necesaria para instalaciones termicas conforme al RITE.</p>
-            <div class="coste-rango">250 &euro; &ndash; 600 &euro; <span>+ IVA</span></div>
-            <div class="coste-factores">
-                <strong>Factores que influyen</strong>
-                <ul>
-                    <li>Potencia termica</li>
-                    <li>Numero de equipos</li>
-                    <li>Tipo de sistema instalado</li>
-                </ul>
-            </div>
-        </div>
-        <div class="coste-card">
-            <h3>Documentacion tecnica para local o negocio</h3>
-            <p class="coste-desc">Revision de instalaciones electricas o termicas y elaboracion de documentacion necesaria para licencias o inspecciones.</p>
-            <div class="coste-rango">500 &euro; &ndash; 1.200 &euro; <span>+ IVA</span></div>
-            <div class="coste-factores">
-                <strong>Factores que influyen</strong>
-                <ul>
-                    <li>Superficie del local</li>
-                    <li>Potencia instalada</li>
-                    <li>Tipo de actividad</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="coste-nota">
-        <p>Cada instalacion es diferente y el coste final depende del estado de la instalacion y de la documentacion disponible. Antes de iniciar cualquier expediente realizamos una revision basica para determinar que documentacion es necesaria y cual es el procedimiento mas adecuado.</p>
-        <a href="#contacto" class="sit-cta" style="margin-top: 1.5rem;">Solicitar revision de instalacion &rarr;</a>
     </div>
 </section>
 
@@ -1312,51 +1313,27 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
 
         <div style="max-width: 750px; margin: 0 auto;">
             <div class="faq-item">
-                <button class="faq-question">Cuanto cuesta regularizar una instalacion electrica?</button>
+                <button class="faq-question">En cuanto tiempo se puede preparar la documentacion?</button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">La documentacion tecnica para regularizar una instalacion electrica de vivienda o local cuesta entre 250 y 400 euros (IVA incluido para particulares). Para instalaciones industriales, entre 600 y 1.200 euros. El presupuesto exacto depende de la potencia y complejidad de la instalacion.</div>
+                    <div class="faq-answer-inner">En muchos casos entre 24 y 48 horas una vez recibida la informacion necesaria. El plazo puede variar en funcion de la complejidad del expediente y del tipo de instalacion.</div>
                 </div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">Puedo regularizar una instalacion antigua sin hacer obras?</button>
+                <button class="faq-question">Que documentos necesitais para empezar?</button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">Si la instalacion cumple con los minimos de seguridad del REBT o RITE vigente, se puede documentar y registrar sin necesidad de obras. Si no cumple, sera necesario adaptar algunos elementos antes de legalizar. Te indicamos exactamente que necesitas en cada caso.</div>
+                    <div class="faq-answer-inner">Datos del titular, potencia instalada, fotos de la instalacion, plano o croquis del local o vivienda y datos del instalador si existen. Cuanta mas informacion recibamos, mas rapido y preciso sera el expediente.</div>
                 </div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">Que pasa si me pillan con una instalacion sin legalizar?</button>
+                <button class="faq-question">Podeis tramitar el expediente ante Industria?</button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">La Ley 21/1992 de Industria establece sanciones de entre 3.001 y 60.000 euros para infracciones graves como tener una instalacion sin documentacion preceptiva. Ademas, puede exigirse el desmontaje y el seguro puede no cubrir siniestros derivados de la instalacion irregular.</div>
+                    <div class="faq-answer-inner">Si, en muchos casos podemos preparar y apoyar la tramitacion ante la Direccion General de Industria de la Comunidad de Madrid. Esto incluye la presentacion telematica y el seguimiento del estado del expediente.</div>
                 </div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">Necesito que venga alguien a mi casa?</button>
+                <button class="faq-question">Que ocurre si Industria pide correcciones?</button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">En la mayoria de los casos no es necesaria una visita presencial. Con fotos de la instalacion, datos del cuadro electrico y fichas tecnicas de los equipos podemos elaborar toda la documentacion. Solo en casos complejos o cuando la normativa lo exige se realizara visita tecnica.</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Cuanto tarda el proceso de regularizacion?</button>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">La documentacion tecnica se entrega en 24-48 horas desde la recepcion de todos los datos. El registro ante Industria depende de la comunidad autonoma: generalmente entre 2 y 4 semanas para instalaciones estandar.</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Trabajan en toda Espana?</button>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">Si. Nuestra documentacion es digital y firmada electronicamente por Director Tecnico habilitado (R.I. 206529), lo que la hace valida en todo el territorio nacional. La tramitacion ante Industria se gestiona telematicamente en la comunidad autonoma correspondiente.</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Que diferencia hay entre regularizar y legalizar?</button>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">En la practica son sinonimos. Regularizar o legalizar una instalacion significa presentar ante Industria la documentacion tecnica que acredita que la instalacion cumple con la normativa vigente. Nosotros preparamos esa documentacion para que tu (o tu instalador) la presentes.</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Puedo regularizar una instalacion que hizo otro instalador?</button>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">Si. Podemos elaborar la documentacion tecnica para cualquier instalacion existente, independientemente de quien la ejecutara. Lo importante es que la instalacion cumpla con la normativa vigente. Si detectamos defectos, te indicamos que hay que corregir antes de poder legalizar.</div>
+                    <div class="faq-answer-inner">Revisamos la documentacion emitida dentro del mismo expediente. Si la administracion o un organismo de control solicita aclaraciones o subsanaciones, las atendemos sin coste adicional dentro del alcance del servicio contratado.</div>
                 </div>
             </div>
         </div>
@@ -1571,6 +1548,48 @@ document.getElementById('tipo-cliente-select').addEventListener('change', functi
     var fields = document.getElementById('installer-fields');
     if (this.value === 'instalador') { fields.classList.add('visible'); } else { fields.classList.remove('visible'); }
 });
+
+// Calculadora de coste orientativo
+(function() {
+    var rangos = {
+        vivienda: { baja: [150,300], media: [250,450], alta: [400,700] },
+        local:    { baja: [350,600], media: [500,900], alta: [800,1200] },
+        clima:    { baja: [250,450], media: [400,700], alta: [700,1100] },
+        aerotermia:{ baja: [300,500], media: [450,800], alta: [800,1200] },
+        expediente:{ baja: [250,450], media: [400,700], alta: [700,1100] }
+    };
+    var tramitMult = { 'solo-doc': 1, 'doc-tramit': 1.15 };
+    var ids = ['calc-tipo','calc-docs','calc-complej','calc-tramit'];
+    function calcular() {
+        var tipo = document.getElementById('calc-tipo').value;
+        var docs = document.getElementById('calc-docs').value;
+        var complej = document.getElementById('calc-complej').value;
+        var tramit = document.getElementById('calc-tramit').value;
+        var result = document.getElementById('calc-result');
+        var value = document.getElementById('calc-value');
+        var nota = document.getElementById('calc-nota');
+        if (!tipo || !docs || !complej || !tramit) { result.classList.remove('visible'); nota.style.display = 'none'; return; }
+        // Ajustar complejidad si no tiene documentacion
+        var compMap = { baja: 'baja', media: 'media', alta: 'alta' };
+        var compEfectiva = complej;
+        if (docs === 'ninguna') {
+            if (complej === 'baja') compEfectiva = 'media';
+            else if (complej === 'media') compEfectiva = 'alta';
+        }
+        var rango = rangos[tipo][compEfectiva];
+        if (!rango) { result.classList.remove('visible'); nota.style.display = 'none'; return; }
+        var mult = tramitMult[tramit] || 1;
+        var min = Math.round(rango[0] * mult);
+        var max = Math.round(rango[1] * mult);
+        value.textContent = min + ' \u20AC \u2013 ' + max + ' \u20AC';
+        result.classList.add('visible');
+        nota.style.display = 'block';
+    }
+    ids.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener('change', calcular);
+    });
+})();
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(function(a) {
