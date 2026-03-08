@@ -1182,6 +1182,15 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <div class="servicio-entrega">Según complejidad</div>
                     <a href="/analisis-proyectos" class="servicio-cta">Ver detalles →</a>
                 </div>
+                <div class="servicio-card">
+                    <svg class="servicio-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                    <h3><a href="/direccion-tecnica">Dirección Técnica externa</a></h3>
+                    <p>Director Técnico habilitado (R.I. 206529) para tu empresa. REBT, RITE, RSIF.</p>
+                    <div class="servicio-precio">A consultar</div>
+                    <a href="/direccion-tecnica" class="servicio-cta">Ver detalles →</a>
+                </div>
             </div>
         </div>
     </div>
@@ -1346,18 +1355,13 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
     </div>
 </section>
 
-<!-- PRÓXIMAMENTE — Dirección Técnica -->
-<section id="dt-interes" style="padding:60px 0;background:var(--nexell-blue-dark);color:white;">
+<!-- DIRECCIÓN TÉCNICA EXTERNA -->
+<section id="dt-externo" style="padding:60px 0;background:var(--nexell-blue-dark);color:white;">
     <div class="container" style="max-width:700px;text-align:center;">
-        <p style="font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--nexell-green);margin-bottom:0.8rem;">Próximamente</p>
+        <p style="font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--nexell-green);margin-bottom:0.8rem;">Servicio B2B</p>
         <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:800;margin-bottom:1rem;color:white;">Dirección Técnica externa para instaladores</h2>
-        <p style="font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:2rem;">Estamos preparando un servicio de Dirección Técnica externa para empresas instaladoras que necesiten un Director Técnico habilitado con R.I. sin incorporarlo a plantilla. Si te interesa, déjanos tus datos y te avisamos cuando esté disponible.</p>
-        <form id="dt-interes-form" style="display:flex;flex-wrap:wrap;gap:0.8rem;justify-content:center;max-width:500px;margin:0 auto;">
-            <input type="email" name="email" placeholder="Tu email" required style="flex:1;min-width:200px;padding:0.85rem 1.1rem;border-radius:4px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);color:white;font-size:0.95rem;font-family:inherit;">
-            <input type="text" name="empresa" placeholder="Nombre de empresa" style="flex:1;min-width:150px;padding:0.85rem 1.1rem;border-radius:4px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);color:white;font-size:0.95rem;font-family:inherit;">
-            <button type="submit" style="padding:0.85rem 1.8rem;border:none;border-radius:4px;background:var(--nexell-green);color:white;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;transition:background 0.2s;">Avisadme</button>
-        </form>
-        <p style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:1rem;">Solo usaremos tu email para informarte sobre este servicio.</p>
+        <p style="font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:2rem;">Actuamos como tu Director Técnico habilitado (R.I. 206529) sin necesidad de incorporarlo a plantilla. Habilitaciones REBT, RITE y RSIF.</p>
+        <a href="/direccion-tecnica" style="display:inline-block;padding:14px 32px;background:var(--nexell-green);color:#1a1f2b;font-weight:700;border-radius:8px;text-decoration:none;font-size:1rem;">Ver servicio completo →</a>
     </div>
 </section>
 
@@ -1513,6 +1517,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                         <option value="Ofertas y Licitaciones">Preparación de ofertas y licitaciones</option>
                         <option value="Soporte Normativo">Soporte normativo</option>
                         <option value="Auditoría de Proyectos">Auditoría de proyecto + presupuestación</option>
+                        <option value="Dirección Técnica Externa">Dirección Técnica externa</option>
                         <option value="Otro">Otro</option>
                     </select>
                 </div>
@@ -1701,39 +1706,6 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
     </a>
 </div>
 
-<script>
-    // DT Interest mini-form
-    document.getElementById('dt-interes-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var form = this;
-        var btn = form.querySelector('button[type="submit"]');
-        btn.textContent = 'Enviando...';
-        btn.disabled = true;
-        fetch('https://hook.eu1.make.com/su7f2kymvomrx6c3twf3o2piv0oq9ugk', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                servicio: 'dirección-técnica-interes',
-                pagina_origen: 'index',
-                email: form.email.value,
-                nombre: form.empresa.value || '',
-                observaciones: 'Interesado en Dirección Técnica externa',
-                origen: 'nexelldox.com'
-            })
-        })
-        .then(function(r) {
-            if (!r.ok) throw new Error('Error ' + r.status);
-            btn.textContent = '✓ Te avisaremos';
-            btn.style.background = '#69BE28';
-            form.reset();
-        })
-        .catch(function() {
-            btn.textContent = 'Avisadme';
-            btn.disabled = false;
-            alert('Error al enviar. Inténtalo de nuevo.');
-        });
-    });
-</script>
 <script src="/ndx-phone.js"></script>
 </body>
 </html>
