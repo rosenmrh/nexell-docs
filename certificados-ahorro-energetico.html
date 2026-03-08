@@ -600,6 +600,17 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <input type="text" name="ubicacion" placeholder="Ej: Madrid, Alcobendas" required>
                 </div>
                 <div class="form-group">
+                    <label>�C�mo nos has encontrado?</label>
+                    <select name="como_encontrado">
+                        <option value="">Selecciona...</option>
+                        <option value="google">Google</option>
+                        <option value="recomendacion">Recomendaci�n</option>
+                        <option value="agremia">Agremia</option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Observaciones adicionales</label>
                     <textarea name="observaciones" rows="3" placeholder="Cualquier dato adicional..."></textarea>
                 </div>
@@ -695,6 +706,10 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             <a href="/inspeccion-oca" class="related-card">
                 <h4>Preparacion Inspeccion OCA</h4>
                 <p>Auditoria documental previa para superar la inspeccion.</p>
+            </a>
+            <a href="/calculos-tecnicos" class="related-card">
+                <h4>Calculos Tecnicos</h4>
+                <p>Calculos electricos y termicos para justificar el ahorro. Desde 100 EUR + IVA.</p>
             </a>
         </div>
     </div>

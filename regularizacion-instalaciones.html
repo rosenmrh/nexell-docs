@@ -1463,6 +1463,17 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <input type="text" name="ubicacion" placeholder="Ej: Madrid, Alcobendas" required>
                 </div>
                 <div class="form-group">
+                    <label>�C�mo nos has encontrado?</label>
+                    <select name="como_encontrado">
+                        <option value="">Selecciona...</option>
+                        <option value="google">Google</option>
+                        <option value="recomendacion">Recomendaci�n</option>
+                        <option value="agremia">Agremia</option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Descripcion de la situacion *</label>
                     <textarea name="observaciones" rows="4" placeholder="Describe la situacion de tu instalacion: que equipos tienes, cuando se instalo, si tienes algun documento..." required></textarea>
                 </div>
@@ -1519,6 +1530,10 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             <a href="/memoria-tecnica-diseno" class="related-card">
                 <h4>Memoria Tecnica de Diseno</h4>
                 <p>MTDs electricas y termicas para cualquier tipo de instalacion.</p>
+            </a>
+            <a href="/calculos-tecnicos" class="related-card">
+                <h4>Calculos Tecnicos</h4>
+                <p>Calculos electricos y termicos bajo demanda. Desde 100 EUR + IVA.</p>
             </a>
         </div>
     </div>
