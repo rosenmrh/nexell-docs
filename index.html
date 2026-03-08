@@ -19,7 +19,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legalización de Instalaciones en Madrid | Nexell Dox — Empresa Habilitada</title>
     <meta name="description" content="Legalización de instalaciones eléctricas, aire acondicionado, aerotermia y calderas en la Comunidad de Madrid. Memorias técnicas REBT, RITE y RSIF. Empresa con R.I. 206529.">
-    <meta name="keywords" content="legalizar aire acondicionado Madrid, legalizar instalación eléctrica Madrid, memoria técnica Madrid, MTD REBT Madrid, legalizar climatización Madrid, inspección OCA Madrid, oficina técnica instaladores Madrid, boletín eléctrico Madrid, legalizar aerotermia Madrid, legalizar caldera Madrid">
+    <meta name="keywords" content="legalizar instalacion electrica Madrid, legalizar aire acondicionado Madrid, instalacion electrica sin boletin, regularizar instalacion electrica vivienda, inspeccion OCA instalacion, memoria tecnica Madrid, MTD REBT Madrid, legalizar climatizacion Madrid, inspeccion OCA Madrid, boletin electrico Madrid, legalizar aerotermia Madrid, legalizar caldera Madrid, regularizacion instalaciones Madrid">
     <meta name="author" content="Nexell Instalaciones">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="Du2-26c9c18j9zjOcC0NswO0q2GnMj7-2gjjOuci9i4" />
@@ -174,7 +174,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                 "name": "¿Qué pasa si no legalizo mi instalación?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Una instalación sin legalizar puede acarrear multas de entre 600 y 6.000 € por parte de Industria. Además, en caso de siniestro, la compañía de seguros puede denegar la cobertura al no existir documentación reglamentaria."
+                    "text": "Una instalación sin legalizar puede acarrear multas de entre 600 y 6.000 € (infracciones leves) y de 6.001 a 60.000 € (infracciones graves) por parte de Industria. Además, en caso de siniestro, la compañía de seguros puede denegar la cobertura al no existir documentación reglamentaria."
                 }
             },
             {
@@ -491,7 +491,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         .paso:last-child::after { display: none; }
         .paso-num {
             width: 44px; height: 44px; border-radius: 50%;
-            background: var(--azul); color: white;
+            background: #27AE60; color: white;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 1rem; font-weight: 700;
             display: flex; align-items: center; justify-content: center;
@@ -797,6 +797,35 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             .situaciones-grid { grid-template-columns: repeat(2, 1fr); }
             .servicios-grid { grid-template-columns: repeat(2, 1fr); }
         }
+
+        /* CORRECCIÓN 5: Verde acento */
+        .section-sub strong { color: #27AE60; }
+
+        /* CORRECCIÓN 9: Mejoras UX */
+        .card, .servicio-card, .info-card, .beneficio-card, .detalle-card {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover, .servicio-card:hover, .info-card:hover, .beneficio-card:hover, .detalle-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #1F4E78;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            content: '\2212';
+        }
+        .btn, .cta-btn, .btn-primary, .submit-btn {
+            min-width: 220px;
+            padding: 14px 28px;
+            font-size: 1rem;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
@@ -844,7 +873,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         <!-- Tab Instaladores -->
         <div class="tab-content" data-tab-content="instaladores">
             <h1>Documentación técnica para instaladores</h1>
-            <p class="hero-sub">Memorias REBT, RITE y RSIF firmadas con R.I. 206529. Precios cerrados, plazos reales, revisiones incluidas.</p>
+            <p class="hero-sub">Memorias REBT, RITE y RSIF firmadas con R.I. 206529. Precios cerrados, plazos agiles, revisiones incluidas.</p>
             <div class="hero-precio">MTD desde 250 € + IVA</div>
             <div class="hero-cta-group">
                 <a href="#servicios" class="cta-btn-hero">Ver catálogo de precios</a>
@@ -1070,54 +1099,28 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
 <!-- PROCESO -->
 <section class="proceso" id="proceso">
     <div class="container">
-        <!-- PARTICULARES -->
-        <div class="tab-content active" data-tab-content="particulares">
-            <h2 class="section-title">Proceso de trabajo</h2>
-            <p class="section-sub">Documentación técnica con método y rigor normativo.</p>
-            <div class="proceso-steps">
-                <div class="paso">
-                    <div class="paso-num">01</div>
-                    <h3>Contacto inicial</h3>
-                    <p>Cuéntanos qué instalación tienes y qué necesitas. Por formulario, teléfono o WhatsApp.</p>
-                </div>
-                <div class="paso">
-                    <div class="paso-num">02</div>
-                    <h3>Evaluación técnica</h3>
-                    <p>Revisamos tu caso, verificamos documentación disponible y te enviamos presupuesto cerrado.</p>
-                </div>
-                <div class="paso">
-                    <div class="paso-num">03</div>
-                    <h3>Documentación</h3>
-                    <p>Elaboramos memoria técnica, certificados y documentación según normativa vigente.</p>
-                </div>
-                <div class="paso">
-                    <div class="paso-num">04</div>
-                    <h3>Registro en Industria</h3>
-                    <p>Presentamos ante la Comunidad de Madrid. Recibes la documentación sellada.</p>
-                </div>
+        <h2 class="section-title">Proceso de trabajo</h2>
+        <p class="section-sub">Documentación técnica con método y rigor normativo.</p>
+        <div class="proceso-steps">
+            <div class="paso">
+                <div class="paso-num">01</div>
+                <h3>Recogida de información</h3>
+                <p>Envíanos los datos de tu instalación por formulario, email o WhatsApp: fotos, planos, boletines o cualquier documentación disponible.</p>
             </div>
-        </div>
-
-        <!-- INSTALADORES -->
-        <div class="tab-content" data-tab-content="instaladores">
-            <h2 class="section-title">Proceso de trabajo</h2>
-            <p class="section-sub">Documentación técnica con método y rigor normativo.</p>
-            <div class="proceso-steps">
-                <div class="paso">
-                    <div class="paso-num">01</div>
-                    <h3>Envía los datos</h3>
-                    <p>Formulario, email o WhatsApp. Datos técnicos, fotos, planos.</p>
-                </div>
-                <div class="paso">
-                    <div class="paso-num">02</div>
-                    <h3>Elaboración técnica</h3>
-                    <p>Documentación con cálculos reales según normativa vigente. REBT, RITE o RSIF.</p>
-                </div>
-                <div class="paso">
-                    <div class="paso-num">03</div>
-                    <h3>Firma y entrega</h3>
-                    <p>Revisión final, firma con R.I. 206529, documento listo para Industria.</p>
-                </div>
+            <div class="paso">
+                <div class="paso-num">02</div>
+                <h3>Revisión técnica</h3>
+                <p>Analizamos la instalación, verificamos el cumplimiento normativo y te enviamos presupuesto cerrado sin compromiso.</p>
+            </div>
+            <div class="paso">
+                <div class="paso-num">03</div>
+                <h3>Preparación del expediente</h3>
+                <p>Elaboramos memoria técnica, cálculos, certificados y toda la documentación según normativa vigente (REBT, RITE o RSIF).</p>
+            </div>
+            <div class="paso">
+                <div class="paso-num">04</div>
+                <h3>Cierre documental</h3>
+                <p>Firma con R.I. 206529, presentación ante la Comunidad de Madrid y entrega de documentación sellada.</p>
             </div>
         </div>
     </div>
@@ -1202,6 +1205,40 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
     </div>
 </section>
 
+<!-- NORMATIVA APLICABLE -->
+<section style="padding:60px 0;background:#fff;">
+    <div class="container">
+        <h2 class="section-title">Normativa aplicable a la legalización de instalaciones</h2>
+        <p class="section-sub">Toda nuestra documentación se elabora conforme a la normativa vigente en la Comunidad de Madrid.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:32px;">
+            <div style="padding:24px;border:1px solid #E2E8F0;border-radius:12px;border-top:3px solid #1F4E78;">
+                <h3 style="font-size:1.05rem;color:#1F4E78;margin-bottom:8px;">REBT — Instalaciones eléctricas</h3>
+                <p style="font-size:0.9rem;color:#475569;line-height:1.6;">RD 842/2002 y sus ITC-BT. Memorias técnicas de diseño (ITC-BT-04), certificados de instalación eléctrica (CIE) y boletines.</p>
+            </div>
+            <div style="padding:24px;border:1px solid #E2E8F0;border-radius:12px;border-top:3px solid #1F4E78;">
+                <h3 style="font-size:1.05rem;color:#1F4E78;margin-bottom:8px;">RITE — Instalaciones térmicas</h3>
+                <p style="font-size:0.9rem;color:#475569;line-height:1.6;">RD 1027/2007 e IT 1.2.4.1. Documentación para climatización, calefacción, ACS, aerotermia y sistemas frigoríficos.</p>
+            </div>
+            <div style="padding:24px;border:1px solid #E2E8F0;border-radius:12px;border-top:3px solid #1F4E78;">
+                <h3 style="font-size:1.05rem;color:#1F4E78;margin-bottom:8px;">Normativa CM — Comunidad de Madrid</h3>
+                <p style="font-size:0.9rem;color:#475569;line-height:1.6;">Registro ante la Dirección General de Industria. Tramitación telemática y presencial. Ley 21/1992 de Industria.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- QUIÉN ESTÁ DETRÁS -->
+<section style="padding:60px 0;background:#F8FAFC;">
+    <div class="container">
+        <h2 class="section-title">Quién está detrás de Nexell Dox</h2>
+        <div style="max-width:720px;margin:0 auto;text-align:center;">
+            <p style="font-size:1.05rem;color:#334155;line-height:1.8;margin-bottom:1.2rem;">Nexell Dox es el servicio de documentación técnica de <strong>Nexell Instalaciones</strong> (Construction Efficient Building and Services S.L.), empresa instaladora habilitada con <strong>Registro Industrial n.º 206529</strong>.</p>
+            <p style="font-size:1.05rem;color:#334155;line-height:1.8;margin-bottom:1.2rem;">Nuestro Director Técnico, <strong>Rosen Iliev Marhov</strong>, firma cada documento con habilitaciones <strong>REBT</strong> (especialista en baja tensión), <strong>RITE</strong> (instalaciones térmicas) y <strong>RSIF</strong> (sistemas frigoríficos, nivel 1). Más de 20 años de experiencia en el sector.</p>
+            <p style="font-size:0.95rem;color:#64748B;">CIF B87004370 · Agremia n.º 57532 · Seguro de RC vigente</p>
+        </div>
+    </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq" id="faq">
     <div class="container">
@@ -1232,7 +1269,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <span class="faq-toggle">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Una instalación sin legalizar puede acarrear multas de entre 600 y 6.000 € por parte de Industria. Además, en caso de siniestro, la compañía de seguros puede denegar la cobertura al no existir documentación reglamentaria.</p>
+                    <p>Una instalación sin legalizar puede acarrear multas de entre 600 y 6.000 € (infracciones leves) y de 6.001 a 60.000 € (infracciones graves) por parte de Industria. Además, en caso de siniestro, la compañía de seguros puede denegar la cobertura al no existir documentación reglamentaria.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -1330,7 +1367,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                     <input type="checkbox" id="acepta-comercial" name="acepta_comercial">
                     <label for="acepta-comercial">Deseo recibir información sobre servicios de Nexell Dox.</label>
                 </div>
-                <button type="submit" class="form-submit">Solicitar presupuesto gratuito →</button>
+                <button type="submit" class="form-submit">Enviar datos de la instalación →</button>
                 <div class="form-direct-contact">
                     <p>¿Prefieres contacto directo?</p>
                     <p>
