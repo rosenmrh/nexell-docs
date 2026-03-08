@@ -48,59 +48,62 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --azul: #1F4E78;
-            --azul-claro: #2D6A9F;
-            --azul-oscuro: #0F2B45;
-            --verde: #8DC63F;
-            --verde-hover: #7AB534;
-            --rojo-nexell: #ED1C24;
-            --gris-claro: #F4F6F8;
-            --gris-texto: #4A5568;
-            --blanco: #FFFFFF;
+            --azul: #1B4F72;
+            --azul-hover: #154360;
+            --azul-medio: #2E86C1;
+            --texto: #2C3E50;
+            --texto-sec: #5D6D7E;
+            --fondo: #FFFFFF;
+            --fondo-alt: #F8F9FA;
+            --fondo-oscuro: #1A252F;
+            --fondo-footer: #141C24;
+            --borde: #DEE2E6;
+            --exito: #27AE60;
+            --wa: #25D366;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #2D3748; line-height: 1.6; background: var(--blanco); }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--texto); line-height: 1.6; background: var(--fondo); }
 
-        nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(31,78,120,0.1); padding: 0.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        nav { position: fixed; top: 0; width: 100%; z-index: 100; background: #FFFFFF; border-bottom: 1px solid var(--borde); padding: 0.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .nav-brand { display: flex; align-items: center; gap: 0.3rem; text-decoration: none; }
         .nav-brand img { height: 80px; width: auto; object-fit: contain; }
-        .nav-cta-btn { background: var(--rojo-nexell); color: white; padding: 0.5rem 1.2rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
-        .nav-cta-btn:hover { background: #D41920; }
+        .nav-cta-btn { background: var(--azul); color: white; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
+        .nav-cta-btn:hover { background: var(--azul-hover); }
 
-        .breadcrumb { padding: 6.5rem 2rem 0; background: var(--gris-claro); }
-        .breadcrumb-inner { max-width: 1100px; margin: 0 auto; font-size: 0.85rem; color: var(--gris-texto); }
-        .breadcrumb-inner a { color: var(--azul-claro); text-decoration: none; }
+        .breadcrumb { padding: 6.5rem 2rem 0; background: var(--fondo-alt); }
+        .breadcrumb-inner { max-width: 1100px; margin: 0 auto; font-size: 0.85rem; color: var(--texto-sec); }
+        .breadcrumb-inner a { color: var(--azul-medio); text-decoration: none; }
         .breadcrumb-inner a:hover { text-decoration: underline; }
 
-        .page-header { background: var(--gris-claro); padding: 2rem 2rem 3rem; text-align: center; }
-        .page-header h1 { font-size: 2.4rem; font-weight: 800; color: var(--azul-oscuro); letter-spacing: -0.5px; margin-bottom: 0.5rem; }
-        .page-header .update-date { font-size: 0.9rem; color: var(--gris-texto); }
+        .page-header { background: var(--fondo-alt); padding: 2rem 2rem 3rem; text-align: center; }
+        .page-header h1 { font-size: 2.4rem; font-weight: 800; color: var(--texto); letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+        .page-header .update-date { font-size: 0.9rem; color: var(--texto-sec); }
 
         section { padding: 3rem 2rem; }
         .container { max-width: 1100px; margin: 0 auto; }
-        .bg-light { background: var(--gris-claro); }
+        .bg-light { background: var(--fondo-alt); }
 
         .content-block { max-width: 1100px; margin: 0 auto; }
-        .content-block h2 { font-size: 1.7rem; font-weight: 800; color: var(--azul-oscuro); margin-bottom: 0.8rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #E2E8F0; }
+        .content-block h2 { font-size: 1.7rem; font-weight: 800; color: var(--texto); margin-bottom: 0.8rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #E2E8F0; }
         .content-block h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
         .content-block h3 { font-size: 1.2rem; font-weight: 700; color: var(--azul); margin-bottom: 0.5rem; margin-top: 1.5rem; }
-        .content-block p { color: var(--gris-texto); margin-bottom: 1rem; font-size: 0.95rem; }
-        .content-block ul { color: var(--gris-texto); margin: 0.5rem 0 1.5rem 1.5rem; font-size: 0.95rem; }
+        .content-block p { color: var(--texto-sec); margin-bottom: 1rem; font-size: 0.95rem; }
+        .content-block ul { color: var(--texto-sec); margin: 0.5rem 0 1.5rem 1.5rem; font-size: 0.95rem; }
         .content-block ul li { margin-bottom: 0.4rem; }
 
         .data-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
-        .data-table td { padding: 0.6rem 1rem; border-bottom: 1px solid #E2E8F0; color: var(--gris-texto); vertical-align: top; }
-        .data-table td:first-child { font-weight: 600; color: var(--azul-oscuro); width: 220px; white-space: nowrap; }
-        .data-table tr:nth-child(even) td { background: var(--gris-claro); }
+        .data-table td { padding: 0.6rem 1rem; border-bottom: 1px solid #E2E8F0; color: var(--texto-sec); vertical-align: top; }
+        .data-table td:first-child { font-weight: 600; color: var(--texto); width: 220px; white-space: nowrap; }
+        .data-table tr:nth-child(even) td { background: var(--fondo-alt); }
 
-        .highlight-box { background: linear-gradient(135deg, #EFF6FF 0%, #F0F7FF 100%); border-left: 4px solid var(--azul); border-radius: 0 10px 10px 0; padding: 1.5rem 2rem; margin: 1.5rem 0; }
-        .highlight-box h4 { font-size: 1rem; font-weight: 700; color: var(--azul-oscuro); margin-bottom: 0.3rem; }
+        .highlight-box { background: #EFF6FF; border-left: 4px solid var(--azul); border-radius: 0 6px 6px 0; padding: 1.5rem 2rem; margin: 1.5rem 0; }
+        .highlight-box h4 { font-size: 1rem; font-weight: 700; color: var(--texto); margin-bottom: 0.3rem; }
         .highlight-box p { margin-bottom: 0.5rem; font-size: 0.9rem; }
 
-        footer { background: #0A1929; color: rgba(255,255,255,0.5); padding: 2.5rem 2rem; text-align: center; font-size: 0.85rem; }
+        footer { background: var(--fondo-footer); color: rgba(255,255,255,0.5); padding: 2.5rem 2rem; text-align: center; font-size: 0.85rem; }
         footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
         .legal-links { margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
         .legal-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
@@ -109,7 +112,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
 
         @media (max-width: 768px) {
             nav { padding: 0.5rem 1rem; }
-            .nav-brand img { height: 50px; }
+            .nav-brand img { height: 55px; }
             .breadcrumb { padding: 5.5rem 1.2rem 0; }
             .page-header { padding: 1.5rem 1.2rem 2rem; }
             .page-header h1 { font-size: 1.6rem; }
@@ -121,18 +124,18 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         /* WHATSAPP FLOTANTE */
         .whatsapp-float {
             position: fixed; bottom: 24px; right: 24px; z-index: 999;
-            width: 60px; height: 60px; border-radius: 50%;
-            background: #25D366; color: white;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--wa); color: white;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            box-shadow: 0 4px 15px rgba(37,211,102,0.3);
             text-decoration: none; transition: all 0.3s;
         }
-        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
+        .whatsapp-float:hover { background: #20BD5A; transform: scale(1.1); }
         .whatsapp-float svg { width: 32px; height: 32px; fill: white; }
         .mobile-call-bar {
             display: none;
             position: fixed; bottom: 0; left: 0; right: 0; z-index: 998;
-            background: #1F4E78; padding: 0.6rem 1rem;
+            background: var(--azul); padding: 0.6rem 1rem;
             text-align: center;
         }
         .mobile-call-bar a {
@@ -180,13 +183,13 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             <tr><td>Registro Industrial</td><td>Nº 206529 (Comunidad de Madrid)</td></tr>
             <tr><td>Habilitaciones</td><td>REBT (empresa instaladora baja tensión), RITE (empresa instaladora y mantenedora), RSIF (empresa frigorista)</td></tr>
             <tr><td>Teléfono</td><td><a href="#" data-ndx-tel="link-full">Contacto telefónico</a></td></tr>
-            <tr><td>Correo electrónico</td><td><a href="mailto:nexell@nexell.es" style="color:var(--azul-claro);">nexell@nexell.es</a></td></tr>
-            <tr><td>Sitio web</td><td><a href="https://nexelldox.com" style="color:var(--azul-claro);">https://nexelldox.com</a></td></tr>
+            <tr><td>Correo electrónico</td><td><a href="mailto:nexell@nexell.es" style="color:var(--azul-medio);">nexell@nexell.es</a></td></tr>
+            <tr><td>Sitio web</td><td><a href="https://nexelldox.com" style="color:var(--azul-medio);">https://nexelldox.com</a></td></tr>
             <tr><td>Director Técnico</td><td>Rosen Iliev Marhov</td></tr>
         </table>
 
         <h2>2. Objeto</h2>
-        <p>El presente Aviso Legal regula el uso del sitio web <a href="https://nexelldox.com" style="color:var(--azul-claro);">https://nexelldox.com</a> (en adelante, &laquo;el Sitio Web&raquo;), propiedad de Construction Efficient Building and Services S.L. (en adelante, &laquo;Nexell&raquo; o &laquo;la Empresa&raquo;).</p>
+        <p>El presente Aviso Legal regula el uso del sitio web <a href="https://nexelldox.com" style="color:var(--azul-medio);">https://nexelldox.com</a> (en adelante, &laquo;el Sitio Web&raquo;), propiedad de Construction Efficient Building and Services S.L. (en adelante, &laquo;Nexell&raquo; o &laquo;la Empresa&raquo;).</p>
         <p>A través de este Sitio Web, Nexell ofrece información sobre sus servicios de documentación técnica para instalaciones (memorias técnicas, certificados, cálculos, legalizaciones y otros servicios de documentación técnica) bajo la marca comercial <strong>Nexell Dox</strong>.</p>
         <p>Los servicios de Nexell Dox se dirigen tanto a <strong>particulares y consumidores</strong> (personas físicas que actúan con fines ajenos a su actividad profesional) como a <strong>profesionales y empresas</strong> del sector de las instalaciones. En su condición de consumidores y usuarios, los particulares gozan de los derechos reconocidos por el Real Decreto Legislativo 1/2007, de 16 de noviembre (Ley General para la Defensa de los Consumidores y Usuarios), y demás normativa de protección al consumidor aplicable.</p>
 
@@ -243,12 +246,12 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             <p>Conforme a lo dispuesto en los artículos 90.2 del Real Decreto Legislativo 1/2007 y 54 de la Ley 1/2000 de Enjuiciamiento Civil, serán competentes los Juzgados y Tribunales del domicilio del consumidor. Cualquier pacto de sumisión a fuero distinto se tendrá por no puesto cuando el cliente tenga la condición de consumidor.</p>
         </div>
 
-        <p>Asimismo, Nexell informa de la existencia de la <strong>Plataforma de Resolución de Litigios en Línea de la Unión Europea</strong>, accesible en <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener" style="color:var(--azul-claro);">https://ec.europa.eu/consumers/odr</a>, a la que tanto consumidores como Nexell pueden acudir para la resolución extrajudicial de controversias derivadas de contratos celebrados en línea.</p>
+        <p>Asimismo, Nexell informa de la existencia de la <strong>Plataforma de Resolución de Litigios en Línea de la Unión Europea</strong>, accesible en <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener" style="color:var(--azul-medio);">https://ec.europa.eu/consumers/odr</a>, a la que tanto consumidores como Nexell pueden acudir para la resolución extrajudicial de controversias derivadas de contratos celebrados en línea.</p>
 
         <h2>8. Modificaciones</h2>
         <p>Nexell se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su Sitio Web, pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se presten a través de la misma como la forma en la que éstos aparezcan presentados o localizados.</p>
 
-        <p style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid #E2E8F0; font-size:0.85rem; font-style:italic; color:var(--gris-texto);">Este Aviso Legal se rige por lo dispuesto en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE).</p>
+        <p style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid #E2E8F0; font-size:0.85rem; font-style:italic; color:var(--texto-sec);">Este Aviso Legal se rige por lo dispuesto en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE).</p>
 
     </div>
 </section>

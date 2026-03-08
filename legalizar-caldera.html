@@ -32,7 +32,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nexelldox.com/legalizar-caldera">
     <meta property="og:title" content="Legalizar Caldera — Documentacion RITE para Calderas y Calentadores">
-    <meta property="og:description" content="Documentacion tecnica para legalizar calderas de gas, electricas y calentadores. Memoria tecnica RITE, registro y tramitacion. Entrega en 48h.">
+    <meta property="og:description" content="Documentacion tecnica para legalizar calderas de gas, electricas y calentadores. Memoria tecnica RITE, registro y tramitacion. Comunidad de Madrid. Empresa habilitada R.I. 206529.">
     <meta property="og:image" content="https://nexelldox.com/logo-nexell-dox.png">
     <meta property="og:locale" content="es_ES">
     <meta property="og:site_name" content="Nexell Dox">
@@ -47,7 +47,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             "@type": "ProfessionalService", "name": "Nexell Dox", "telephone": "", "email": "nexell@nexell.es", "url": "https://nexelldox.com",
             "address": { "@type": "PostalAddress", "addressLocality": "Camarma de Esteruelas", "addressRegion": "Madrid", "addressCountry": "ES" }
         },
-        "areaServed": { "@type": "Country", "name": "Espana" },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Comunidad de Madrid" },
         "offers": { "@type": "Offer", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "300", "maxPrice": "500", "priceCurrency": "EUR" } }
     }
     </script>
@@ -77,106 +77,110 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root { --azul: #1F4E78; --azul-claro: #2D6A9F; --azul-oscuro: #0F2B45; --verde: #8DC63F; --verde-hover: #7AB534; --rojo-nexell: #ED1C24; --gris-claro: #F4F6F8; --gris-texto: #4A5568; --blanco: #FFFFFF; }
+        :root { --azul: #1B4F72; --azul-hover: #154360; --azul-medio: #2E86C1; --texto: #2C3E50; --texto-sec: #5D6D7E; --fondo: #FFFFFF; --fondo-alt: #F8F9FA; --fondo-oscuro: #1A252F; --fondo-footer: #141C24; --borde: #DEE2E6; --exito: #27AE60; --wa: #25D366; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #2D3748; line-height: 1.6; background: var(--blanco); }
-        nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(31,78,120,0.1); padding: 0.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--texto); line-height: 1.6; background: var(--fondo); }
+        nav { position: fixed; top: 0; width: 100%; z-index: 100; background: #FFFFFF; border-bottom: 1px solid var(--borde); padding: 0.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .nav-brand { display: flex; align-items: center; gap: 0.3rem; text-decoration: none; }
         .nav-brand img { height: 80px; width: auto; object-fit: contain; }
-        .nav-cta-btn { background: var(--rojo-nexell); color: white; padding: 0.5rem 1.2rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
-        .nav-cta-btn:hover { background: #D41920; }
-        .breadcrumb { padding: 6.5rem 2rem 0; background: var(--gris-claro); }
-        .breadcrumb-inner { max-width: 1100px; margin: 0 auto; font-size: 0.85rem; color: var(--gris-texto); }
-        .breadcrumb-inner a { color: var(--azul-claro); text-decoration: none; }
+        .nav-cta-btn { background: var(--azul); color: white; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
+        .nav-cta-btn:hover { background: var(--azul-hover); }
+        .breadcrumb { padding: 6.5rem 2rem 0; background: var(--fondo-alt); }
+        .breadcrumb-inner { max-width: 1100px; margin: 0 auto; font-size: 0.85rem; color: var(--texto-sec); }
+        .breadcrumb-inner a { color: var(--azul-medio); text-decoration: none; }
         .breadcrumb-inner a:hover { text-decoration: underline; }
-        .hero { padding: 3rem 2rem 5rem; background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul) 50%, var(--azul-claro) 100%); color: white; text-align: center; position: relative; overflow: hidden; }
-        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(to bottom right, transparent 49.5%, var(--blanco) 50%); }
-        .hero h1 { font-size: 2.6rem; font-weight: 800; line-height: 1.15; max-width: 800px; margin: 0 auto 1rem; letter-spacing: -1px; }
-        .hero h1 span { color: var(--verde); }
-        .hero .hero-sub { font-size: 1.15rem; max-width: 650px; margin: 0 auto 2rem; opacity: 0.9; font-weight: 300; }
+        .hero { padding: 3rem 2rem 4rem; background: var(--azul); color: white; text-align: center; position: relative; }
+        .hero h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.6rem; font-weight: 800; line-height: 1.15; max-width: 800px; margin: 0 auto 1rem; letter-spacing: -1px; }
+        .hero h1 span { color: rgba(255,255,255,0.85); }
+        .hero .hero-sub { font-size: 1.1rem; max-width: 650px; margin: 0 auto 2rem; opacity: 0.9; font-weight: 400; }
         .hero-badges { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
-        .badge { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 0.35rem 0.9rem; border-radius: 50px; font-size: 0.8rem; font-weight: 500; }
-        .cta-btn { display: inline-block; background: var(--verde); color: white; padding: 0.9rem 2.2rem; border-radius: 8px; font-size: 1.05rem; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(141,198,63,0.4); }
-        .cta-btn:hover { background: var(--verde-hover); transform: translateY(-2px); }
+        .badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.8rem; font-weight: 500; }
+        .cta-btn { display: inline-block; background: white; color: var(--azul); padding: 0.85rem 2rem; border-radius: 4px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+        .cta-btn:hover { background: #F0F0F0; }
         section { padding: 4rem 2rem; }
         .container { max-width: 1100px; margin: 0 auto; }
-        .section-title { font-size: 2rem; font-weight: 800; color: var(--azul-oscuro); margin-bottom: 0.8rem; letter-spacing: -0.5px; }
-        .bg-light { background: var(--gris-claro); }
+        .section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2rem; font-weight: 800; color: var(--texto); margin-bottom: 0.8rem; letter-spacing: -0.5px; }
+        .section-sub { color: var(--texto-sec); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+        .bg-light { background: var(--fondo-alt); }
         .content-block { max-width: 1100px; margin: 0 auto; }
-        .content-block h2 { font-size: 1.7rem; font-weight: 800; color: var(--azul-oscuro); margin-bottom: 0.8rem; }
-        .content-block h3 { font-size: 1.2rem; font-weight: 700; color: var(--azul); margin-bottom: 0.5rem; margin-top: 1.5rem; }
-        .content-block p { color: var(--gris-texto); margin-bottom: 1rem; font-size: 0.95rem; }
-        .content-block ul { color: var(--gris-texto); margin: 0.5rem 0 1.5rem 1.5rem; font-size: 0.95rem; }
+        .content-block h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.7rem; font-weight: 800; color: var(--texto); margin-bottom: 0.8rem; }
+        .content-block h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--azul); margin-bottom: 0.5rem; margin-top: 1.5rem; }
+        .content-block p { color: var(--texto-sec); margin-bottom: 1rem; font-size: 0.95rem; }
+        .content-block ul { color: var(--texto-sec); margin: 0.5rem 0 1.5rem 1.5rem; font-size: 0.95rem; }
         .content-block ul li { margin-bottom: 0.4rem; }
-        .highlight-box { background: linear-gradient(135deg, #EFF6FF 0%, #F0F7FF 100%); border-left: 4px solid var(--azul); border-radius: 0 10px 10px 0; padding: 1.5rem 2rem; margin: 1.5rem 0; }
-        .highlight-box.warning { border-left-color: #F59E0B; background: linear-gradient(135deg, #FFFBEB 0%, #FFF8E1 100%); }
-        .highlight-box h4 { font-size: 1rem; font-weight: 700; color: var(--azul-oscuro); margin-bottom: 0.3rem; }
-        .highlight-box.warning h4 { color: #92400E; }
+        .highlight-box { background: #EFF6FF; border-left: 4px solid var(--azul); border-radius: 0 6px 6px 0; padding: 1.5rem 2rem; margin: 1.5rem 0; }
+        .highlight-box.warning { border-left-color: #DC2626; background: #FEF2F2; }
+        .highlight-box h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: var(--texto); margin-bottom: 0.3rem; }
+        .highlight-box.warning h4 { color: #991B1B; }
         .highlight-box p { margin-bottom: 0; font-size: 0.9rem; }
         .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
         .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
         .info-card { background: white; border: 2px solid #E2E8F0; border-radius: 10px; padding: 1.5rem; }
-        .info-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--azul-oscuro); margin-bottom: 0.4rem; }
-        .info-card p { font-size: 0.85rem; color: var(--gris-texto); margin: 0; }
-        .pricing-card { background: white; border: 2px solid #E2E8F0; border-radius: 12px; padding: 2rem; text-align: center; max-width: 400px; margin: 2rem auto; transition: all 0.3s; }
-        .pricing-card:hover { border-color: var(--verde); box-shadow: 0 4px 20px rgba(141,198,63,0.15); }
-        .pricing-tag { display: inline-block; background: #FEE2E2; color: #991B1B; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 0.2rem 0.7rem; border-radius: 4px; margin-bottom: 1rem; }
+        .info-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--azul); margin-bottom: 0.4rem; }
+        .info-card p { font-size: 0.85rem; color: var(--texto-sec); margin: 0; }
+        .pricing-card { background: white; border: 1.5px solid var(--borde); border-radius: 6px; padding: 2rem; text-align: center; max-width: 400px; margin: 2rem auto; transition: border-color 0.2s; }
+        .pricing-card:hover { border-color: var(--azul); }
+        .pricing-tag { display: inline-block; background: #E0F2FE; color: var(--azul); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 0.2rem 0.7rem; border-radius: 4px; margin-bottom: 1rem; }
         .pricing-amount { font-size: 2.5rem; font-weight: 800; color: var(--azul); }
-        .pricing-amount span { font-size: 1rem; font-weight: 400; color: var(--gris-texto); }
-        .pricing-desc { font-size: 0.9rem; color: var(--gris-texto); margin-top: 0.5rem; }
-        .faq-section { background: var(--gris-claro); }
-        .faq-item { background: white; border-radius: 10px; margin-bottom: 0.8rem; box-shadow: 0 1px 4px rgba(0,0,0,0.05); overflow: hidden; }
-        .faq-question { width: 100%; padding: 1.2rem 1.5rem; border: none; background: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: inherit; font-size: 0.95rem; font-weight: 600; color: var(--azul-oscuro); text-align: left; }
-        .faq-question::after { content: '+'; font-size: 1.3rem; font-weight: 300; color: var(--azul-claro); flex-shrink: 0; margin-left: 1rem; }
-        .faq-question.active::after { content: '-'; }
+        .pricing-amount span { font-size: 1rem; font-weight: 400; color: var(--texto-sec); }
+        .pricing-desc { font-size: 0.9rem; color: var(--texto-sec); margin-top: 0.5rem; }
+        .faq-section { background: var(--fondo-alt); }
+        .faq-item { background: white; border: 1px solid var(--borde); border-radius: 6px; margin-bottom: 0.8rem; overflow: hidden; }
+        .faq-question { width: 100%; padding: 1.2rem 1.5rem; border: none; background: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: inherit; font-size: 0.95rem; font-weight: 600; color: var(--texto); text-align: left; }
+        .faq-question::after { content: '+'; font-size: 1.3rem; font-weight: 300; color: var(--azul); transition: none; flex-shrink: 0; margin-left: 1rem; }
+        .faq-question.active::after { content: '\2212'; }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .faq-answer-inner { padding: 0 1.5rem 1.2rem; font-size: 0.9rem; color: var(--gris-texto); line-height: 1.7; }
-        .cta-section { background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul) 100%); color: white; text-align: center; }
+        .faq-answer-inner { padding: 0 1.5rem 1.2rem; font-size: 0.9rem; color: var(--texto-sec); line-height: 1.7; }
+        .cta-section { background: var(--azul); color: white; text-align: center; }
         .cta-section .section-title { color: white; }
         .cta-section p { color: rgba(255,255,255,0.8); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2rem; }
         .related-services { max-width: 1100px; margin: 0 auto; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
-        .related-card { border: 2px solid #E2E8F0; border-radius: 10px; padding: 1.5rem; text-decoration: none; color: inherit; transition: all 0.3s; }
-        .related-card:hover { border-color: var(--azul-claro); box-shadow: 0 4px 15px rgba(31,78,120,0.1); transform: translateY(-2px); }
-        .related-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--azul-oscuro); margin-bottom: 0.3rem; }
-        .related-card p { font-size: 0.8rem; color: var(--gris-texto); margin: 0; }
-        footer { background: #0A1929; color: rgba(255,255,255,0.5); padding: 2.5rem 2rem; text-align: center; font-size: 0.85rem; }
+        .related-card { border: 1.5px solid var(--borde); border-radius: 6px; padding: 1.5rem; text-decoration: none; color: inherit; transition: border-color 0.2s; }
+        .related-card:hover { border-color: var(--azul); }
+        .related-card h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--texto); margin-bottom: 0.3rem; }
+        .related-card p { font-size: 0.8rem; color: var(--texto-sec); margin: 0; }
+        footer { background: var(--fondo-footer); color: rgba(255,255,255,0.5); padding: 2.5rem 2rem; text-align: center; font-size: 0.85rem; }
         footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
         .legal-links { margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
         .legal-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
         .legal-links a:hover { color: rgba(255,255,255,0.9); }
         .footer-legal { margin-top: 0.8rem; font-size: 0.75rem; }
         /* CONTACTO / FORMULARIO */
-        .contacto { background: var(--azul-oscuro); color: white; }
-        .contacto .section-title { color: white; }
+        .contacto { background: var(--fondo-oscuro); color: white; }
+        .contacto .section-title { color: white; font-family: 'Plus Jakarta Sans', sans-serif; }
         .contacto .section-sub { color: rgba(255,255,255,0.7); }
         .form-container { max-width: 650px; margin: 0 auto; }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
         .form-group { margin-bottom: 1rem; }
         .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; color: rgba(255,255,255,0.8); }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 2px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); color: white; font-size: 0.95rem; font-family: inherit; transition: border-color 0.2s; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem 1rem; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); color: white; font-size: 0.95rem; font-family: inherit; transition: border-color 0.2s; }
         .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.4); }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--verde); }
-        .form-group select option { background: var(--azul-oscuro); color: white; }
-        .form-submit { width: 100%; padding: 1rem; border: none; border-radius: 8px; background: var(--verde); color: white; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; margin-top: 0.5rem; }
-        .form-submit:hover { background: var(--verde-hover); transform: translateY(-2px); }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--azul-medio); }
+        .form-group select option { background: var(--fondo-oscuro); color: white; }
+        .form-submit { width: 100%; padding: 1rem; border: none; border-radius: 4px; background: var(--azul-medio); color: white; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; }
+        .form-submit:hover { background: var(--azul); }
         .form-checkbox { display: flex; align-items: flex-start; gap: 0.6rem; margin-top: 0.8rem; text-align: left; }
-        .form-checkbox input[type="checkbox"] { margin-top: 0.25rem; width: 16px; height: 16px; accent-color: var(--verde); flex-shrink: 0; cursor: pointer; }
+        .form-checkbox input[type="checkbox"] { margin-top: 0.25rem; width: 16px; height: 16px; accent-color: var(--azul-medio); flex-shrink: 0; cursor: pointer; }
         .form-checkbox label { font-size: 0.78rem; color: rgba(255,255,255,0.65); line-height: 1.4; cursor: pointer; }
-        .form-checkbox label a { color: var(--verde); text-decoration: underline; }
+        .form-checkbox label a { color: var(--azul-medio); text-decoration: underline; }
         .form-checkbox.required label { color: rgba(255,255,255,0.75); }
         .installer-fields { display: none; }
         .installer-fields.visible { display: block; }
 
         @media (max-width: 768px) {
-            nav { padding: 0.5rem 1rem; } .nav-brand img { height: 50px; }
-            .breadcrumb { padding: 5.5rem 1.2rem 0; }
-            .hero { padding: 2rem 1.2rem 4rem; } .hero h1 { font-size: 1.7rem; } .hero .hero-sub { font-size: 0.95rem; }
-            section { padding: 3rem 1.2rem; } .section-title { font-size: 1.5rem; } .content-block h2 { font-size: 1.4rem; }
-            .two-col { grid-template-columns: 1fr; gap: 1.5rem; } .three-col { grid-template-columns: 1fr; }
-            section [style*="grid-template-columns: repeat(4"] { grid-template-columns: 1fr 1fr !important; }
+            nav { padding: 0.5rem 1rem; }
+            .nav-brand img { height: 55px; }
+            .breadcrumb { padding: 5rem 1.2rem 0; }
+            .hero { padding: 2rem 1.2rem 3rem; }
+            .hero h1 { font-size: 1.7rem; }
+            .hero .hero-sub { font-size: 0.95rem; }
+            section { padding: 3rem 1.2rem; }
+            .section-title { font-size: 1.5rem; }
+            .content-block h2 { font-size: 1.4rem; }
+            .two-col { grid-template-columns: 1fr; gap: 1.5rem; }
             .related-grid { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
             .form-container { padding: 0 0.5rem; }
@@ -184,18 +188,18 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         /* WHATSAPP FLOTANTE */
         .whatsapp-float {
             position: fixed; bottom: 24px; right: 24px; z-index: 999;
-            width: 60px; height: 60px; border-radius: 50%;
-            background: #25D366; color: white;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--wa); color: white;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-            text-decoration: none; transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+            text-decoration: none; transition: background 0.2s;
         }
-        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
-        .whatsapp-float svg { width: 32px; height: 32px; fill: white; }
+        .whatsapp-float:hover { background: #20BD5A; }
+        .whatsapp-float svg { width: 30px; height: 30px; fill: white; }
         .mobile-call-bar {
             display: none;
             position: fixed; bottom: 0; left: 0; right: 0; z-index: 998;
-            background: #1F4E78; padding: 0.6rem 1rem;
+            background: var(--azul); padding: 0.6rem 1rem;
             text-align: center;
         }
         .mobile-call-bar a {
@@ -226,7 +230,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         <div class="hero-badges">
             <span class="badge">RITE</span>
             <span class="badge">Calderas y ACS</span>
-            <span class="badge">Entrega 48h</span>
+            <span class="badge">Empresa habilitada</span>
         </div>
         <h1>Legalizar Caldera: <span>registro RITE y documentacion</span></h1>
         <p class="hero-sub">Toda la documentacion tecnica para registrar tu caldera, calentador o sistema de calefaccion ante Industria. Calderas de gas, electricas y mixtas.</p>
@@ -323,22 +327,22 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
 
         <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 1.5rem;">
             <div class="info-card" style="text-align: center; padding: 1.8rem 1.2rem;">
-                <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--azul), var(--azul-claro)); color: white; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem;">1</div>
+                <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--azul), var(--azul-medio)); color: white; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem;">1</div>
                 <h4>Datos del equipo</h4>
                 <p>Marca, modelo, potencia nominal y tipo de combustible de la caldera instalada.</p>
             </div>
             <div class="info-card" style="text-align: center; padding: 1.8rem 1.2rem;">
-                <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--azul), var(--azul-claro)); color: white; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem;">2</div>
+                <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--azul), var(--azul-medio)); color: white; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem;">2</div>
                 <h4>Verificacion hidraulica</h4>
                 <p>Comprobacion del circuito hidraulico: ACS, calefaccion (radiadores, suelo radiante) o ambos.</p>
             </div>
             <div class="info-card" style="text-align: center; padding: 1.8rem 1.2rem;">
-                <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--azul), var(--azul-claro)); color: white; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem;">3</div>
+                <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--azul), var(--azul-medio)); color: white; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem;">3</div>
                 <h4>Elaboracion MTD RITE</h4>
                 <p>Memoria tecnica con calculos de cargas termicas, esquema de principio y ficha de mantenimiento.</p>
             </div>
             <div class="info-card" style="text-align: center; padding: 1.8rem 1.2rem;">
-                <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--azul), var(--azul-claro)); color: white; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem;">4</div>
+                <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--azul), var(--azul-medio)); color: white; font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem;">4</div>
                 <h4>Registro en Industria</h4>
                 <p>Presentacion de la documentacion ante el organo competente de la comunidad autonoma.</p>
             </div>
@@ -355,31 +359,31 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
         <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
             <thead>
                 <tr>
-                    <th style="background: var(--azul-oscuro); color: white; padding: 1rem; font-size: 0.9rem; font-weight: 600; text-align: left;">Tipo de equipo</th>
-                    <th style="background: var(--azul-oscuro); color: white; padding: 1rem; font-size: 0.9rem; font-weight: 600; text-align: left;">Normativa aplicable</th>
-                    <th style="background: var(--azul-oscuro); color: white; padding: 1rem; font-size: 0.9rem; font-weight: 600; text-align: left;">Observaciones</th>
+                    <th style="background: var(--azul); color: white; padding: 1rem; font-size: 0.9rem; font-weight: 600; text-align: left;">Tipo de equipo</th>
+                    <th style="background: var(--azul); color: white; padding: 1rem; font-size: 0.9rem; font-weight: 600; text-align: left;">Normativa aplicable</th>
+                    <th style="background: var(--azul); color: white; padding: 1rem; font-size: 0.9rem; font-weight: 600; text-align: left;">Observaciones</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0; font-weight: 600; color: var(--azul-oscuro);">Caldera de condensacion a gas</td>
-                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">RITE + RD 919/2006 (gas)</td>
-                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">La mas habitual en vivienda nueva. Requiere RITE (Nexell Dox) + instalacion de gas (instalador de gas habilitado).</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--texto-sec); border-bottom: 1px solid #F0F0F0; font-weight: 600; color: var(--azul);">Caldera de condensacion a gas</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--texto-sec); border-bottom: 1px solid #F0F0F0;">RITE + RD 919/2006 (gas)</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--texto-sec); border-bottom: 1px solid #F0F0F0;">La mas habitual en vivienda nueva. Requiere RITE (Nexell Dox) + instalacion de gas (instalador de gas habilitado).</td>
                 </tr>
                 <tr>
-                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0; font-weight: 600; color: var(--azul-oscuro);">Calentador de agua a gas</td>
-                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">RITE + RD 919/2006 (gas)</td>
-                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">Para ACS solamente. Mismos requisitos normativos que una caldera de gas.</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--texto-sec); border-bottom: 1px solid #F0F0F0; font-weight: 600; color: var(--azul);">Calentador de agua a gas</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--texto-sec); border-bottom: 1px solid #F0F0F0;">RITE + RD 919/2006 (gas)</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--texto-sec); border-bottom: 1px solid #F0F0F0;">Para ACS solamente. Mismos requisitos normativos que una caldera de gas.</td>
                 </tr>
                 <tr>
-                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0; font-weight: 600; color: var(--azul-oscuro);">Caldera electrica</td>
-                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">RITE (solo parte termica)</td>
-                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); border-bottom: 1px solid #F0F0F0;">Solo requiere documentacion RITE (no hay parte de gas). Menos habitual por alto coste energetico.</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--texto-sec); border-bottom: 1px solid #F0F0F0; font-weight: 600; color: var(--azul);">Caldera electrica</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--texto-sec); border-bottom: 1px solid #F0F0F0;">RITE (solo parte termica)</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--texto-sec); border-bottom: 1px solid #F0F0F0;">Solo requiere documentacion RITE (no hay parte de gas). Menos habitual por alto coste energetico.</td>
                 </tr>
                 <tr>
-                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto); font-weight: 600; color: var(--azul-oscuro);">Termo electrico >5 kW</td>
-                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto);">RITE (si supera 5 kW)</td>
-                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--gris-texto);">Los termos domesticos estandar (1,5-2 kW) NO requieren legalizacion RITE. Solo termos de alta capacidad o instalaciones centralizadas superan el umbral.</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--texto-sec); font-weight: 600; color: var(--azul);">Termo electrico >5 kW</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--texto-sec);">RITE (si supera 5 kW)</td>
+                    <td style="padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--texto-sec);">Los termos domesticos estandar (1,5-2 kW) NO requieren legalizacion RITE. Solo termos de alta capacidad o instalaciones centralizadas superan el umbral.</td>
                 </tr>
             </tbody>
         </table>
@@ -400,7 +404,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             </div>
             <div>
                 <h3>Cambio de combustible</h3>
-                <p>Si se pasa de una caldera de gasoleo a gas natural, de gas a electrica, o de caldera convencional a <a href="/legalizar-aerotermia" style="color: var(--azul-claro);">aerotermia</a>, la nueva instalacion debe documentarse integramente.</p>
+                <p>Si se pasa de una caldera de gasoleo a gas natural, de gas a electrica, o de caldera convencional a <a href="/legalizar-aerotermia" style="color: var(--azul-medio);">aerotermia</a>, la nueva instalacion debe documentarse integramente.</p>
 
                 <h3>Ampliacion del sistema</h3>
                 <p>Anadir radiadores, modificar el circuito de calefaccion o incorporar produccion de ACS a un sistema existente puede requerir actualizar la documentacion.</p>
@@ -449,7 +453,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
 <section class="bg-light">
     <div class="content-block" style="text-align: center;">
         <h2>Precio de legalizar la caldera</h2>
-        <p style="max-width: 600px; margin: 0 auto 1.5rem; color: var(--gris-texto);">Precio cerrado para la documentacion tecnica RITE completa de tu caldera o calentador.</p>
+        <p style="max-width: 600px; margin: 0 auto 1.5rem; color: var(--texto-sec);">Precio cerrado para la documentacion tecnica RITE completa de tu caldera o calentador.</p>
         <div class="pricing-card">
             <span class="pricing-tag">RITE - Caldera/Calentador</span>
             <div class="pricing-amount">300 - 500 <span>EUR</span></div>
@@ -464,7 +468,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
 <section class="faq-section">
     <div class="content-block">
         <h2 class="section-title" style="text-align: center;">Preguntas frecuentes sobre legalizar calderas</h2>
-        <p style="text-align: center; color: var(--gris-texto); max-width: 600px; margin: 0 auto 2rem;">Las consultas mas frecuentes que recibimos sobre documentacion de calderas y calentadores.</p>
+        <p style="text-align: center; color: var(--texto-sec); max-width: 600px; margin: 0 auto 2rem;">Las consultas mas frecuentes que recibimos sobre documentacion de calderas y calentadores.</p>
 
         <div style="max-width: 750px; margin: 0 auto;">
             <div class="faq-item">
@@ -489,7 +493,7 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
             </div>
             <div class="faq-item">
                 <button class="faq-question">Tengo caldera y aire acondicionado. Necesito dos legalizaciones?</button>
-                <div class="faq-answer"><div class="faq-answer-inner">Si. Son instalaciones termicas independientes, cada una con su propia memoria tecnica RITE. La caldera cubre la calefaccion y/o ACS, y el <a href="/legalizar-aire-acondicionado" style="color: var(--azul-claro);">aire acondicionado</a> cubre la refrigeracion. Nexell Dox puede preparar ambas documentaciones con precio conjunto.</div></div>
+                <div class="faq-answer"><div class="faq-answer-inner">Si. Son instalaciones termicas independientes, cada una con su propia memoria tecnica RITE. La caldera cubre la calefaccion y/o ACS, y el <a href="/legalizar-aire-acondicionado" style="color: var(--azul-medio);">aire acondicionado</a> cubre la refrigeracion. Nexell Dox puede preparar ambas documentaciones con precio conjunto.</div></div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">Un termo electrico necesita legalizacion?</button>
@@ -639,9 +643,9 @@ document.addEventListener('click',function(e){var l=e.target.closest('a[href^="t
                 <div style="text-align:center; margin-top:2rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.15);">
                     <p style="font-size:0.95rem; color:rgba(255,255,255,0.7); margin-bottom:0.5rem;">Prefieres contacto directo?</p>
                     <p style="font-size:1.1rem; font-weight:600;">
-                        <a href="#" data-ndx-tel="link" style="color:var(--verde); text-decoration:none;">Llamar</a>
+                        <a href="#" data-ndx-tel="link" style="color:var(--exito); text-decoration:none;">Llamar</a>
                         &nbsp;&middot;&nbsp;
-                        <a href="mailto:nexell@nexell.es" style="color:var(--verde); text-decoration:none;">nexell@nexell.es</a>
+                        <a href="mailto:nexell@nexell.es" style="color:var(--exito); text-decoration:none;">nexell@nexell.es</a>
                     </p>
                 </div>
             </form>
